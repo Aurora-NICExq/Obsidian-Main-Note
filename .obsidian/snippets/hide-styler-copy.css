@@ -1,0 +1,4 @@
+/* 强制隐藏 Code Styler 自带的复制按钮，只保留 Obsidian 官方原生的 */
+pre.code-styler-pre button.copy-code-button {
+    display: none !important;
+}

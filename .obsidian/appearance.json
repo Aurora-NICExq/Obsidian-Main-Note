@@ -1,0 +1,9 @@
+{
+  "enabledCssSnippets": [
+    "hide-styler-copy",
+    "typora-tables"
+  ],
+  "cssTheme": "Minimal",
+  "baseFontSize": 17,
+  "theme": "system"
+}

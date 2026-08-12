@@ -1,0 +1,14 @@
+/* Force identical width and centering for Title, Properties, and Body */
+body {
+    --file-line-width: 1000px !important;
+}
+
+.markdown-source-view.mod-cm6 .cm-contentContainer,
+.markdown-preview-view .markdown-preview-sizer,
+.inline-title,
+.metadata-container {
+    max-width: 1000px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+}

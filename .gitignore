@@ -1,0 +1,40 @@
+# Ignore Obsidian UI state files (change on every session, pure noise)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspaces.json
+.obsidian/graph.json
+
+# Ignore Smart Environment folder
+.smart-env/
+
+# Ignore macOS folder metadata
+.DS_Store
+**/.DS_Store
+
+# Ignore Claude Code local settings / project state
+.claude/
+
+# Ignore agent guidance file (local only)
+CLAUDE.md
+
+# Ignore book extraction working copies (copyrighted source text)
+**/_extract/
+
+# Local Python venvs for diagram generation scripts
+# (trailing-slash only matches directories; bare name also ignores symlinks)
+90 Assets/scripts/.venv/
+90 Assets/scripts/**/.venv
+90 Assets/scripts/**/.venv/
+90 Assets/scripts/**/.mplconfig/
+90 Assets/scripts/**/__pycache__/
+90 Assets/scripts/**/*.log
+
+# Temporary TeX build artifacts
+90 Assets/scripts/tikz_to_svg/_work/
+90 Assets/scripts/electronic_circuits/_work/
+90 Assets/scripts/signals_and_systems/_work/
+90 Assets/scripts/algorithms/_work/
+
+# Generated D2 sources (optional to keep; SVG is the deliverable)
+# 90 Assets/scripts/mermaid_to_d2/sources/
+

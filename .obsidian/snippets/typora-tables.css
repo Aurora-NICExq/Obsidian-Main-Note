@@ -1,0 +1,30 @@
+/* Make tables take up full width of the container */
+.markdown-rendered table {
+    width: 100% !important;
+    border-collapse: collapse;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* Clean borders and comfortable padding */
+.markdown-rendered th,
+.markdown-rendered td {
+    padding: 8px 13px !important;
+    border: 1px solid var(--background-modifier-border) !important;
+}
+
+/* Typora style table header */
+.markdown-rendered thead {
+    background-color: var(--background-secondary-alt);
+    font-weight: bold;
+}
+
+/* Typora style striped rows (Zebra striping) */
+.markdown-rendered tr:nth-child(2n) {
+    background-color: var(--background-secondary);
+}
+
+/* Hover effect for rows */
+.markdown-rendered tbody tr:hover {
+    background-color: var(--background-modifier-hover);
+}
