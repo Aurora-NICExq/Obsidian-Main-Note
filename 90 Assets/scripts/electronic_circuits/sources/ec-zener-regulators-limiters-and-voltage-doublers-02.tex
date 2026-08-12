@@ -1,0 +1,33 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  % ---------- limiter circuit ----------
+  \begin{scope}[yshift=0.5cm]
+    \draw (0,2.4) to[sV, l=$v_{in}$] (0,0) node[ground]{};
+    \draw (0,2.4) to[R=$R_1$] (2.3,2.4) node[circ]{};
+    % upper branch: D1 + battery V_H
+    \draw (2.3,2.4) -- (3.6,2.4) to[D, l=$D_1$] (5.0,2.4)
+          to[battery1, l=$V_H$] (6.4,2.4) -- (6.4,0);
+    % lower branch: D2 + battery V_L (reversed)
+    \draw (2.3,2.4) -- (2.3,1.0) -- (3.6,1.0) to[D, l_=$D_2$, invert] (5.0,1.0)
+          to[battery1, l_=$V_L$, invert] (6.4,1.0) -- (6.4,0);
+    \draw (6.4,0) -- (0,0);
+    \draw (2.3,2.4) -- (2.3,3.4) -- (7.4,3.4) node[right]{$v_{out}$};
+    \node[circ] at (2.3,2.4){};
+  \end{scope}
+
+  % ---------- transfer characteristic ----------
+  \begin{scope}[xshift=10.2cm, yshift=1.4cm]
+    \draw[ax] (-2.9,0) -- (2.9,0) node[below left]{$v_{in}$};
+    \draw[ax] (0,-2.1) -- (0,2.1) node[left]{$v_{out}$};
+    % slope-1 in the middle, flat outside
+    \draw[curve, line width=1.3pt]
+      (-2.7,-1.15) -- (-1.15,-1.15) -- (1.05,1.05) -- (2.7,1.05);
+    \draw[helper, ecred] (-2.8,1.05) -- (2.8,1.05);
+    \draw[helper, ecred] (-2.8,-1.15) -- (2.8,-1.15);
+    \node[ecred, font=\footnotesize, anchor=south west] at (1.3,1.08){$V_H+V_{D,on}$};
+    \node[ecred, font=\footnotesize, anchor=north east] at (-1.3,-1.18){$-(V_L+V_{D,on})$};
+    \node[note, anchor=north west, font=\footnotesize] at (0.55,0.35){斜率 $=1$};
+    \node[note, anchor=north, align=center] at (0,-2.35)
+      {中间区两个二极管都截止，$v_{out}=v_{in}$；\\
+       越界后对应的二极管导通，把输出钳住};
+  \end{scope}
+\end{tikzpicture}

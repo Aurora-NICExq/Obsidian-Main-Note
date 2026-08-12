@@ -1,0 +1,58 @@
+\begin{tikzpicture}[font=\small]
+  % ---------- the DP table: d_i(v) ----------
+  \begin{scope}
+    \node[anchor=south, font=\small] at (4.2,3.9){Bellman-Ford 的本质：按\textbf{边数}分层的动态规划};
+
+    % header row
+    \node[cell, fill=alglight!25, minimum width=1.5cm] at (-1.3,3.2) {$i\ \backslash\ v$};
+    \foreach \jj/\vv in {0/$s$, 1/$a$, 2/$b$, 3/$c$, 4/$t$}
+      \node[cell, fill=alglight!25] at (\jj*0.9,3.2) {\vv};
+
+    % rows
+    \foreach \rw/\lbl/\va/\vb/\vc/\vt in {
+      0/{$i=0$}/$\infty$/$\infty$/$\infty$/$\infty$,
+      1/{$i=1$}/{$3$}/$\infty$/$\infty$/$\infty$,
+      2/{$i=2$}/{$3$}/{$5$}/{$8$}/$\infty$,
+      3/{$i=3$}/{$3$}/{$4$}/{$8$}/{$9$},
+      4/{$i=4$}/{$3$}/{$4$}/{$7$}/{$8$}}{
+      \node[cell, fill=alglight!12, minimum width=1.5cm] at (-1.3,2.5-\rw*0.7) {\lbl};
+      \node[cell] at (0,2.5-\rw*0.7) {$0$};
+      \node[cell] at (0.9,2.5-\rw*0.7) {\va};
+      \node[cell] at (1.8,2.5-\rw*0.7) {\vb};
+      \node[cell] at (2.7,2.5-\rw*0.7) {\vc};
+      \node[cell] at (3.6,2.5-\rw*0.7) {\vt};
+    }
+
+    \node[note, anchor=west, align=left] at (4.5,2.0)
+      {$d_i(v)=$ 从 $s$ 到 $v$、\\ \textbf{最多用 $i$ 条边}的最短距离\\[6pt]
+       $d_i(v)=\min\big(d_{i-1}(v),$\\
+       $\qquad \min_{(u,v)\in E} d_{i-1}(u)+w(u,v)\big)$};
+
+    \node[note, anchor=north west, align=left] at (-1.6,-0.6)
+      {每多算一行 = 每条最短路\textbf{多允许用一条边}。
+       最短\textbf{简单}路径最多 $|V|-1$ 条边，所以 $|V|-1$ 轮之后必然收敛。\\
+       原地实现把整张表压成一个数组反复扫边 —— 空间从 $O(|V|^2)$ 降到 $O(|V|)$，代价是失去「第 $i$ 层」的语义。};
+  \end{scope}
+
+  % ---------- negative cycle detection ----------
+  \begin{scope}[yshift=-4.6cm, xshift=1.0cm]
+    \node[anchor=south, font=\small] at (3.0,2.3){第 $|V|$ 轮还能松弛 $\Rightarrow$ 存在负权环};
+
+    \node[vtx] (s2) at (-1.4,0.8) {$s$};
+    \node[bad] (p) at (0.6,0.8) {$p$};
+    \node[bad] (q) at (2.4,1.6) {$q$};
+    \node[bad] (r) at (2.4,0.0) {$r$};
+    \draw[dedge] (s2) -- node[above, font=\footnotesize]{$2$} (p);
+    \draw[dedge, algred, line width=1.3pt] (p) -- node[above left, font=\footnotesize]{$1$} (q);
+    \draw[dedge, algred, line width=1.3pt] (q) -- node[right, font=\footnotesize]{$1$} (r);
+    \draw[dedge, algred, line width=1.3pt] (r) -- node[below left, font=\footnotesize]{$-3$} (p);
+    \node[algred, font=\footnotesize, anchor=west] at (3.1,0.8){环权和 $=-1<0$};
+
+    \node[note, anchor=north west, align=left] at (-1.9,-0.7)
+      {推理链：第 $|V|$ 轮还能改进 $\Rightarrow$ 存在一条更短路径用了 $\ge|V|$ 条边\\
+       $\Rightarrow$ 抽屉原理，该路径重复了顶点，含一个环\\
+       $\Rightarrow$ 绕这个环还能让距离下降 $\Rightarrow$ 环权和为负。\\[4pt]
+       有负环时「最短路」根本\textbf{没有定义}（绕环可以无限降），
+       所以检测出来就该报错而不是返回结果。};
+  \end{scope}
+\end{tikzpicture}

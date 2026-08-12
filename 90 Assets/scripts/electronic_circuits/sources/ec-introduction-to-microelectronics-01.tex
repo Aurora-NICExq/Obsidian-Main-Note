@@ -1,0 +1,27 @@
+\begin{tikzpicture}[scale=1.0]
+  % ---- analog ----
+  \begin{scope}
+    \draw[ax] (-0.2,0) -- (5.2,0) node[below left]{$t$};
+    \draw[ax] (0,-1.3) -- (0,1.5) node[left]{$x(t)$};
+    \draw[curve, domain=0:5, samples=200, smooth]
+      plot (\x, {0.95*sin(deg(2.2*\x)) + 0.28*sin(deg(7.1*\x))});
+    \node[note, anchor=north] at (2.5,-1.45){模拟：取值连续，任何扰动都成为误差};
+    \node[ecblue, font=\small, anchor=south] at (2.5,1.55){模拟信号};
+  \end{scope}
+
+  % ---- digital ----
+  \begin{scope}[xshift=7.2cm]
+    \draw[ax] (-0.2,0) -- (5.2,0) node[below left]{$t$};
+    \draw[ax] (0,-1.3) -- (0,1.5) node[left]{$x(t)$};
+    % noisy square wave: levels 0 and 1, with a noise band
+    \fill[ecteal, opacity=0.10] (0,0.85) rectangle (5,1.25);
+    \fill[ecteal, opacity=0.10] (0,-0.20) rectangle (5,0.20);
+    \draw[curve3]
+      (0,1.05) -- (1.1,1.05) -- (1.1,0.02) -- (2.0,0.02) -- (2.0,1.08) --
+      (3.3,1.08) -- (3.3,-0.03) -- (4.1,-0.03) -- (4.1,1.03) -- (5,1.03);
+    \draw[helper] (0,1.05) -- (5.2,1.05) node[right, note]{$V_{OH}$};
+    \draw[helper] (0,0.0) -- (5.2,0.0) node[right, note]{$V_{OL}$};
+    \node[note, anchor=north] at (2.5,-1.45){数字：只区分两个电平，噪声在容限内被完全丢弃};
+    \node[ecteal, font=\small, anchor=south] at (2.5,1.55){数字信号};
+  \end{scope}
+\end{tikzpicture}

@@ -1,0 +1,33 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  % ---------- circuit ----------
+  \begin{scope}
+    \draw (2.4,4.3) node[vcc]{$V_{CC}$} -- (2.4,3.7);
+    \draw (2.4,3.7) to[R=$R_C$] (2.4,2.4);
+    \draw (2.4,2.4) node[npn, anchor=C](Q){$Q_1$};
+    \draw (Q.E) to[R=$R_E$] (2.4,0.3) node[ground]{};
+    \draw (Q.B) -- (0.3,1.5) node[left]{$v_{in}$};
+    \draw (2.4,2.4) node[circ]{} -- (3.8,2.4) node[right]{$v_{out}$};
+
+    % impedance looking into the emitter
+    \draw[helper, ecred, -{Stealth[length=4pt]}] (3.3,1.15) -- (2.75,1.15);
+    \node[ecred, font=\footnotesize, anchor=west] at (3.35,1.15){$1/g_m$};
+  \end{scope}
+
+  % ---------- gain vs R_E ----------
+  \begin{scope}[xshift=6.4cm, yshift=0.4cm]
+    \draw[ax] (-0.2,0) -- (5.4,0) node[below left]{$R_E$};
+    \draw[ax] (0,-0.2) -- (0,3.5) node[left]{$|A_v|$};
+    \draw[curve, domain=0:5.1, samples=200, smooth]
+      plot (\x, {3.1/(1+\x/0.62)});
+    \node[circle, fill=ecblue, inner sep=1.3pt] at (0,3.1){};
+    \node[note, anchor=west] at (0.15,3.25){$R_E=0$ 时 $|A_v|=g_mR_C$};
+    \node[note, anchor=north east, align=right] at (5.2,2.3)
+      {$R_E\gg 1/g_m$ 时\\ $|A_v|\to\dfrac{R_C}{R_E}$\\ 只由电阻比决定};
+  \end{scope}
+
+  \node[note, anchor=north, align=center] at (5.0,-0.9)
+    {$A_v=-\dfrac{R_C}{R_E+1/g_m}$：$R_E$ 是拿增益换线性度和可预测性的旋钮};
+  \node[note, anchor=north, align=center] at (5.0,-1.85)
+    {同时 $R_{in}=r_\pi+(\beta+1)R_E$ 被抬高，$R_{out}$ 也从 $R_C\parallel r_o$ 变大 ——
+     退化电阻是一个作用在三处的负反馈};
+\end{tikzpicture}

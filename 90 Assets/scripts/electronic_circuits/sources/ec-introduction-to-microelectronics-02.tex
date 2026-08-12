@@ -1,0 +1,24 @@
+\begin{circuitikz}[scale=1.0, transform shape, font=\small]
+  % source branch
+  \draw (-4.2,0.9) to[sV, l=$v_s$] (-4.2,-1.1) node[ground]{};
+  \draw (-4.2,0.9) to[R=$R_S$] (-2.4,0.9) -- (-2.0,0.9);
+
+  % amplifier
+  \draw[ecblue, line width=1.1pt, fill=ecblue, fill opacity=0.07]
+    (-2.0,2.0) -- (-2.0,-0.2) -- (0.9,0.9) -- cycle;
+  \node[ecblue] at (-1.15,1.15){$A_v$};
+  \node[note] at (-1.15,0.62){放大器};
+
+  % input / output ports
+  \node[note, anchor=east] at (-2.1,0.2){$R_{in}$};
+  \node[note, anchor=west] at (1.0,0.25){$R_{out}$};
+
+  % load
+  \draw (0.9,0.9) -- (2.2,0.9) node[circ]{} -- (2.9,0.9) node[right]{$v_{out}$};
+  \draw (2.2,0.9) to[R=$R_L$] (2.2,-1.1) node[ground]{};
+
+  \node[note, anchor=north, align=center] at (-0.6,-1.6)
+    {理想电压放大器：$R_{in}\to\infty$（不从信号源取电流），$R_{out}\to 0$（负载不拉低增益）};
+  \node[note, anchor=north, align=center] at (-0.6,-2.25)
+    {实际上 $v_{out}=A_v\,v_s\cdot\dfrac{R_{in}}{R_{in}+R_S}\cdot\dfrac{R_L}{R_L+R_{out}}$，两处分压都在吃增益};
+\end{circuitikz}

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="401.04pt" height="214.126125pt" viewBox="0 0 401.04 214.126125" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-12T15:01:33.922824</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 214.126125 
+L 401.04 214.126125 
+L 401.04 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 28.25424 142.120365 
+L 114.76656 142.120365 
+Q 117.80208 142.120365 117.80208 138.572205 
+L 117.80208 81.801645 
+Q 117.80208 78.253485 114.76656 78.253485 
+L 28.25424 78.253485 
+Q 25.21872 78.253485 25.21872 81.801645 
+L 25.21872 138.572205 
+Q 25.21872 142.120365 28.25424 142.120365 
+z
+" clip-path="url(#p00f95e6c25)" style="fill: #d6e4f0; stroke: #2f5f8f; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 145.88064 142.120365 
+L 255.15936 142.120365 
+Q 258.19488 142.120365 258.19488 138.572205 
+L 258.19488 81.801645 
+Q 258.19488 78.253485 255.15936 78.253485 
+L 145.88064 78.253485 
+Q 142.84512 78.253485 142.84512 81.801645 
+L 142.84512 138.572205 
+Q 142.84512 142.120365 145.88064 142.120365 
+z
+" clip-path="url(#p00f95e6c25)" style="fill: #f0e6d6; stroke: #2a7a6b; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 286.27344 142.120365 
+L 372.78576 142.120365 
+Q 375.82128 142.120365 375.82128 138.572205 
+L 375.82128 81.801645 
+Q 375.82128 78.253485 372.78576 78.253485 
+L 286.27344 78.253485 
+Q 283.23792 78.253485 283.23792 81.801645 
+L 283.23792 138.572205 
+Q 283.23792 142.120365 286.27344 142.120365 
+z
+" clip-path="url(#p00f95e6c25)" style="fill: #d6e4f0; stroke: #a33b3b; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #2f5f8f" x="71.5104" y="112.784581" transform="rotate(-0 71.5104 112.784581)">CPU</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2a7a6b" transform="translate(167.019219 106.783605)">DMA engine /</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2a7a6b" transform="translate(176.667656 118.786339)">controller</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #a33b3b" x="329.5296" y="112.784972" transform="rotate(-0 329.5296 112.784972)">Device</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 122.833921 101.316525 
+Q 130.320875 101.316525 136.242582 101.316525 
+" style="fill: none; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 131.842582 99.116525 
+L 136.242582 101.316525 
+L 131.842582 103.516525 
+z
+" style="fill: #c47a2c; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 263.226721 101.316525 
+Q 270.713675 101.316525 276.635382 101.316525 
+" style="fill: none; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 272.235382 99.116525 
+L 276.635382 101.316525 
+L 272.235382 103.516525 
+z
+" style="fill: #c47a2c; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #666666" x="200.52" y="56.964525" transform="rotate(-0 200.52 56.964525)">coherent / streaming DMA API</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="200.52" y="19.918125" transform="rotate(-0 200.52 19.918125)">DMA data path sketch</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p00f95e6c25">
+   <rect x="10.8" y="25.918125" width="379.44" height="177.408"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,71 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  \def\W{7.0}      % total width
+  \def\xj{3.5}     % junction position
+  \def\dxp{0.85}   % depletion into p
+  \def\dxn{1.25}   % depletion into n
+
+  % ---------- (a) the junction itself ----------
+  \begin{scope}[yshift=0cm]
+    \fill[ecteal, opacity=0.12] (0,0) rectangle (\xj,1.3);
+    \fill[ecred,  opacity=0.12] (\xj,0) rectangle (\W,1.3);
+    \fill[white] (\xj-\dxp,0) rectangle (\xj+\dxn,1.3);
+    \draw[ecgray, line width=0.8pt] (0,0) rectangle (\W,1.3);
+    \draw[ecgray, line width=0.8pt] (\xj-\dxp,0) -- (\xj-\dxp,1.3);
+    \draw[ecgray, line width=0.8pt] (\xj+\dxn,0) -- (\xj+\dxn,1.3);
+    \node at (1.6,0.65){$p$ 型（$N_A$）};
+    \node at (5.6,0.65){$n$ 型（$N_D$）};
+    \foreach \x in {2.85,3.15} \node[ecteal, font=\footnotesize] at (\x,0.65){$-$};
+    \foreach \x in {3.8,4.1,4.4} \node[ecred, font=\footnotesize] at (\x,0.65){$+$};
+    \draw[{Stealth[length=4pt]}-{Stealth[length=4pt]}, ecgray] (\xj-\dxp,1.55) -- (\xj+\dxn,1.55);
+    \node[note, anchor=south] at (\xj+0.2,1.62){耗尽区 $W$：无自由载流子，只剩固定的电离杂质};
+    \node[note, anchor=east] at (-0.2,0.65){(a)};
+  \end{scope}
+
+  % ---------- (b) charge density ----------
+  \begin{scope}[yshift=-3.2cm]
+    \draw[ax] (0,0) -- (\W+0.4,0) node[below]{$x$};
+    \draw[ax] (\xj,-1.05) -- (\xj,1.15) node[above right]{$\rho(x)$};
+    \fill[ecteal, opacity=0.35] (\xj-\dxp,0) rectangle (\xj,-0.8);
+    \fill[ecred,  opacity=0.35] (\xj,0) rectangle (\xj+\dxn,0.55);
+    \draw[curve, line width=1.0pt]
+      (0,0) -- (\xj-\dxp,0) -- (\xj-\dxp,-0.8) -- (\xj,-0.8) --
+      (\xj,0.55) -- (\xj+\dxn,0.55) -- (\xj+\dxn,0) -- (\W,0);
+    \node[note, anchor=east] at (\xj-\dxp-0.12,-0.55){$-qN_A$};
+    \node[note, anchor=west] at (\xj+\dxn+0.12,0.42){$+qN_D$};
+    \node[note, anchor=east] at (-0.2,0.1){(b)};
+    \node[note, anchor=west, align=left] at (0.15,0.75)
+      {电荷守恒 $N_Ax_p=N_Dx_n$：掺杂轻的一侧耗尽得更深};
+  \end{scope}
+
+  % ---------- (c) electric field ----------
+  \begin{scope}[yshift=-6.4cm]
+    \draw[ax] (0,0) -- (\W+0.4,0) node[below]{$x$};
+    \draw[ax] (\xj,-1.35) -- (\xj,0.85) node[above right]{$E(x)$};
+    \draw[curve2, line width=1.0pt]
+      (0,0) -- (\xj-\dxp,0) -- (\xj,-1.0) -- (\xj+\dxn,0) -- (\W,0);
+    \node[note, anchor=east] at (\xj-\dxp-0.12,-0.75){$E_{max}$};
+    \node[note, anchor=east] at (-0.2,0.1){(c)};
+    \node[note, anchor=west, align=left] at (0.15,0.5)
+      {$E$ 是 $\rho$ 的积分 $\Rightarrow$ 三角形分布，峰值落在冶金结面};
+  \end{scope}
+
+  % ---------- (d) potential ----------
+  \begin{scope}[yshift=-9.6cm]
+    \draw[ax] (0,0) -- (\W+0.4,0) node[below]{$x$};
+    \draw[ax] (\xj,-0.35) -- (\xj,1.75) node[above right]{$V(x)$};
+    \draw[curve3, line width=1.0pt]
+      (0,0) -- (\xj-\dxp,0)
+      .. controls (\xj-0.35,0.05) and (\xj-0.1,0.55) .. (\xj,0.72)
+      .. controls (\xj+0.35,0.95) and (\xj+0.75,1.2) .. (\xj+\dxn,1.25)
+      -- (\W,1.25);
+    \draw[{Stealth[length=4pt]}-{Stealth[length=4pt]}, ecgray] (\W-0.45,0) -- (\W-0.45,1.25);
+    \node[note, anchor=west] at (\W-0.4,0.62){$V_0$};
+    \node[note, anchor=east] at (-0.2,0.1){(d)};
+    \node[note, anchor=west, align=left] at (0.15,1.45)
+      {$V$ 是 $-E$ 的积分：从 $p$ 侧到 $n$ 侧抬升 $V_0$};
+  \end{scope}
+
+  \node[note, anchor=north, align=center] at (\xj,-11.3)
+    {内建电势 $V_0=V_T\ln\dfrac{N_AN_D}{n_i^2}$（典型 $0.6\text{--}0.8\,\mathrm{V}$）；
+     反偏时 $W$ 与 $V_0+V_R$ 的平方根同步展宽};
+\end{tikzpicture}

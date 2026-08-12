@@ -1,0 +1,36 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  % ---------- left: depletion widening under reverse bias ----------
+  \begin{scope}
+    \foreach \k/\yy/\dl/\dr/\lbl in {
+      0/2.6/0.55/0.80/{$V_R=0$（平衡）},
+      1/1.3/0.85/1.25/{$V_R>0$（反偏）},
+      2/0.0/1.10/1.60/{$V_R\gg 0$}}{
+      \fill[ecteal, opacity=0.12] (0,\yy) rectangle (2.5,\yy+0.85);
+      \fill[ecred,  opacity=0.12] (2.5,\yy) rectangle (5.0,\yy+0.85);
+      \fill[white] (2.5-\dl,\yy) rectangle (2.5+\dr,\yy+0.85);
+      \draw[ecgray, line width=0.8pt] (0,\yy) rectangle (5.0,\yy+0.85);
+      \draw[ecgray, line width=0.8pt] (2.5-\dl,\yy) -- (2.5-\dl,\yy+0.85);
+      \draw[ecgray, line width=0.8pt] (2.5+\dr,\yy) -- (2.5+\dr,\yy+0.85);
+      \node[note, anchor=west] at (5.2,\yy+0.42){\lbl};
+      \node[font=\footnotesize] at (1.1,\yy+0.42){$p$};
+      \node[font=\footnotesize] at (4.1,\yy+0.42){$n$};
+    }
+    \node[note, anchor=north, align=center] at (2.5,-0.55)
+      {反偏把耗尽区拉宽 $\Rightarrow$ 两块「极板」拉开 $\Rightarrow$ 电容变小};
+  \end{scope}
+
+  % ---------- right: junction capacitance vs reverse bias ----------
+  \begin{scope}[xshift=9.6cm, yshift=0.2cm]
+    \draw[ax] (-0.2,0) -- (5.4,0) node[below left]{$V_R$};
+    \draw[ax] (0,-0.2) -- (0,3.6) node[left]{$C_j$};
+    \draw[curve, domain=0:5.1, samples=200, smooth]
+      plot (\x, {3.1/sqrt(1+\x/0.75)});
+    \node[circle, fill=ecblue, inner sep=1.3pt] at (0,3.1){};
+    \node[note, anchor=west] at (0.15,3.42){$C_{j0}$（零偏结电容）};
+    \node[note, anchor=north east, align=right] at (5.3,2.9)
+      {$C_j=\dfrac{C_{j0}}{\sqrt{1+V_R/V_0}}$\\[4pt]
+       突变结指数 $1/2$，缓变结约 $1/3$};
+    \node[note, anchor=north, align=center] at (2.6,-0.5)
+      {压控电容（varactor）就靠这条曲线做 VCO 调谐};
+  \end{scope}
+\end{tikzpicture}

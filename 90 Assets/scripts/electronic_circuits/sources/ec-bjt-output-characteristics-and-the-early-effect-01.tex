@@ -1,0 +1,31 @@
+\begin{tikzpicture}[scale=1.0]
+  % -V_A sits at x = -5.5; every active-region line is aimed at it
+  \def\va{-5.5}
+  \def\xk{0.9}   % knee: edge of saturation
+  \def\xr{5.8}   % right end of plot
+
+  \draw[ax] (\va-0.6,0) -- (6.9,0) node[below left]{$V_{CE}$};
+  \draw[ax] (0,-0.6) -- (0,4.4) node[left]{$I_C$};
+
+  \foreach \y/\lbl in {1.0/$V_{BE1}$, 1.75/$V_{BE2}$, 2.5/$V_{BE3}$}{
+    \pgfmathsetmacro\slope{\y/(\xk-\va)}
+    \pgfmathsetmacro\yend{\y + \slope*(\xr-\xk)}
+    % dashed extrapolation converging on -V_A
+    \draw[helper] (\va,0) -- (\xk,\y);
+    % saturation knee, then Early-sloped active region
+    \draw[curve] (0,0) .. controls (0.3,\y*0.85) and (0.55,\y) .. (\xk,\y)
+                 -- (\xr,\yend);
+    \node[note, anchor=west] at (\xr+0.05,\yend){\lbl};
+  }
+
+  \node[circle, fill=ecred, inner sep=1.3pt] at (\va,0){};
+  \node[ecred, font=\footnotesize, anchor=north] at (\va,-0.14){$-V_A$};
+
+  \draw[helper, ecteal] (\xk,-0.2) -- (\xk,3.9);
+  \node[ecteal, font=\footnotesize, anchor=south west] at (\xk+0.08,3.55){$V_{CE}=V_{BE}$};
+  \node[note, anchor=north east] at (\xk-0.05,-0.25){饱和区};
+  \node[note, anchor=north west] at (\xk+0.15,-0.25){正向有源区};
+
+  \node[note, anchor=north west] at (\va-0.3,3.9)
+    {$I_C=I_S e^{V_{BE}/V_T}\left(1+\dfrac{V_{CE}}{V_A}\right),\qquad r_o=\dfrac{V_A}{I_C}$};
+\end{tikzpicture}

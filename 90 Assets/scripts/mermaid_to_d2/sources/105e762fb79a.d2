@@ -1,0 +1,21 @@
+direction: down
+
+
+crate: "crate"
+front_of_house: "front_of_house"
+hosting: "hosting"
+serving: "serving"
+add_to_waitlist: "add_to_waitlist"
+seat_at_table: "seat_at_table"
+take_order: "take_order"
+serve_order: "serve_order"
+take_payment: "take_payment"
+
+crate -> front_of_house
+front_of_house -> hosting
+front_of_house -> serving
+hosting -> add_to_waitlist
+hosting -> seat_at_table
+serving -> take_order
+serving -> serve_order
+serving -> take_payment

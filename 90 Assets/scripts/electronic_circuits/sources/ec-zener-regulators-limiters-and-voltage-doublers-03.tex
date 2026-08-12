@@ -1,0 +1,41 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  % ---------- clamp (level shifter) ----------
+  \begin{scope}
+    \draw (0,2.2) to[sV, l=$v_{in}$] (0,0) node[ground]{};
+    \draw (0,2.2) to[C=$C_1$] (2.2,2.2) node[circ]{};
+    \draw (2.2,2.2) to[D, l_=$D_1$, invert] (2.2,0) -- (0,0);
+    \draw (2.2,2.2) -- (3.4,2.2) node[right]{$v_{out}$};
+    \node[note, anchor=north, align=center] at (1.7,-0.7)
+      {钳位器：电容充到 $V_p$ 后，\\ 整条波形被抬高一个 $V_p$};
+  \end{scope}
+
+  % ---------- clamp waveform ----------
+  \begin{scope}[xshift=5.6cm, yshift=1.1cm]
+    \draw[ax] (-0.2,0) -- (4.6,0) node[below left]{$t$};
+    \draw[ax] (0,-1.5) -- (0,2.6) node[left]{$v$};
+    \draw[helper, domain=0:4.4, samples=200, smooth]
+      plot (\x, {1.0*sin(deg(3*\x))});
+    \draw[curve, line width=1.2pt, domain=0:4.4, samples=200, smooth]
+      plot (\x, {1.0*sin(deg(3*\x)) + 1.0});
+    \draw[helper, ecred] (0,0) -- (4.5,0);
+    \node[note, anchor=south east] at (4.5,1.9){$v_{out}$};
+    \node[note, anchor=north east] at (4.5,-0.85){$v_{in}$};
+    \draw[{Stealth[length=3.5pt]}-{Stealth[length=3.5pt]}, ecred] (0.35,0) -- (0.35,1.0);
+    \node[ecred, font=\footnotesize, anchor=west] at (0.42,0.5){$V_p$};
+    \node[note, anchor=north, align=center] at (2.2,-1.75)
+      {波形形状不变，只是直流电平被平移};
+  \end{scope}
+
+  % ---------- voltage doubler ----------
+  \begin{scope}[xshift=11.6cm]
+    \draw (0,2.2) to[sV, l=$v_{in}$] (0,0) node[ground]{};
+    \draw (0,2.2) to[C=$C_1$] (2.0,2.2) node[circ]{};
+    \draw (2.0,2.2) to[D, l_=$D_1$, invert] (2.0,0) -- (0,0);
+    \draw (2.0,2.2) to[D, l=$D_2$] (4.0,2.2) node[circ]{};
+    \draw (4.0,2.2) to[C=$C_2$] (4.0,0) -- (2.0,0);
+    \draw (4.0,2.2) -- (5.2,2.2) node[right]{$v_{out}\approx 2V_p$};
+    \node[note, anchor=north, align=center] at (2.6,-0.7)
+      {倍压器：$C_1D_1$ 先钳位得到 $0\sim 2V_p$ 的波形，\\
+       $D_2C_2$ 再把它的峰值整流保持下来};
+  \end{scope}
+\end{tikzpicture}

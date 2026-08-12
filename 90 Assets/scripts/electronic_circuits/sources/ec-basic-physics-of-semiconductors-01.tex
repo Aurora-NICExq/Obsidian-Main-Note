@@ -1,0 +1,25 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  \foreach \i/\gap/\name/\sub in {0/2.6/绝缘体/{$E_g\approx\SI{8}{eV}$},
+                                  4.4/1.1/半导体/{$E_g\approx\SI{1.12}{eV}$（Si）},
+                                  8.8/-0.45/导体/{导带与价带交叠，$E_g=0$}}{
+    \begin{scope}[xshift=\i cm]
+      % valence band
+      \fill[ecblue, opacity=0.25] (0,0) rectangle (3.0,0.75);
+      \node[note] at (1.5,0.37){价带（满）};
+      % conduction band
+      \pgfmathsetmacro\top{0.75+\gap}
+      \fill[ecred, opacity=0.18] (0,\top) rectangle (3.0,\top+0.75);
+      \node[note] at (1.5,\top+0.37){导带（空）};
+      % gap arrow (only where there is a gap)
+      \ifdim\gap pt>0.1pt
+        \draw[{Stealth[length=4pt]}-{Stealth[length=4pt]}, ecgray]
+          (3.25,0.75) -- (3.25,\top);
+        \node[note, anchor=west] at (3.3,0.75+\gap/2){$E_g$};
+      \fi
+      \node[font=\small, anchor=north] at (1.5,-0.2){\name};
+      \node[note, anchor=north, align=center] at (1.5,-0.65){\sub};
+    \end{scope}
+  }
+  \node[note, anchor=north, align=center] at (6.4,-1.6)
+    {带隙决定「常温下有多少电子能跳上导带」：$n_i\propto T^{3/2}\exp\!\left(-\dfrac{E_g}{2kT}\right)$};
+\end{tikzpicture}

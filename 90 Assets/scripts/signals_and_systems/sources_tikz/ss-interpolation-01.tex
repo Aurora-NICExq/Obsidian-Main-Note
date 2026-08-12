@@ -1,0 +1,68 @@
+\begin{tikzpicture}[font=\small]
+  % samples used by all three panels
+  \def\samps{{0.95,1.32,1.18,0.62,0.28,0.55,1.05,1.25}}
+
+  % ---------- (a) zero-order hold ----------
+  \begin{scope}
+    \node[note, anchor=south] at (3.2,2.2){(a) 零阶保持（ZOH）};
+    \draw[ax] (-0.4,0) -- (7.0,0); \node[note, anchor=north west] at (6.8,-0.05){$t$};
+    \draw[ax] (0,-0.2) -- (0,1.9);
+    \foreach \i in {0,...,7}{
+      \pgfmathsetmacro\yv{\samps[\i]}
+      \draw[curve2, line width=1.3pt] (\i*0.8,\yv) -- (\i*0.8+0.8,\yv);
+      \ifnum\i<7
+        \pgfmathsetmacro\ynext{\samps[\i+1]}
+        \draw[curve2, line width=1.3pt] (\i*0.8+0.8,\yv) -- (\i*0.8+0.8,\ynext);
+      \fi
+      \filldraw[ssblue] (\i*0.8,\yv) circle (2.2pt);
+    }
+    \node[note, anchor=north, align=center] at (3.2,-0.4)
+      {$h(t)$ 是宽度 $T$ 的矩形 $\Rightarrow$ $H(j\omega)$ 是 sinc，\\
+       通带内下垂、带外泄漏都很大};
+  \end{scope}
+
+  % ---------- (b) ideal band-limited interpolation ----------
+  \begin{scope}[xshift=9.4cm]
+    \node[note, anchor=south] at (3.2,2.2){(b) 理想带限内插（sinc 内插）};
+    \draw[ax] (-0.4,0) -- (7.0,0); \node[note, anchor=north west] at (6.8,-0.05){$t$};
+    \draw[ax] (0,-0.2) -- (0,1.9);
+    % smooth curve through the samples
+    \draw[curve3, line width=1.4pt]
+      (0,0.95) .. controls (0.27,1.10) and (0.53,1.26) .. (0.8,1.32)
+      .. controls (1.07,1.38) and (1.33,1.28) .. (1.6,1.18)
+      .. controls (1.87,1.08) and (2.13,0.78) .. (2.4,0.62)
+      .. controls (2.67,0.46) and (2.93,0.28) .. (3.2,0.28)
+      .. controls (3.47,0.28) and (3.73,0.42) .. (4.0,0.55)
+      .. controls (4.27,0.68) and (4.53,0.95) .. (4.8,1.05)
+      .. controls (5.07,1.15) and (5.33,1.24) .. (5.6,1.25);
+    \foreach \i in {0,...,7}{
+      \pgfmathsetmacro\yv{\samps[\i]}
+      \draw[helper] (\i*0.8,0) -- (\i*0.8,\yv);
+      \filldraw[ssblue] (\i*0.8,\yv) circle (2.2pt);
+    }
+    \node[note, anchor=north, align=center] at (3.2,-0.4)
+      {$h(t)=\dfrac{\sin(\pi t/T)}{\pi t/T}$：在采样点处 $=1$，\\
+       在其余采样点处 $=0$ $\Rightarrow$ 精确穿过每个样本};
+  \end{scope}
+
+  % ---------- frequency view ----------
+  \begin{scope}[yshift=-4.6cm, xshift=4.4cm]
+    \draw[ax] (-6.2,0) -- (6.6,0); \node[note, anchor=north west] at (6.4,-0.05){$\omega$};
+    \draw[ax] (0,-0.2) -- (0,1.8);
+    \foreach \c in {-4.0,0,4.0}{
+      \draw[sslight, line width=1.2pt] (\c-1.2,0) -- (\c,1.35) -- (\c+1.2,0);
+    }
+    % ideal LP brick wall
+    \draw[curve3, line width=1.4pt] (-2.0,0) -- (-2.0,1.55) -- (2.0,1.55) -- (2.0,0);
+    % ZOH sinc envelope
+    \draw[curve2, line width=1.3pt, domain=-6.0:6.0, samples=300, smooth]
+      plot (\x, {1.55*abs(sin(deg(0.7854*\x+0.00001))/(0.7854*\x+0.00001))});
+    \node[ssteal, font=\footnotesize, anchor=south east] at (-2.1,1.5){理想低通};
+    \node[ssred,  font=\footnotesize, anchor=west] at (2.15,0.95){ZOH 的 sinc 包络};
+    \node[note, anchor=north] at (4.0,-0.1){$\omega_s$};
+
+    \node[note, anchor=north, align=center] at (0,-0.75)
+      {ZOH 既\textbf{压低了通带}（下垂），又\textbf{漏进了副本}。
+       实用做法：ZOH 之后再补一级模拟低通，并在数字端预加重补偿下垂};
+  \end{scope}
+\end{tikzpicture}

@@ -1,0 +1,41 @@
+direction: right
+
+
+A: "Start: delete key"
+B__root_is_NULL___: "B{\"root is NULL?\"}"
+B_--__yes_: "B -- \"yes"
+Z: "return NULL (not found)"
+B_--__no_: "B -- \"no"
+C__compare_key_with_root__: "C{\"compare key with root\"}"
+C_--__key_smaller_: "C -- \"key smaller"
+D: "recurse into left subtree"
+R: "return current subtree root"
+C_--__key_larger_: "C -- \"key larger"
+E: "recurse into right subtree"
+C_--__key_equal_: "C -- \"key equal"
+F__does_target_have_both_children___: "F{\"does target have both children?\"}"
+F_--__no_: "F -- \"no"
+G: "leaf or single-child case"
+F_--__yes_: "F -- \"yes"
+H: "find inorder successor (min of right subtree)"
+I: "copy successor value into current node"
+J: "delete that successor from the right subtree"
+K: "relink, preserving BST property"
+END: "End"
+
+A -> B__root_is_NULL___
+B_--__yes_ -> Z
+B_--__no_ -> C__compare_key_with_root__
+C_--__key_smaller_ -> D
+D -> R
+C_--__key_larger_ -> E
+E -> R
+C_--__key_equal_ -> F__does_target_have_both_children___
+F_--__no_ -> G
+G -> R
+F_--__yes_ -> H
+H -> I
+I -> J
+J -> K
+K -> R
+R -> END

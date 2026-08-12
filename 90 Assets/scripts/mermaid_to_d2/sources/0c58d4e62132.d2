@@ -1,0 +1,17 @@
+direction: down
+
+Blocked: Blocked
+Ready: Ready
+Running: Running
+Start: {shape: circle; width: 28; height: 28; label: ""}
+Suspended: Suspended
+
+Start -> Ready: "xTaskCreate"
+Ready -> Running: "被调度选中"
+Running -> Ready: "被抢占 / 时间片用尽"
+Running -> Blocked: "vTaskDelay / 等队列·信号量等"
+Blocked -> Ready: "超时到 / 事件满足"
+Running -> Suspended: "vTaskSuspend"
+Ready -> Suspended: "vTaskSuspend"
+Blocked -> Suspended: "vTaskSuspend"
+Suspended -> Ready: "vTaskResume"

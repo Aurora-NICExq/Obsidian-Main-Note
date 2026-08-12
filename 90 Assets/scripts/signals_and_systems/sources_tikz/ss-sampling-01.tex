@@ -1,0 +1,51 @@
+\begin{tikzpicture}[font=\small]
+  % ---------- (a) original spectrum ----------
+  \begin{scope}
+    \draw[ax] (-4.2,0) -- (4.4,0) node[below left]{$\omega$};
+    \draw[ax] (0,-0.2) -- (0,2.0);
+    \node[note, anchor=south east] at (-0.1,1.75){$X(j\omega)$};
+    \draw[curve] (-2.0,0) -- (0,1.55) -- (2.0,0);
+    \draw[helper] (2.0,0) -- (2.0,1.7);
+    \draw[helper] (-2.0,0) -- (-2.0,1.7);
+    \node[note, anchor=north] at (2.0,-0.1){$\omega_M$};
+    \node[note, anchor=north] at (-2.0,-0.1){$-\omega_M$};
+    \node[note, anchor=west] at (2.6,1.45){(a) 原信号，带限于 $\omega_M$};
+  \end{scope}
+
+  % ---------- (b) no aliasing ----------
+  \begin{scope}[yshift=-3.2cm]
+    \draw[ax] (-8.0,0) -- (8.2,0) node[below left]{$\omega$};
+    \draw[ax] (0,-0.2) -- (0,2.0);
+    \node[note, anchor=south east] at (-0.1,1.75){$X_p(j\omega)$};
+    \foreach \c in {-6,-3,0,3,6}{
+      \draw[curve] (\c-1.0,0) -- (\c,1.55) -- (\c+1.0,0);
+    }
+    \draw[helper] (3,0) -- (3,1.75);
+    \node[note, anchor=north] at (3,-0.1){$\omega_s$};
+    \node[note, anchor=north] at (6,-0.1){$2\omega_s$};
+    \node[ssteal, font=\footnotesize, anchor=north, align=center] at (0,-0.75)
+      {(b) $\omega_s>2\omega_M$：副本互不重叠，用截止在 $\omega_M$ 与 $\omega_s-\omega_M$ 之间的低通即可完整恢复};
+  \end{scope}
+
+  % ---------- (c) aliasing ----------
+  \begin{scope}[yshift=-6.6cm]
+    \draw[ax] (-8.0,0) -- (8.2,0) node[below left]{$\omega$};
+    \draw[ax] (0,-0.2) -- (0,2.0);
+    \node[note, anchor=south east] at (-0.1,1.75){$X_p(j\omega)$};
+    \foreach \c in {-6.4,-4.8,-3.2,-1.6,0,1.6,3.2,4.8,6.4}{
+      \draw[ssblue, line width=1.0pt, opacity=0.45] (\c-1.0,0) -- (\c,1.55) -- (\c+1.0,0);
+    }
+    % overlap wedges
+    \foreach \c in {-5.6,-4.0,-2.4,-0.8,0.8,2.4,4.0,5.6}{
+      \fill[ssred, opacity=0.30] (\c-0.4,0) -- (\c,0.62) -- (\c+0.4,0) -- cycle;
+      \draw[ssred, line width=0.7pt] (\c-0.4,0) -- (\c,0.62) -- (\c+0.4,0);
+    }
+    \draw[helper] (1.6,0) -- (1.6,1.75);
+    \node[note, anchor=north] at (1.6,-0.1){$\omega_s$};
+    \node[ssred, font=\footnotesize, anchor=north, align=center] at (0,-0.75)
+      {(c) $\omega_s<2\omega_M$：相邻副本重叠（红色区）—— 混叠 aliasing，高频被折叠成低频，任何滤波都救不回来};
+  \end{scope}
+
+  \node[note, anchor=north, align=center] at (0,-8.6)
+    {奈奎斯特条件 $\omega_s>2\omega_M$。防混叠的唯一办法是\textbf{采样之前}先用模拟低通把带外内容滤掉};
+\end{tikzpicture}

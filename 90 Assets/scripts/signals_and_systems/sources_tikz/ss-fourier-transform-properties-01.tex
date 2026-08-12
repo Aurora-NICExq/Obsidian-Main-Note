@@ -1,0 +1,59 @@
+\begin{tikzpicture}[font=\small]
+  % ---------- scaling: narrow in time <-> wide in frequency ----------
+  \begin{scope}
+    \node[note, anchor=south] at (2.6,2.5){尺度变换 $x(at)\;\longleftrightarrow\;\dfrac{1}{|a|}X\!\left(\dfrac{j\omega}{a}\right)$};
+
+    % time domain
+    \draw[ax] (-1.6,0) -- (1.9,0) node[below left]{$t$};
+    \draw[ax] (0,-0.2) -- (0,1.9);
+    \draw[curve] (-1.05,0) -- (-1.05,1.35) -- (1.05,1.35) -- (1.05,0);
+    \draw[curve3] (-0.42,0) -- (-0.42,1.35) -- (0.42,1.35) -- (0.42,0);
+    \node[ssblue, font=\footnotesize, anchor=west] at (1.12,1.2){宽};
+    \node[ssteal, font=\footnotesize, anchor=south east] at (-0.5,1.38){窄};
+
+    % arrow
+    \node[note] at (2.85,0.9){$\longleftrightarrow$};
+
+    % frequency domain
+    \begin{scope}[xshift=5.6cm]
+      \draw[ax] (-2.6,0) -- (2.9,0) node[below left]{$\omega$};
+      \draw[ax] (0,-0.2) -- (0,1.9);
+      \draw[curve, domain=-2.4:2.4, samples=200, smooth]
+        plot (\x, {1.55*abs(sin(deg(2.2*\x+0.0001))/(2.2*\x+0.0001))});
+      \draw[curve3, domain=-2.4:2.4, samples=240, smooth]
+        plot (\x, {1.55*abs(sin(deg(0.88*\x+0.0001))/(0.88*\x+0.0001))});
+      \node[ssblue, font=\footnotesize, anchor=west] at (0.75,0.62){窄};
+      \node[ssteal, font=\footnotesize, anchor=west] at (1.85,0.95){宽};
+    \end{scope}
+
+    \node[note, anchor=north, align=center] at (3.3,-0.55)
+      {时域压缩 $\Rightarrow$ 频域展宽。这就是「时宽-带宽积」下界的由来};
+  \end{scope}
+
+  % ---------- time shift <-> linear phase ----------
+  \begin{scope}[yshift=-4.6cm]
+    \node[note, anchor=south] at (2.6,2.5){时移 $x(t-t_0)\;\longleftrightarrow\;e^{-j\omega t_0}X(j\omega)$};
+
+    \draw[ax] (-1.6,0) -- (2.4,0) node[below left]{$t$};
+    \draw[ax] (0,-0.2) -- (0,1.9);
+    \draw[curve] (-0.6,0) -- (-0.6,1.35) -- (0.6,1.35) -- (0.6,0);
+    \draw[curve2] (0.8,0) -- (0.8,1.35) -- (2.0,1.35) -- (2.0,0);
+    \draw[{Stealth[length=4pt]}-{Stealth[length=4pt]}, ssred] (0,-0.42) -- (1.4,-0.42);
+    \node[ssred, font=\footnotesize, anchor=north] at (0.7,-0.48){$t_0$};
+
+    \node[note] at (3.35,0.9){$\longleftrightarrow$};
+
+    \begin{scope}[xshift=6.3cm]
+      \draw[ax] (-2.6,0) -- (2.9,0) node[below left]{$\omega$};
+      \draw[ax] (0,-1.5) -- (0,1.7);
+      \node[note, anchor=south east] at (-0.1,1.4){$\angle X$};
+      \draw[curve2] (-2.4,1.25) -- (2.4,-1.25);
+      \node[ssred, font=\footnotesize, anchor=north west] at (0.9,-0.35){斜率 $=-t_0$};
+      \draw[helper] (-2.5,0) -- (2.6,0);
+    \end{scope}
+
+    \node[note, anchor=north, align=center] at (3.6,-2.0)
+      {幅度谱\textbf{完全不变}，只在相位上加一条过原点的直线。\\
+       「线性相位 = 纯延迟、不失真」正是滤波器设计追求线性相位的原因};
+  \end{scope}
+\end{tikzpicture}

@@ -1,0 +1,21 @@
+direction: right
+
+
+A: "env::args"
+B: "Config::new"
+C: "run"
+D: "fs::read_to_string"
+E__case_sensitive___: "E{\"case_sensitive?\"}"
+E: "E"
+F: "search"
+G: "search_case_insensitive"
+H: "println 匹配行"
+
+A -> B
+B -> C
+C -> D
+D -> E__case_sensitive___
+E -> F: "yes"
+E -> G: "no"
+F -> H
+G -> H

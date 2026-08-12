@@ -1,0 +1,44 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  % ---------- circuit ----------
+  \begin{scope}[yshift=0.3cm]
+    \draw (2.4,4.1) node[vcc]{$V_{CC}$} -- (2.4,3.5);
+    \draw (2.4,3.5) to[R=$R_C$] (2.4,2.1);
+    \draw (2.4,2.1) node[npn, anchor=C](Q){$Q_1$};
+    \draw (Q.E) -- (2.4,0.3) node[ground]{};
+    \draw (Q.B) -- (0.9,1.25) to[R=$R_B$] (-0.9,1.25) to[sV, l_=$v_{in}$] (-0.9,0.3) node[ground]{};
+    \draw (2.4,2.1) node[circ]{} -- (3.8,2.1) node[right]{$v_{out}$};
+  \end{scope}
+
+  % ---------- load line ----------
+  \begin{scope}[xshift=6.6cm, yshift=0.3cm]
+    \draw[ax] (-0.2,0) -- (5.8,0) node[below left]{$V_{CE}$};
+    \draw[ax] (0,-0.2) -- (0,3.9) node[left]{$I_C$};
+
+    % output curves
+    \foreach \y in {0.5,1.0,1.6,2.3,3.1}{
+      \pgfmathsetmacro\yend{\y + \y*0.09}
+      \draw[eclight, line width=0.9pt]
+        (0,0) .. controls (0.2,\y*0.85) and (0.4,\y) .. (0.65,\y) -- (5.3,\yend);
+    }
+
+    % load line: I_C = (VCC - VCE)/RC
+    \draw[curve2, line width=1.2pt] (0,3.55) -- (5.1,0);
+    \node[ecred, font=\footnotesize, anchor=west] at (3.3,1.35){负载线 斜率 $=-1/R_C$};
+    \node[ecred, font=\footnotesize, anchor=south west] at (0.08,3.55){$V_{CC}/R_C$};
+    \node[ecred, font=\footnotesize, anchor=north] at (5.1,-0.08){$V_{CC}$};
+
+    % Q point
+    \node[circle, fill=ecblue, inner sep=1.5pt] at (2.55,1.78){};
+    \node[ecblue, font=\footnotesize, anchor=south west] at (2.62,1.82){$Q$};
+
+    % saturation / cutoff ends
+    \node[circle, fill=ecteal, inner sep=1.3pt] at (0.72,3.05){};
+    \node[ecteal, font=\footnotesize, anchor=west] at (0.82,3.1){饱和端};
+    \node[circle, fill=ecteal, inner sep=1.3pt] at (5.1,0){};
+    \node[ecteal, font=\footnotesize, anchor=south east] at (5.05,0.12){截止端};
+  \end{scope}
+
+  \node[note, anchor=north, align=center] at (5.6,-0.9)
+    {偏置就是在负载线上挑一个 $Q$ 点：太靠饱和端输出摆不下去，
+     太靠截止端增益和线性都会垮};
+\end{tikzpicture}

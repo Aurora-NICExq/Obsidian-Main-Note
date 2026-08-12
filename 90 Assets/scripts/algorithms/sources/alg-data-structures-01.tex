@@ -1,0 +1,52 @@
+\begin{tikzpicture}[font=\small]
+  \node[anchor=south, font=\small] at (7.0,4.4)
+    {\textbf{接口}说「能做什么」，\textbf{数据结构}说「怎么做到」—— 同一个接口可以有多种实现，各有各的代价};
+
+  % ---------- interface vs implementation table ----------
+  \node[cell, fill=alglight!25, minimum width=2.6cm] at (0,3.5) {操作};
+  \foreach \jj/\nm in {0/{静态数组}, 1/{链表}, 2/{动态数组}}
+    \node[cell, fill=alglight!25, minimum width=2.4cm] at (2.5+\jj*2.5,3.5) {\nm};
+
+  \foreach \rw/\op/\sa/\ll/\da in {
+    0/{\texttt{get\_at(i)}}/{$O(1)$}/{$O(n)$}/{$O(1)$},
+    1/{\texttt{insert\_first}}/{$O(n)$}/{$O(1)$}/{$O(n)$},
+    2/{\texttt{delete\_first}}/{$O(n)$}/{$O(1)$}/{$O(n)$},
+    3/{\texttt{insert\_last}}/{$O(n)$}/{$O(n)$}/{$O(1)^{*}$},
+    4/{\texttt{delete\_last}}/{$O(n)$}/{$O(n)$}/{$O(1)^{*}$}}{
+    \node[cell, fill=alglight!12, minimum width=2.6cm] at (0,2.8-\rw*0.7) {\op};
+    \node[cell, minimum width=2.4cm] at (2.5,2.8-\rw*0.7) {\sa};
+    \node[cell, minimum width=2.4cm] at (5.0,2.8-\rw*0.7) {\ll};
+    \node[cell, minimum width=2.4cm] at (7.5,2.8-\rw*0.7) {\da};
+  }
+  \node[note, anchor=west, align=left] at (9.0,1.6)
+    {$^{*}$ \textbf{摊还}（amortized）代价：\\
+     单次可能是 $O(n)$，但任意 $n$ 次\\
+     操作的总代价是 $O(n)$。};
+
+  \node[note, anchor=north, align=center] at (4.6,-0.6)
+    {没有「最好」的数据结构，只有「对这组操作最好」的。选型 = 看哪些操作是热路径。};
+
+  % ---------- amortization: doubling ----------
+  \begin{scope}[yshift=-4.2cm, xshift=0.6cm]
+    \node[anchor=south, font=\small] at (5.2,2.6){动态数组为什么是摊还 $O(1)$：\textbf{容量翻倍}};
+
+    \draw[ax] (-0.3,0) -- (10.8,0); \node[note, anchor=north west] at (10.6,-0.05){插入次数 $n$};
+    \draw[ax] (0,-0.2) -- (0,2.2); \node[note, anchor=south east] at (-0.1,1.9){单次代价};
+
+    % O(1) baseline
+    \draw[algteal, line width=1.2pt] (0,0.22) -- (10.4,0.22);
+    \node[algteal, font=\footnotesize, anchor=west] at (7.4,0.48){平时都是 $O(1)$};
+
+    % resize spikes at powers of two, height ~ n
+    \foreach \x/\h in {0.65/0.35, 1.3/0.5, 2.6/0.75, 5.2/1.15, 10.4/1.9}{
+      \draw[algred, line width=1.4pt] (\x,0.22) -- (\x,\h);
+      \filldraw[algred] (\x,\h) circle (1.8pt);
+    }
+    \node[algred, font=\footnotesize, anchor=east] at (10.2,1.95){扩容时复制整个数组：$O(n)$};
+
+    \node[note, anchor=north west, align=left] at (-0.3,-0.55)
+      {尖峰虽高，但\textbf{越来越稀疏} —— 第 $k$ 次扩容代价 $2^k$，却买来 $2^k$ 次廉价插入。\\
+       前 $n$ 次插入的总代价 $\le n + \sum_{k}2^k < n+2n=3n$，所以\textbf{平均每次 $O(1)$}。\\[3pt]
+       关键在「翻倍」而不是「每次加固定量」：后者会退化成 $O(n^2)$。};
+  \end{scope}
+\end{tikzpicture}

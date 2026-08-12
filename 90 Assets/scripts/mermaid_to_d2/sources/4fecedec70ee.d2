@@ -1,0 +1,26 @@
+direction: down
+
+
+Power: "国家政权"
+RSA: "RSA"
+ISA: "ISA"
+V: "暴力 / 镇压"
+I: "意识形态"
+Pol: "政治 ISA"
+Un: "工会 ISA"
+Sch: "学校等"
+ReformRisk: "议会迷"
+ReformRisk2: "经济主义"
+Class: "阶级斗争"
+
+Power -> RSA
+Power -> ISA
+RSA -> V: "首要"
+ISA -> I: "首要"
+ISA -> Pol
+ISA -> Un
+ISA -> Sch
+Pol -> ReformRisk
+Un -> ReformRisk2
+Class -> Pol
+Class -> Un

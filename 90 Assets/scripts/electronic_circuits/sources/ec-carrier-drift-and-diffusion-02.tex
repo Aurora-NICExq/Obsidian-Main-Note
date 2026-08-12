@@ -1,0 +1,30 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  \draw[ax] (-0.2,0) -- (6.4,0) node[below left]{$x$};
+  \draw[ax] (0,-0.2) -- (0,3.4) node[left]{$n(x)$};
+
+  % concentration profile: decaying
+  \draw[curve, domain=0:6.0, samples=200, smooth]
+    plot (\x, {2.9*exp(-0.42*\x)});
+
+  % tangent at x = 2 showing dn/dx
+  \pgfmathsetmacro\xt{2.0}
+  \pgfmathsetmacro\nt{2.9*exp(-0.42*\xt)}
+  \pgfmathsetmacro\slope{-0.42*\nt}
+  \draw[curve2] (\xt-1.1,{\nt-\slope*(-1.1)}) -- (\xt+1.1,{\nt+\slope*1.1});
+  \node[circle, fill=ecred, inner sep=1.3pt] at (\xt,\nt){};
+  \node[ecred, font=\footnotesize, anchor=south west] at (\xt+0.55,{\nt+\slope*0.55+0.1})
+    {斜率 $=\dfrac{dn}{dx}<0$};
+
+  % diffusion flux arrows: high -> low
+  \foreach \x in {0.7,1.9,3.1,4.3} {
+    \draw[-{Stealth[length=5pt]}, ecteal, line width=1.0pt] (\x,-0.75) -- (\x+0.8,-0.75);
+  }
+  \node[ecteal, font=\footnotesize, anchor=west] at (5.3,-0.75){扩散方向};
+
+  \node[note, anchor=north west, align=left] at (2.6,2.9)
+    {$J_n=q D_n\dfrac{dn}{dx}$，\quad $J_p=-qD_p\dfrac{dp}{dx}$\\[2pt]
+     Einstein 关系：$\dfrac{D}{\mu}=\dfrac{kT}{q}=V_T\approx\SI{26}{mV}$};
+
+  \node[note, anchor=north, align=center] at (3.2,-1.3)
+    {载流子从高浓度自发流向低浓度；不需要电场，只需要梯度};
+\end{tikzpicture}

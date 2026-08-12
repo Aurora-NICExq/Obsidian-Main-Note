@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="389.88pt" height="225.214125pt" viewBox="0 0 389.88 225.214125" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-12T15:01:34.011936</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 225.214125 
+L 389.88 225.214125 
+L 389.88 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 24.05808 158.807805 
+L 96.97752 158.807805 
+Q 99.92376 158.807805 99.92376 155.037885 
+L 99.92376 90.006765 
+Q 99.92376 86.236845 96.97752 86.236845 
+L 24.05808 86.236845 
+Q 21.11184 86.236845 21.11184 90.006765 
+L 21.11184 155.037885 
+Q 21.11184 158.807805 24.05808 158.807805 
+z
+" clip-path="url(#pdf2ce44b17)" style="fill: #d6e4f0; stroke: #2f5f8f; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 112.44528 158.807805 
+L 185.36472 158.807805 
+Q 188.31096 158.807805 188.31096 155.037885 
+L 188.31096 90.006765 
+Q 188.31096 86.236845 185.36472 86.236845 
+L 112.44528 86.236845 
+Q 109.49904 86.236845 109.49904 90.006765 
+L 109.49904 155.037885 
+Q 109.49904 158.807805 112.44528 158.807805 
+z
+" clip-path="url(#pdf2ce44b17)" style="fill: #f0e6d6; stroke: #2f5f8f; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 200.83248 158.807805 
+L 273.75192 158.807805 
+Q 276.69816 158.807805 276.69816 155.037885 
+L 276.69816 90.006765 
+Q 276.69816 86.236845 273.75192 86.236845 
+L 200.83248 86.236845 
+Q 197.88624 86.236845 197.88624 90.006765 
+L 197.88624 155.037885 
+Q 197.88624 158.807805 200.83248 158.807805 
+z
+" clip-path="url(#pdf2ce44b17)" style="fill: #d6e4f0; stroke: #2a7a6b; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 289.21968 158.807805 
+L 362.13912 158.807805 
+Q 365.08536 158.807805 365.08536 155.037885 
+L 365.08536 90.006765 
+Q 365.08536 86.236845 362.13912 86.236845 
+L 289.21968 86.236845 
+Q 286.27344 86.236845 286.27344 90.006765 
+L 286.27344 155.037885 
+Q 286.27344 158.807805 289.21968 158.807805 
+z
+" clip-path="url(#pdf2ce44b17)" style="fill: #f0e6d6; stroke: #2a7a6b; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2f5f8f" transform="translate(42.131081 119.459337)">spinlock</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2f5f8f" transform="translate(33.291394 130.261798)">(atomic ctx)</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2f5f8f" transform="translate(134.552109 119.458985)">mutex</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2f5f8f" transform="translate(125.481094 130.261446)">(sleep OK)</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2a7a6b" transform="translate(219.319622 119.459337)">rwsem /</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2a7a6b" transform="translate(227.953997 130.261095)">RCU</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2a7a6b" transform="translate(305.006119 119.459337)">atomics /</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2a7a6b" transform="translate(308.23065 130.261798)">barriers</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="194.94" y="19.918125" transform="rotate(-0 194.94 19.918125)">Common kernel locking primitives</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pdf2ce44b17">
+   <rect x="10.8" y="25.918125" width="368.28" height="188.496"/>
+  </clipPath>
+ </defs>
+</svg>

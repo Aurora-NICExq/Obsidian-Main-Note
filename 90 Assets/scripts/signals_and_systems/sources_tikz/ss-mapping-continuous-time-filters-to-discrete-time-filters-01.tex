@@ -1,0 +1,49 @@
+\begin{tikzpicture}[font=\small]
+  % ---------- impulse invariance: aliasing ----------
+  \begin{scope}
+    \node[anchor=south, font=\small] at (2.8,2.6){冲激不变法：$h[n]=T\,h_c(nT)$};
+    \draw[ax] (-0.4,0) -- (6.0,0); \node[note, anchor=north west] at (5.8,-0.05){$\Omega$};
+    \draw[ax] (0,-0.2) -- (0,2.2);
+    \node[note, anchor=south east] at (-0.1,1.85){$|H(e^{j\Omega})|$};
+
+    % desired
+    \draw[curve, line width=1.4pt, domain=0:5.8, samples=250, smooth]
+      plot (\x, {1.7*\bwmag{\x/1.5}{4}});
+    % aliased tail folding back up
+    \draw[curve2, line width=1.3pt, domain=0:5.8, samples=250, smooth]
+      plot (\x, {1.7*\bwmag{(5.8-\x)/1.5}{4}});
+    \draw[helper] (5.8,0) -- (5.8,2.0);
+    \node[note, anchor=north east] at (5.8,-0.1){$\pi$};
+    \node[ssred, font=\footnotesize, anchor=south east] at (5.7,0.55){折叠回来的副本};
+    \node[ssblue, font=\footnotesize, anchor=west] at (1.9,1.55){想要的响应};
+
+    \node[note, anchor=north, align=center] at (2.8,-0.55)
+      {保留冲激响应的形状，\textbf{但会混叠} ——\\
+       只适用于原型本身就已经充分衰减的低通};
+  \end{scope}
+
+  % ---------- bilinear transform: warping ----------
+  \begin{scope}[xshift=9.4cm]
+    \node[anchor=south, font=\small] at (2.4,2.6){双线性变换：$s=\dfrac{2}{T}\dfrac{1-z^{-1}}{1+z^{-1}}$};
+    \draw[ax] (-0.4,0) -- (5.4,0); \node[note, anchor=north west] at (5.2,-0.05){$\Omega$（数字）};
+    \draw[ax] (0,-0.2) -- (0,3.0); \node[note, anchor=south east] at (-0.1,2.85){$\omega$（模拟）};
+
+    \draw[curve3, line width=1.5pt, domain=0:4.6, samples=250, smooth]
+      plot (\x, {0.62*tan(deg(\x*3.14159/(2*5.0)))});
+    \draw[helper] (0,0) -- (4.2,2.6);
+    \node[note, anchor=west, font=\footnotesize] at (2.0,1.55){线性（理想）};
+    \node[ssteal, font=\footnotesize, anchor=east] at (4.75,1.85){$\omega=\dfrac{2}{T}\tan\dfrac{\Omega}{2}$};
+    \draw[helper] (5.0,-0.2) -- (5.0,2.9);
+    \node[note, anchor=north] at (5.0,-0.1){$\pi$};
+
+    \node[note, anchor=north, align=center] at (2.4,-0.55)
+      {把整条 $j\omega$ 轴\textbf{一对一}压进单位圆 $\Rightarrow$ \textbf{绝不混叠}，\\
+       代价是频率轴被非线性\textbf{翘曲}（warping）};
+  \end{scope}
+
+  \node[note, anchor=north, align=center] at (5.8,-2.6)
+    {实用做法：设计前先做\textbf{预畸变}（pre-warp）—— 把要保住的临界频率按 $\omega=\tfrac{2}{T}\tan\tfrac{\Omega}{2}$ 反算过去，
+    这样变换之后它正好落回原处。\\
+    因为翘曲是单调的，通带 / 阻带的\textbf{幅度}指标全部原样保留；被破坏的只有相位线性度。
+    这就是数字 IIR 滤波器几乎总用双线性变换的原因};
+\end{tikzpicture}

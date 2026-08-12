@@ -1,0 +1,37 @@
+\begin{circuitikz}[scale=1.0, transform shape, font=\small]
+  % ---------- common-base ----------
+  \begin{scope}
+    \node[note, anchor=south] at (2.0,4.6){共基级（CB）};
+    \draw (2.4,4.2) node[vcc]{$V_{CC}$} -- (2.4,3.6);
+    \draw (2.4,3.6) to[R=$R_C$] (2.4,2.4);
+    \draw (2.4,2.4) node[npn, anchor=C](Q){$Q_1$};
+    \draw (Q.B) -- (0.9,1.5) to[battery1, l_=$V_b$] (0.9,0.3) node[ground]{};
+    \draw (Q.E) -- (2.4,0.9) node[circ]{} -- (2.4,0.6);
+    \draw (2.4,0.6) to[sV, l=$v_{in}$] (2.4,-0.6) node[ground]{};
+    \draw (2.4,2.4) node[circ]{} -- (3.8,2.4) node[right]{$v_{out}$};
+
+    \node[note, anchor=north west, align=left, text=ecblue] at (4.1,2.4)
+      {$A_v=+g_mR_C$（同相！）\\[3pt]
+       $R_{in}=\dfrac{1}{g_m}$（很低）\\[3pt]
+       $R_{out}=R_C$};
+    \node[note, anchor=north, align=center] at (2.2,-1.2)
+      {用途：给 \SI{50}{\ohm} 传输线做阻抗匹配、\\ 以及做 cascode 的上管};
+  \end{scope}
+
+  % ---------- emitter follower ----------
+  \begin{scope}[xshift=9.2cm]
+    \node[note, anchor=south] at (2.0,4.6){射极跟随器（EF / 共集）};
+    \draw (2.2,4.2) node[vcc]{$V_{CC}$} -- (2.2,3.4);
+    \draw (2.2,3.4) node[npn, anchor=C](Q2){$Q_2$};
+    \draw (Q2.B) -- (0.5,2.45) to[sV, l_=$v_{in}$] (0.5,0.3) node[ground]{};
+    \draw (Q2.E) -- (2.2,1.5) node[circ]{} to[R=$R_E$] (2.2,0.3) node[ground]{};
+    \draw (2.2,1.5) -- (3.6,1.5) node[right]{$v_{out}$};
+
+    \node[note, anchor=north west, align=left, text=ecteal] at (3.9,2.4)
+      {$A_v=\dfrac{R_E}{R_E+1/g_m}\lesssim 1$\\[3pt]
+       $R_{in}=r_\pi+(\beta+1)R_E$（很高）\\[3pt]
+       $R_{out}=\dfrac{1}{g_m}+\dfrac{R_S}{\beta+1}$（很低）};
+    \node[note, anchor=north, align=center] at (2.0,-1.2)
+      {用途：缓冲级 / 输出级 ——\\ 不放大电压，只把阻抗从高变低};
+  \end{scope}
+\end{circuitikz}

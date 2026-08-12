@@ -1,0 +1,31 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  % ---------- Zener regulator ----------
+  \begin{scope}
+    \draw (0,2.4) to[sV, l=$v_{in}$] (0,0) node[ground]{};
+    \draw (0,2.4) to[R=$R_1$] (2.4,2.4) node[circ]{};
+    \draw (2.4,2.4) to[zzD, l_=$D_Z$] (2.4,0) -- (0,0);
+    \draw (2.4,2.4) -- (3.5,2.4) node[circ]{} to[R=$R_L$] (3.5,0) -- (2.4,0);
+    \draw (3.5,2.4) -- (4.4,2.4) node[right]{$v_{out}$};
+    \node[note, anchor=north, align=center] at (2.2,-0.7)
+      {$R_1$ 吃掉多余电压，齐纳把 $v_{out}$ 钳在 $V_Z$};
+  \end{scope}
+
+  % ---------- regulation quality ----------
+  \begin{scope}[xshift=8.0cm, yshift=0.3cm]
+    \draw[ax] (-0.2,0) -- (5.4,0) node[below left]{$v_{in}$};
+    \draw[ax] (0,-0.2) -- (0,3.0) node[left]{$v_{out}$};
+    % unregulated 1:1 line
+    \draw[helper] (0,0) -- (2.9,2.9);
+    \node[note, anchor=south east, rotate=45] at (2.1,2.1){未稳压时 $v_{out}=v_{in}$};
+    % regulated: follows until Vz, then flat with tiny slope r_z/(R1+r_z)
+    \draw[curve, line width=1.2pt]
+      (0,0) -- (1.75,1.75) .. controls (1.95,1.92) and (2.15,1.95) .. (2.45,1.97)
+      -- (5.1,2.16);
+    \draw[helper, ecred] (0,1.95) -- (5.2,1.95);
+    \node[ecred, font=\footnotesize, anchor=east] at (-0.08,1.95){$V_Z$};
+    \node[note, anchor=north west, align=left] at (2.6,1.75)
+      {残余斜率 $=\dfrac{r_z}{R_1+r_z}$，\\ $r_z$ 越小稳压越硬};
+    \node[note, anchor=north, align=center] at (2.6,-0.5)
+      {输入波动被压缩 $(R_1+r_z)/r_z$ 倍，这就是「线性调整率」};
+  \end{scope}
+\end{tikzpicture}

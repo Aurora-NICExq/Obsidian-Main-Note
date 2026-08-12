@@ -1,0 +1,39 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  % ---------- small-signal model ----------
+  \begin{scope}
+    \node[note, anchor=south] at (2.9,3.3){MOS 小信号模型（饱和区）};
+    \draw (0,2.4) node[left]{G} -- (1.6,2.4);
+    \node[circ] at (1.6,2.4){};
+    % gate is open at DC — no r_pi counterpart
+    \node[note, anchor=south, font=\footnotesize, text=ecblue] at (0.85,2.5){直流开路};
+
+    \draw (1.6,2.4) -- (3.0,2.4);
+    \draw (3.0,2.4) node[circ]{} to[cI, l_=$g_mv_{gs}$, invert] (3.0,0);
+    \draw (4.4,2.4) node[circ]{} to[R=$r_o$] (4.4,0);
+    \draw (3.0,0) -- (4.4,0);
+    \draw (3.0,2.4) -- (5.4,2.4) node[right]{D};
+    \draw (1.6,0) -- (3.0,0);
+    \node[ground] at (2.4,0){};
+    \node[below left] at (2.4,-0.05){S};
+    \draw[helper] (1.15,2.55) -- (1.15,0.6);
+    \node[note, anchor=east, font=\footnotesize] at (1.1,1.55){$v_{gs}$};
+  \end{scope}
+
+  % ---------- the three faces of g_m ----------
+  \begin{scope}[xshift=7.6cm, yshift=0.2cm]
+    \node[note, anchor=south west, align=left] at (0,2.55)
+      {跨导的三种等价写法（长沟道饱和区）：};
+    \node[note, anchor=north west, align=left] at (0.2,2.35)
+      {$g_m=\mu_nC_{ox}\dfrac{W}{L}(V_{GS}-V_{TH})
+        =\dfrac{2I_D}{V_{ov}}
+        =\sqrt{2\mu_nC_{ox}\dfrac{W}{L}I_D}$};
+    \node[note, anchor=north west, align=left] at (0.2,0.9)
+      {三个式子里各有一个量被消掉，用哪个取决于\\
+       你手上固定的是 $V_{ov}$、$I_D$ 还是 $W/L$};
+  \end{scope}
+
+  \node[note, anchor=north, align=center] at (6.2,-1.3)
+    {与 BJT 的关键差别：$g_m\propto\sqrt{I_D}$ 而不是 $\propto I_D$，
+     所以 MOS 的 $g_m/I_D$ 效率随电流增大而变差；\\
+     本征增益 $g_mr_o=\dfrac{2}{\lambda V_{ov}}$ 也会随 $V_{ov}$ 上升而下降};
+\end{tikzpicture}

@@ -1,0 +1,86 @@
+\begin{tikzpicture}[
+    font=\small,
+    stage/.style={rounded corners=3pt, line width=1.0pt, minimum width=3.4cm,
+                  minimum height=0.95cm, align=center, font=\small},
+    lec/.style={rounded corners=2pt, draw=alggray, line width=0.6pt, fill=white,
+                minimum width=5.4cm, minimum height=0.6cm, align=left,
+                font=\footnotesize, anchor=west},
+    flow/.style={-{Stealth[length=6pt]}, alggray, line width=1.1pt},
+  ]
+
+  \node[stage, draw=algteal, fill=algteal!8, text=algteal] (s1) at (0,0)     {\textbf{一 · 基础}\\[-2pt]{\footnotesize L01–L05}};
+  \node[stage, draw=algblue, fill=algblue!8, text=algblue] (s2) at (0,-3.4)  {\textbf{二 · 树与堆}\\[-2pt]{\footnotesize L06–L08}};
+  \node[stage, draw=algred,  fill=algred!8,  text=algred]  (s3) at (0,-6.4)  {\textbf{三 · 图算法}\\[-2pt]{\footnotesize L09–L14}};
+  \node[stage, draw=algblue, fill=algblue!8, text=algblue] (s4) at (0,-10.2) {\textbf{四 · 动态规划}\\[-2pt]{\footnotesize L15–L18}};
+  \node[stage, draw=algteal, fill=algteal!8, text=algteal] (s5) at (0,-13.2) {\textbf{五 · 复杂度与回顾}\\[-2pt]{\footnotesize L19–L21}};
+
+  \foreach \a/\b in {s1/s2, s2/s3, s3/s4, s4/s5} \draw[flow] (\a) -- (\b);
+
+  \def\lx{2.6}
+  \foreach \y/\t in {
+     0.90/{L01 Algorithms and Computation},
+     0.30/{L02 Data Structures},
+    -0.30/{L03 Sorting},
+    -0.90/{L04 Hashing},
+    -1.50/{L05 Linear Sorting}}
+    \node[lec] at (\lx,\y) {\t};
+
+  \foreach \y/\t in {
+    -2.80/{L06 Binary Trees Part 1},
+    -3.40/{L07 Binary Trees Part 2 AVL},
+    -4.00/{L08 Binary Heaps}}
+    \node[lec] at (\lx,\y) {\t};
+
+  \foreach \y/\t in {
+    -5.20/{L09 Breadth-First Search},
+    -5.80/{L10 Depth-First Search},
+    -6.40/{L11 Weighted Shortest Paths},
+    -7.00/{L12 Bellman-Ford},
+    -7.60/{L13 Dijkstra},
+    -8.20/{L14 APSP and Johnson}}
+    \node[lec] at (\lx,\y) {\t};
+
+  \foreach \y/\t in {
+     -9.60/{L15 Dynamic Programming Part 1},
+    -10.20/{L16 Dynamic Programming Part 2},
+    -10.80/{L17 Dynamic Programming Part 3},
+    -11.40/{L18 Dynamic Programming Part 4}}
+    \node[lec] at (\lx,\y) {\t};
+
+  \foreach \y/\t in {
+    -12.60/{L19 Complexity},
+    -13.20/{L20 Course Review},
+    -13.80/{L21 Algorithms Next Steps}}
+    \node[lec] at (\lx,\y) {\t};
+
+  % ---- side rails ----
+  \node[rounded corners=3pt, draw=alggray, dashed, line width=0.8pt,
+        fill=alglight!12, align=left, font=\footnotesize, anchor=north west]
+    at (8.8,0.9)
+    {\textbf{全课的统一叙事}\\[4pt]
+     先定义\textbf{接口}（要支持哪些操作），\\
+     再找\textbf{数据结构}去实现它，\\
+     最后分析各操作的代价。\\[4pt]
+     排序、树、堆、图、DP 都是\\ 这套框架的实例。};
+
+  \node[rounded corners=3pt, draw=alggray, dashed, line width=0.8pt,
+        fill=alglight!12, align=left, font=\footnotesize, anchor=north west]
+    at (8.8,-4.4)
+    {\textbf{最短路的分水岭}\\[4pt]
+     无权 $\to$ BFS\\
+     DAG $\to$ 拓扑序 + 一遍松弛\\
+     非负权 $\to$ Dijkstra\\
+     有负权 $\to$ Bellman-Ford\\
+     有负环 $\to$ 无定义\\[4pt]
+     五者共用\textbf{松弛}，\\ 只差松弛的顺序。};
+
+  \node[rounded corners=3pt, draw=alggray, dashed, line width=0.8pt,
+        fill=alglight!12, align=left, font=\footnotesize, anchor=north west]
+    at (8.8,-9.6)
+    {\textbf{SRTBOT}\\[4pt]
+     Subproblem / Relate /\\
+     Topological order / Base case /\\
+     Original problem / Time\\[4pt]
+     六步里\textbf{只有第一步难}，\\
+     定对子问题其余自动。};
+\end{tikzpicture}

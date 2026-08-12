@@ -1,0 +1,39 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  % ---------- simple base-resistor bias ----------
+  \begin{scope}
+    \node[note, anchor=south] at (1.6,4.4){(a) 简单基极电阻偏置};
+    \draw (2.6,4.0) node[vcc]{$V_{CC}$} -- (2.6,3.4);
+    \draw (0.6,3.4) -- (2.6,3.4);
+    \draw (0.6,3.4) to[R=$R_B$] (0.6,1.5);
+    \draw (2.6,3.4) to[R=$R_C$] (2.6,2.0);
+    \draw (2.6,2.0) node[npn, anchor=C](Qa){};
+    \draw (Qa.E) -- (2.6,0.3) node[ground]{};
+    \draw (0.6,1.5) -- (0.6,1.15) -- (Qa.B);
+    \node[note, anchor=north, align=center, text=ecred] at (1.6,-0.1)
+      {$I_C=\beta\dfrac{V_{CC}-V_{BE}}{R_B}$\\
+       $\beta$ 一变，$I_C$ 跟着变 —— 不能用};
+  \end{scope}
+
+  % ---------- resistive divider + emitter degeneration ----------
+  \begin{scope}[xshift=6.6cm]
+    \node[note, anchor=south] at (1.8,4.4){(b) 分压偏置 + 射极电阻（工程标准解）};
+    \draw (2.8,4.0) node[vcc]{$V_{CC}$} -- (2.8,3.4);
+    \draw (0.7,3.4) -- (2.8,3.4);
+    \draw (0.7,3.4) to[R=$R_1$] (0.7,2.1);
+    \draw (0.7,2.1) node[circ]{} to[R=$R_2$] (0.7,0.3) node[ground]{};
+    \draw (2.8,3.4) to[R=$R_C$] (2.8,2.1);
+    \draw (2.8,2.1) node[npn, anchor=C](Qb){};
+    \draw (0.7,2.1) -- (Qb.B);
+    \draw (Qb.E) to[R=$R_E$] (2.8,0.3) node[ground]{};
+    \draw (2.8,2.1) node[circ]{} -- (4.0,2.1) node[right]{$v_{out}$};
+
+    \node[note, anchor=north, align=center, text=ecteal] at (1.8,-0.1)
+      {$V_B\approx V_{CC}\dfrac{R_2}{R_1+R_2}$，\quad
+       $I_C\approx I_E=\dfrac{V_B-V_{BE}}{R_E}$\\
+       $I_C$ 由外部电阻比决定，几乎与 $\beta$ 无关};
+  \end{scope}
+
+  \node[note, anchor=north, align=center] at (5.4,-1.85)
+    {(b) 的负反馈机制：$I_C\uparrow\Rightarrow V_E\uparrow\Rightarrow V_{BE}\downarrow\Rightarrow I_C\downarrow$。
+     代价是 $R_E$ 吃掉一部分电压裕量，交流增益也被退化（常并一个旁路电容补回来）};
+\end{tikzpicture}

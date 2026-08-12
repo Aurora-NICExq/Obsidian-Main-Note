@@ -1,0 +1,37 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  % ---------- self-bias (collector feedback) ----------
+  \begin{scope}
+    \node[note, anchor=south] at (1.6,4.3){自偏置（集电极反馈）};
+    \draw (2.4,3.9) node[vcc]{$V_{CC}$} -- (2.4,3.3);
+    \draw (2.4,3.3) to[R=$R_C$] (2.4,2.2);
+    \draw (2.4,2.2) node[circ]{} node[npn, anchor=C](Q){};
+    \draw (Q.E) -- (2.4,0.4) node[ground]{};
+    % feedback resistor from collector to base
+    \draw (2.4,2.2) -- (0.5,2.2) to[R=$R_B$] (0.5,1.15) -- (Q.B);
+    \draw (2.4,2.2) -- (3.6,2.2) node[right]{$v_{out}$};
+    \node[note, anchor=north, align=center, text=ecteal] at (1.7,0.0)
+      {$V_{CE}=V_{BE}+I_BR_B$，晶体管必在有源区\\
+       $I_C\uparrow\Rightarrow V_C\downarrow\Rightarrow I_B\downarrow\Rightarrow I_C\downarrow$};
+  \end{scope}
+
+  % ---------- pnp bias ----------
+  \begin{scope}[xshift=7.0cm]
+    \node[note, anchor=south] at (1.7,4.3){PNP 偏置：把整张图上下翻过来};
+    \draw (2.4,3.9) node[vcc]{$V_{CC}$} -- (2.4,3.3);
+    \draw (2.4,3.3) to[R=$R_E$] (2.4,2.6);
+    \draw (2.4,2.6) node[pnp, anchor=E](Qp){};
+    \draw (0.6,3.3) -- (2.4,3.3);
+    \draw (0.6,3.3) to[R=$R_1$] (0.6,2.0);
+    \draw (0.6,2.0) node[circ]{} to[R=$R_2$] (0.6,0.5) node[ground]{};
+    \draw (0.6,2.0) -- (Qp.B);
+    \draw (Qp.C) to[R=$R_C$] (2.4,0.5) node[ground]{};
+    \draw (Qp.C) -- (3.6,1.85) node[right]{$v_{out}$};
+    \node[note, anchor=north, align=center, text=ecblue] at (1.7,0.0)
+      {电流从 $V_{CC}$ 流入发射极、由集电极流向地\\
+       方程结构与 npn 完全同构，只是极性反过来};
+  \end{scope}
+
+  \node[note, anchor=north, align=center] at (5.0,-1.4)
+    {偏置设计的检查清单：$I_C$ 是否对 $\beta$、温度不敏感；
+     $V_{CE}$ 是否留够输出摆幅；直流通路与交流通路是否分得干净};
+\end{tikzpicture}

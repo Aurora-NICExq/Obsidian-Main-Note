@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="378.72pt" height="225.214125pt" viewBox="0 0 378.72 225.214125" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-12T15:34:41.950493</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 225.214125 
+L 378.72 225.214125 
+L 378.72 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 35.7984 102.259005 
+L 164.3616 102.259005 
+Q 167.9328 102.259005 167.9328 98.489085 
+L 167.9328 52.307565 
+Q 167.9328 48.537645 164.3616 48.537645 
+L 35.7984 48.537645 
+Q 32.2272 48.537645 32.2272 52.307565 
+L 32.2272 98.489085 
+Q 32.2272 102.259005 35.7984 102.259005 
+z
+" clip-path="url(#p66d7760247)" style="fill: #d6e4f0; stroke: #2f5f8f; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 214.3584 102.259005 
+L 342.9216 102.259005 
+Q 346.4928 102.259005 346.4928 98.489085 
+L 346.4928 52.307565 
+Q 346.4928 48.537645 342.9216 48.537645 
+L 214.3584 48.537645 
+Q 210.7872 48.537645 210.7872 52.307565 
+L 210.7872 98.489085 
+Q 210.7872 102.259005 214.3584 102.259005 
+z
+" clip-path="url(#p66d7760247)" style="fill: #f0e6d6; stroke: #2a7a6b; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 102.7584 187.082205 
+L 275.9616 187.082205 
+Q 279.5328 187.082205 279.5328 183.312285 
+L 279.5328 137.130765 
+Q 279.5328 133.360845 275.9616 133.360845 
+L 102.7584 133.360845 
+Q 99.1872 133.360845 99.1872 137.130765 
+L 99.1872 183.312285 
+Q 99.1872 187.082205 102.7584 187.082205 
+z
+" clip-path="url(#p66d7760247)" style="fill: #d6e4f0; stroke: #c47a2c; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #2f5f8f" x="100.08" y="77.996372" transform="rotate(-0 100.08 77.996372)">H0: noise only</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #2a7a6b" x="278.64" y="77.996372" transform="rotate(-0 278.64 77.996372)">H1: signal + noise</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #c47a2c" x="189.36" y="162.819572" transform="rotate(-0 189.36 162.819572)">LRT / NP threshold</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 101.923198 102.09483 
+Q 133.561522 115.454368 163.757881 128.205024 
+" style="fill: none; stroke: #666666; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 160.560235 124.466701 
+L 163.757881 128.205024 
+L 158.848635 128.520147 
+z
+" style="fill: #666666; stroke: #666666; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 276.796802 102.09483 
+Q 245.158478 115.454368 214.962119 128.205024 
+" style="fill: none; stroke: #666666; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 219.871365 128.520147 
+L 214.962119 128.205024 
+L 218.159765 124.466701 
+z
+" style="fill: #666666; stroke: #666666; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="189.36" y="19.918125" transform="rotate(-0 189.36 19.918125)">Binary hypothesis testing</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p66d7760247">
+   <rect x="10.8" y="25.918125" width="357.12" height="188.496"/>
+  </clipPath>
+ </defs>
+</svg>

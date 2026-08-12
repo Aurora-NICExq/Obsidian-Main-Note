@@ -1,0 +1,60 @@
+\begin{tikzpicture}[font=\small]
+  % ---------- z-plane ROC ----------
+  \begin{scope}
+    \node[anchor=south, font=\small] at (0,3.1){$z$ 平面：ROC 是\textbf{圆环}};
+    \fill[ssblue, opacity=0.16] (0,0) circle (2.55);
+    \fill[white] (0,0) circle (1.15);
+    \draw[ssblue, line width=1.0pt, dashed] (0,0) circle (1.15);
+    \draw[ssblue, line width=1.0pt, dashed] (0,0) circle (2.55);
+    \draw[ax] (-3.2,0) -- (3.4,0); \node[note, anchor=north west] at (3.2,-0.05){$\mathrm{Re}$};
+    \draw[ax] (0,-3.2) -- (0,3.0); \node[note, anchor=south west] at (0.08,2.85){$\mathrm{Im}$};
+    % unit circle
+    \draw[ssred, line width=1.2pt] (0,0) circle (1.85);
+    \node[ssred, font=\footnotesize, anchor=south west] at (1.28,1.28){单位圆 $|z|=1$};
+    % poles
+    \foreach \a in {0,120,240}{
+      \draw[ssgray, line width=1.3pt] ({1.15*cos(\a)-0.13},{1.15*sin(\a)-0.13}) -- ({1.15*cos(\a)+0.13},{1.15*sin(\a)+0.13});
+      \draw[ssgray, line width=1.3pt] ({1.15*cos(\a)-0.13},{1.15*sin(\a)+0.13}) -- ({1.15*cos(\a)+0.13},{1.15*sin(\a)-0.13});
+    }
+    \draw[ssgray, line width=1.3pt] (2.42,-0.13) -- (2.68,0.13);
+    \draw[ssgray, line width=1.3pt] (2.42,0.13) -- (2.68,-0.13);
+    \node[ssblue, font=\footnotesize] at (-1.5,1.5){ROC};
+
+    \node[note, anchor=north, align=center] at (0,-3.5)
+      {ROC 由内外两个极点半径界定，且\textbf{不含任何极点}。\\
+       右边序列 $\Rightarrow$ 最外极点\textbf{以外}；左边序列 $\Rightarrow$ 最内极点\textbf{以内}};
+  \end{scope}
+
+  % ---------- s-plane to z-plane mapping ----------
+  \begin{scope}[xshift=9.6cm]
+    \node[anchor=south, font=\small] at (0,3.1){$z=e^{sT}$ 把 $s$ 平面卷成 $z$ 平面};
+
+    % left: s-plane
+    \begin{scope}[xshift=-2.4cm]
+      \fill[ssteal, opacity=0.14] (-1.9,-2.4) rectangle (0,2.4);
+      \draw[ax] (-2.1,0) -- (1.5,0); \node[note, anchor=north west] at (1.3,-0.05){$\sigma$};
+      \draw[ax] (0,-2.6) -- (0,2.6); \node[note, anchor=south west] at (0.08,2.45){$j\omega$};
+      \draw[ssred, line width=1.3pt] (0,-2.4) -- (0,2.4);
+      \node[ssteal, font=\footnotesize, anchor=east] at (-0.15,-1.7){左半平面};
+      \node[note, anchor=north, align=center] at (-0.3,-2.9){$s$ 平面};
+    \end{scope}
+
+    \node[note] at (1.0,0.2){$\Longrightarrow$};
+
+    % right: z-plane
+    \begin{scope}[xshift=3.5cm]
+      \fill[ssteal, opacity=0.14] (0,0) circle (1.6);
+      \draw[ax] (-2.1,0) -- (2.3,0); \node[note, anchor=north west] at (2.1,-0.05){$\mathrm{Re}$};
+      \draw[ax] (0,-2.2) -- (0,2.4); \node[note, anchor=south west] at (0.08,2.25){$\mathrm{Im}$};
+      \draw[ssred, line width=1.3pt] (0,0) circle (1.6);
+      \node[ssteal, font=\footnotesize] at (0.0,0.75){单位圆内};
+      \node[ssred, font=\footnotesize, anchor=south west] at (1.1,1.1){$|z|=1$};
+      \node[note, anchor=north, align=center] at (0,-2.9){$z$ 平面};
+    \end{scope}
+
+    \node[note, anchor=north, align=center] at (0.5,-4.2)
+      {$j\omega$ 轴 $\mapsto$ 单位圆，左半平面 $\mapsto$ 单位圆内。\\
+       于是稳定性判据从「极点在左半平面」变成「极点在单位圆内」，\\
+       CTFT（$s=j\omega$）对应 DTFT（$z=e^{j\Omega}$）};
+  \end{scope}
+\end{tikzpicture}

@@ -1,0 +1,40 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  % ---------- region map on the V_BE / V_BC plane ----------
+  \begin{scope}
+    \draw[ax] (-2.4,0) -- (2.8,0) node[below left]{$V_{BC}$};
+    \draw[ax] (0,-2.4) -- (0,2.8) node[left]{$V_{BE}$};
+
+    \fill[ecblue, opacity=0.13] (-2.3,0) rectangle (0,2.6);
+    \node[ecblue, font=\footnotesize, align=center] at (-1.15,1.3){正向有源\\ \scriptsize BE 正偏，BC 反偏};
+
+    \fill[ecred, opacity=0.13] (0,0) rectangle (2.6,2.6);
+    \node[ecred, font=\footnotesize, align=center] at (1.3,1.3){饱和\\ \scriptsize 两个结都正偏};
+
+    \fill[ecgray, opacity=0.10] (-2.3,-2.3) rectangle (0,0);
+    \node[note, font=\footnotesize, align=center] at (-1.15,-1.2){截止\\ \scriptsize 两个结都反偏};
+
+    \fill[ecteal, opacity=0.13] (0,-2.3) rectangle (2.6,0);
+    \node[ecteal, font=\footnotesize, align=center] at (1.3,-1.2){反向有源\\ \scriptsize $\beta$ 极低，几乎不用};
+
+    \node[note, anchor=north, align=center] at (0.2,-2.9)
+      {判据只看两个 pn 结各自的偏置方向};
+  \end{scope}
+
+  % ---------- large-signal model ----------
+  \begin{scope}[xshift=7.4cm, yshift=-0.6cm]
+    \node[note, anchor=south, align=center] at (2.2,3.0){正向有源区的大信号模型};
+    % base node
+    \draw (0,1.4) node[left]{B} -- (0.9,1.4) node[circ]{};
+    % BE diode to emitter
+    \draw (0.9,1.4) to[D, l_=$\dfrac{I_S}{\beta}$] (0.9,0) node[ground]{};
+    \node[font=\footnotesize, anchor=east] at (0.75,-0.05){E};
+    % controlled current source collector
+    \draw (0.9,1.4) -- (2.9,1.4);
+    \draw (2.9,2.6) node[right]{C} to[cI, l_=$I_Se^{V_{BE}/V_T}$, invert] (2.9,0.2) -- (0.9,0.2);
+    \node[circ] at (0.9,0.2){};
+
+    \node[note, anchor=north, align=center] at (2.0,-0.8)
+      {输入侧就是一个二极管，输出侧是一个受 $V_{BE}$ 控制的电流源 ——\\
+       「电压进、电流出」，这正是跨导器件的定义};
+  \end{scope}
+\end{tikzpicture}

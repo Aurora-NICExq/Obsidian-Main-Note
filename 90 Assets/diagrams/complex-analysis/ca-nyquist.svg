@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="478.902764pt" height="277.128pt" viewBox="0 0 478.902764 277.128" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-12T11:43:07.726194</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 277.128 
+L 478.902764 277.128 
+L 478.902764 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 10.8 266.328 
+L 183.7728 266.328 
+L 183.7728 50.112 
+L 10.8 50.112 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1"/>
+   <g id="matplotlib.axis_2"/>
+   <g id="line2d_1">
+    <path d="M 10.8 158.22 
+L 183.7728 158.22 
+" clip-path="url(#p1897ab2c8c)" style="fill: none; stroke: #666666; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 54.0432 266.328 
+L 54.0432 50.112 
+" clip-path="url(#p1897ab2c8c)" style="fill: none; stroke: #666666; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 54.0432 253.35504 
+L 54.0432 63.08496 
+" clip-path="url(#p1897ab2c8c)" style="fill: none; stroke: #2f5f8f; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 54.0432 253.35504 
+L 57.825438 253.279826 
+L 61.601695 253.054303 
+L 65.366 252.678827 
+L 69.112402 252.153993 
+L 72.834977 251.480629 
+L 76.527838 250.659802 
+L 80.185146 249.692808 
+L 83.801118 248.581176 
+L 87.370036 247.326665 
+L 90.886259 245.931258 
+L 94.344224 244.397162 
+L 97.738466 242.726802 
+L 101.063616 240.922819 
+L 104.314418 238.988066 
+L 107.48573 236.925602 
+L 110.572539 234.738689 
+L 113.569963 232.430783 
+L 116.473263 230.005535 
+L 119.277848 227.46678 
+L 121.979284 224.818531 
+L 124.573299 222.064976 
+L 127.055792 219.210469 
+L 129.422836 216.259523 
+L 131.67069 213.216806 
+L 133.795799 210.087126 
+L 135.794802 206.875435 
+L 137.66454 203.586809 
+L 139.402055 200.226449 
+L 141.0046 196.799668 
+L 142.469641 193.311884 
+L 143.794862 189.768613 
+L 144.978167 186.175458 
+L 146.017685 182.538099 
+L 146.911773 178.862288 
+L 147.659016 175.153837 
+L 148.258233 171.41861 
+L 148.708477 167.662514 
+L 149.009036 163.891487 
+L 149.159435 160.111493 
+L 149.159435 156.328507 
+L 149.009036 152.548513 
+L 148.708477 148.777486 
+L 148.258233 145.02139 
+L 147.659016 141.286163 
+L 146.911773 137.577712 
+L 146.017685 133.901901 
+L 144.978167 130.264542 
+L 143.794862 126.671387 
+L 142.469641 123.128116 
+L 141.0046 119.640332 
+L 139.402055 116.213551 
+L 137.66454 112.853191 
+L 135.794802 109.564565 
+L 133.795799 106.352874 
+L 131.67069 103.223194 
+L 129.422836 100.180477 
+L 127.055792 97.229531 
+L 124.573299 94.375024 
+L 121.979284 91.621469 
+L 119.277848 88.97322 
+L 116.473263 86.434465 
+L 113.569963 84.009217 
+L 110.572539 81.701311 
+L 107.48573 79.514398 
+L 104.314418 77.451934 
+L 101.063616 75.517181 
+L 97.738466 73.713198 
+L 94.344224 72.042838 
+L 90.886259 70.508742 
+L 87.370036 69.113335 
+L 83.801118 67.858824 
+L 80.185146 66.747192 
+L 76.527838 65.780198 
+L 72.834977 64.959371 
+L 69.112402 64.286007 
+L 65.366 63.761173 
+L 61.601695 63.385697 
+L 57.825438 63.160174 
+L 54.0432 63.08496 
+" clip-path="url(#p1897ab2c8c)" style="fill: none; stroke: #2a7a6b; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <!-- $i\omega$ -->
+    <g style="fill: #2f5f8f" transform="translate(58.36752 71.7336)">
+     <text>
+      <tspan x="0" y="-0.640625" style="font-style: oblique; font-size: 11px; font-family: 'DejaVu Sans'; fill: #2f5f8f">i</tspan>
+      <tspan x="3.056152" y="-0.640625" style="font-style: oblique; font-size: 11px; font-family: 'DejaVu Sans'; fill: #2f5f8f">ω</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 11px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle" x="97.2864" y="44.112" transform="rotate(-0 97.2864 44.112)">RHP Nyquist contour</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_3">
+    <path d="M 249.975491 245.470909 
+L 468.102764 245.470909 
+L 468.102764 70.969091 
+L 249.975491 70.969091 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_3"/>
+   <g id="matplotlib.axis_4"/>
+   <g id="line2d_5">
+    <path d="M 249.975491 158.22 
+L 468.102764 158.22 
+" clip-path="url(#pe8ce2ab222)" style="fill: none; stroke: #666666; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 359.039127 245.470909 
+L 359.039127 70.969091 
+" clip-path="url(#pe8ce2ab222)" style="fill: none; stroke: #666666; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 345.510611 151.048763 
+L 344.862163 146.994588 
+L 343.930843 143.023595 
+L 342.723552 139.16521 
+L 341.249237 135.448024 
+L 339.518821 131.899581 
+L 337.545129 128.546177 
+L 335.342784 125.412661 
+L 332.928107 122.522253 
+L 330.318992 119.89637 
+L 327.534771 117.554471 
+L 325.591483 116.159635 
+L 323.585918 114.903368 
+L 321.524685 113.789809 
+L 319.414574 112.822626 
+L 317.262536 112.005007 
+L 315.075662 111.339645 
+L 312.861157 110.828732 
+L 310.626316 110.473951 
+L 308.378502 110.27647 
+L 306.12512 110.236942 
+L 303.873595 110.355495 
+L 301.631344 110.63174 
+L 299.405754 111.064765 
+L 297.204158 111.653145 
+L 295.033808 112.394941 
+L 292.901856 113.28771 
+L 290.815324 114.328509 
+L 288.781087 115.51391 
+L 286.805847 116.840008 
+L 284.896112 118.302434 
+L 282.168028 120.741029 
+L 279.621645 123.457349 
+L 277.275833 126.431266 
+L 275.147973 129.640742 
+L 273.253835 133.061995 
+L 271.607453 136.669673 
+L 270.221028 140.437042 
+L 269.104834 144.336185 
+L 268.26714 148.33821 
+L 267.866553 151.048763 
+L 267.866553 165.391237 
+L 268.515 169.445412 
+L 269.44632 173.416405 
+L 270.653611 177.27479 
+L 272.127927 180.991976 
+L 273.858342 184.540419 
+L 275.832035 187.893823 
+L 278.03438 191.027339 
+L 280.449056 193.917747 
+L 283.058172 196.54363 
+L 285.842393 198.885529 
+L 287.785681 200.280365 
+L 289.791245 201.536632 
+L 291.852479 202.650191 
+L 293.96259 203.617374 
+L 296.114627 204.434993 
+L 298.301501 205.100355 
+L 300.516007 205.611268 
+L 302.750848 205.966049 
+L 304.998662 206.16353 
+L 307.252043 206.203058 
+L 309.503568 206.084505 
+L 311.74582 205.80826 
+L 313.97141 205.375235 
+L 316.173006 204.786855 
+L 318.343356 204.045059 
+L 320.475308 203.15229 
+L 322.56184 202.111491 
+L 324.596077 200.92609 
+L 326.571317 199.599992 
+L 328.481052 198.137566 
+L 331.209136 195.698971 
+L 333.755518 192.982651 
+L 336.101331 190.008734 
+L 338.22919 186.799258 
+L 340.123329 183.378005 
+L 341.76971 179.770327 
+L 343.156135 176.002958 
+L 344.27233 172.103815 
+L 345.110023 168.10179 
+L 345.510611 165.391237 
+L 345.510611 165.391237 
+" clip-path="url(#pe8ce2ab222)" style="fill: none; stroke: #c47a2c; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_8">
+    <defs>
+     <path id="mb1981131bc" d="M -5 5 
+L 5 -5 
+M -5 -5 
+L 5 5 
+" style="stroke: #a33b3b; stroke-width: 2"/>
+    </defs>
+    <g clip-path="url(#pe8ce2ab222)">
+     <use xlink:href="#mb1981131bc" x="315.413673" y="158.22" style="fill: #a33b3b; stroke: #a33b3b; stroke-width: 2"/>
+    </g>
+   </g>
+   <g id="text_3">
+    <!-- $-1$ -->
+    <g style="fill: #a33b3b" transform="translate(319.776218 149.494909)">
+     <text>
+      <tspan x="0" y="-0.984375" style="font-size: 11px; font-family: 'DejaVu Sans'; fill: #a33b3b">−</tspan>
+      <tspan x="9.216797" y="-0.984375" style="font-size: 11px; font-family: 'DejaVu Sans'; fill: #a33b3b">1</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_4">
+    <!-- Nyquist plot of $KG(i\omega)$ -->
+    <g transform="translate(301.124127 64.969091)">
+     <text>
+      <tspan x="0" y="-0.640625" style="font-size: 11px; font-family: 'PingFang SC'">N</tspan>
+      <tspan x="7.908936" y="-0.640625" style="font-size: 11px; font-family: 'PingFang SC'">y</tspan>
+      <tspan x="13.364899" y="-0.640625" style="font-size: 11px; font-family: 'PingFang SC'">q</tspan>
+      <tspan x="19.810852" y="-0.640625" style="font-size: 11px; font-family: 'PingFang SC'">u</tspan>
+      <tspan x="25.97081" y="-0.640625" style="font-size: 11px; font-family: 'PingFang SC'">i</tspan>
+      <tspan x="28.786789" y="-0.640625" style="font-size: 11px; font-family: 'PingFang SC'">s</tspan>
+      <tspan x="34.341751" y="-0.640625" style="font-size: 11px; font-family: 'PingFang SC'">t</tspan>
+      <tspan x="38.246719" y="-0.640625" style="font-size: 11px; font-family: 'PingFang SC'"> </tspan>
+      <tspan x="41.909698" y="-0.640625" style="font-size: 11px; font-family: 'PingFang SC'">p</tspan>
+      <tspan x="48.355652" y="-0.640625" style="font-size: 11px; font-family: 'PingFang SC'">l</tspan>
+      <tspan x="50.940628" y="-0.640625" style="font-size: 11px; font-family: 'PingFang SC'">o</tspan>
+      <tspan x="57.386581" y="-0.640625" style="font-size: 11px; font-family: 'PingFang SC'">t</tspan>
+      <tspan x="61.29155" y="-0.640625" style="font-size: 11px; font-family: 'PingFang SC'"> </tspan>
+      <tspan x="64.954529" y="-0.640625" style="font-size: 11px; font-family: 'PingFang SC'">o</tspan>
+      <tspan x="71.400482" y="-0.640625" style="font-size: 11px; font-family: 'PingFang SC'">f</tspan>
+      <tspan x="75.503448" y="-0.640625" style="font-size: 11px; font-family: 'PingFang SC'"> </tspan>
+      <tspan x="79.166428" y="-0.640625" style="font-style: oblique; font-size: 11px; font-family: 'DejaVu Sans'">K</tspan>
+      <tspan x="86.379807" y="-0.640625" style="font-style: oblique; font-size: 11px; font-family: 'DejaVu Sans'">G</tspan>
+      <tspan x="99.195236" y="-0.640625" style="font-style: oblique; font-size: 11px; font-family: 'DejaVu Sans'">i</tspan>
+      <tspan x="102.251389" y="-0.640625" style="font-style: oblique; font-size: 11px; font-family: 'DejaVu Sans'">ω</tspan>
+      <tspan x="94.903732" y="-0.640625" style="font-size: 11px; font-family: 'DejaVu Sans'">(</tspan>
+      <tspan x="111.462814" y="-0.640625" style="font-size: 11px; font-family: 'DejaVu Sans'">)</tspan>
+     </text>
+    </g>
+   </g>
+  </g>
+  <g id="text_5">
+   <text style="font-size: 13.2px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle" x="220.422764" y="22.152" transform="rotate(-0 220.422764 22.152)">Nyquist stability criterion</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p1897ab2c8c">
+   <rect x="10.8" y="50.112" width="172.9728" height="216.216"/>
+  </clipPath>
+  <clipPath id="pe8ce2ab222">
+   <rect x="249.975491" y="70.969091" width="218.127273" height="174.501818"/>
+  </clipPath>
+ </defs>
+</svg>

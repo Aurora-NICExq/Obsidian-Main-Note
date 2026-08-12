@@ -1,0 +1,53 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  \def\xj{4.0}
+  \def\dxp{0.55}
+  \def\dxn{0.75}
+
+  % bulk regions
+  \fill[ecteal, opacity=0.10] (0,-0.15) rectangle (\xj-\dxp,2.9);
+  \fill[ecred,  opacity=0.10] (\xj+\dxn,-0.15) rectangle (8.6,2.9);
+  \fill[eclight, opacity=0.18] (\xj-\dxp,-0.15) rectangle (\xj+\dxn,2.9);
+  \draw[ecgray, line width=0.7pt] (\xj-\dxp,-0.15) -- (\xj-\dxp,2.9);
+  \draw[ecgray, line width=0.7pt] (\xj+\dxn,-0.15) -- (\xj+\dxn,2.9);
+
+  \draw[ax] (-0.2,0) -- (8.9,0) node[below left]{$x$};
+  \node[note, anchor=north] at (1.9,-0.25){$p$ 中性区};
+  \node[note, anchor=north] at (\xj+0.1,-0.25){耗尽区};
+  \node[note, anchor=north] at (6.7,-0.25){$n$ 中性区};
+
+  % majority levels (flat, high)
+  \draw[curve3, line width=1.0pt] (0,2.45) -- (\xj-\dxp,2.45);
+  \node[ecteal, font=\footnotesize, anchor=west] at (0.15,2.68){$p_p\approx N_A$（多子）};
+  \draw[curve3, line width=1.0pt] (\xj+\dxn,2.45) -- (8.6,2.45);
+  \node[ecteal, font=\footnotesize, anchor=east] at (8.45,2.68){$n_n\approx N_D$（多子）};
+
+  % p-side injected electrons: decay to the left from x = xj-dxp
+  \draw[curve2, line width=1.1pt, domain=1.1:3.45, samples=140, smooth]
+    plot (\x, {1.55*exp(-(3.45-\x)/1.05)});
+  \draw[curve2, line width=1.1pt] (0,{1.55*exp(-(3.45-1.1)/1.05)}) -- (1.1,{1.55*exp(-(3.45-1.1)/1.05)});
+  \node[ecred, font=\footnotesize, anchor=east] at (3.35,0.95){$n_p(x)$};
+
+  % n-side injected holes: decay to the right from x = xj+dxn
+  \draw[curve, line width=1.1pt, domain=4.75:7.4, samples=140, smooth]
+    plot (\x, {1.55*exp(-(\x-4.75)/1.15)});
+  \draw[curve, line width=1.1pt] (7.4,{1.55*exp(-(7.4-4.75)/1.15)}) -- (8.6,{1.55*exp(-(7.4-4.75)/1.15)});
+  \node[ecblue, font=\footnotesize, anchor=west] at (5.5,0.95){$p_n(x)$};
+
+  % equilibrium minority levels (curves relax back onto these far from the junction)
+  \draw[helper] (0,0.16) -- (\xj-\dxp,0.16);
+  \draw[helper] (\xj+\dxn,0.16) -- (8.6,0.16);
+  \draw[helper] (0.75,0.62) -- (0.75,0.2);
+  \node[note, anchor=south, font=\footnotesize] at (0.75,0.62){$n_{p0}=n_i^2/N_A$};
+  \draw[helper] (7.85,0.62) -- (7.85,0.2);
+  \node[note, anchor=south, font=\footnotesize] at (7.85,0.62){$p_{n0}=n_i^2/N_D$};
+
+  % injection arrows across the junction
+  \draw[-{Stealth[length=5pt]}, ecblue, line width=1.0pt] (3.1,2.15) -- (4.9,2.15);
+  \node[ecblue, font=\footnotesize, anchor=south] at (4.0,2.18){空穴注入};
+  \draw[-{Stealth[length=5pt]}, ecred, line width=1.0pt] (4.9,1.85) -- (3.1,1.85);
+  \node[ecred, font=\footnotesize, anchor=north] at (4.0,1.82){电子注入};
+
+  \node[note, anchor=north, align=center] at (4.3,-0.95)
+    {正偏把势垒降到 $V_0-V_F$，边界少子浓度按 $\exp(V_F/V_T)$ 抬高；
+     这些超量少子一边扩散一边复合，扩散流就是二极管电流};
+\end{tikzpicture}

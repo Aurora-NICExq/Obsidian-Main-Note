@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="378.72pt" height="236.302125pt" viewBox="0 0 378.72 236.302125" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-12T14:52:57.142323</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 236.302125 
+L 378.72 236.302125 
+L 378.72 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 127.22112 98.566701 
+L 244.35648 98.566701 
+Q 247.21344 98.566701 247.21344 95.373357 
+L 247.21344 60.246573 
+Q 247.21344 57.053229 244.35648 57.053229 
+L 127.22112 57.053229 
+Q 124.36416 57.053229 124.36416 60.246573 
+L 124.36416 95.373357 
+Q 124.36416 98.566701 127.22112 98.566701 
+z
+" clip-path="url(#pc25ebbe7eb)" style="fill: #f0e6d6; stroke: #2a7a6b; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 127.22112 194.367021 
+L 244.35648 194.367021 
+Q 247.21344 194.367021 247.21344 191.173677 
+L 247.21344 148.063533 
+Q 247.21344 144.870189 244.35648 144.870189 
+L 127.22112 144.870189 
+Q 124.36416 144.870189 124.36416 148.063533 
+L 124.36416 191.173677 
+Q 124.36416 194.367021 127.22112 194.367021 
+z
+" clip-path="url(#pc25ebbe7eb)" style="fill: #d6e4f0; stroke: #2f5f8f; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #2a7a6b" x="185.7888" y="80.408012" transform="rotate(-0 185.7888 80.408012)">Next-state / Output logic</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2f5f8f" transform="translate(151.68255 166.215285)">State register</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2f5f8f" transform="translate(160.383331 178.218019)">(flip-flops)</text>
+   </g>
+   <g id="patch_4">
+    <path d="M 185.7888 99.770296 
+Q 185.7888 119.72476 185.7888 138.113977 
+" style="fill: none; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 187.9888 133.713977 
+L 185.7888 138.113977 
+L 183.5888 133.713977 
+z
+" style="fill: #c47a2c; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 207.216 143.665863 
+Q 207.216 121.715799 207.216 101.330983 
+" style="fill: none; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 205.016 105.730983 
+L 207.216 101.330983 
+L 209.416 105.730983 
+z
+" style="fill: #c47a2c; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #c47a2c" x="214.3584" y="125.710125" transform="rotate(-0 214.3584 125.710125)">clk</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 55.654699 169.618605 
+Q 87.582149 169.618605 117.944352 169.618605 
+" style="fill: none; stroke: #666666; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 113.544352 167.418605 
+L 117.944352 169.618605 
+L 113.544352 171.818605 
+z
+" style="fill: #666666; stroke: #666666; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #666666" x="21.5136" y="173.610285" transform="rotate(-0 21.5136 173.610285)">inputs</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 252.070699 77.809965 
+Q 287.567945 77.809965 321.499943 77.809965 
+" style="fill: none; stroke: #666666; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 317.099943 75.609965 
+L 321.499943 77.809965 
+L 317.099943 80.009965 
+z
+" style="fill: #666666; stroke: #666666; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #666666" x="328.6368" y="81.801645" transform="rotate(-0 328.6368 81.801645)">outputs</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="189.36" y="19.918125" transform="rotate(-0 189.36 19.918125)">Sequential system / FSM skeleton</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pc25ebbe7eb">
+   <rect x="10.8" y="25.918125" width="357.12" height="199.584"/>
+  </clipPath>
+ </defs>
+</svg>

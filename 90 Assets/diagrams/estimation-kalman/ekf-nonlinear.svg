@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="389.88pt" height="214.126125pt" viewBox="0 0 389.88 214.126125" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-12T15:34:45.973814</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 214.126125 
+L 389.88 214.126125 
+L 389.88 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 27.74088 140.247725 
+L 126.43992 140.247725 
+Q 129.38616 140.247725 129.38616 136.305325 
+L 129.38616 83.082925 
+Q 129.38616 79.140525 126.43992 79.140525 
+L 27.74088 79.140525 
+Q 24.79464 79.140525 24.79464 83.082925 
+L 24.79464 136.305325 
+Q 24.79464 140.247725 27.74088 140.247725 
+z
+" clip-path="url(#pf2780c2694)" style="fill: #f0e6d6; stroke: #a33b3b; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 152.95608 140.247725 
+L 251.65512 140.247725 
+Q 254.60136 140.247725 254.60136 136.305325 
+L 254.60136 83.082925 
+Q 254.60136 79.140525 251.65512 79.140525 
+L 152.95608 79.140525 
+Q 150.00984 79.140525 150.00984 83.082925 
+L 150.00984 136.305325 
+Q 150.00984 140.247725 152.95608 140.247725 
+z
+" clip-path="url(#pf2780c2694)" style="fill: #d6e4f0; stroke: #2f5f8f; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 278.17128 140.247725 
+L 362.13912 140.247725 
+Q 365.08536 140.247725 365.08536 136.305325 
+L 365.08536 83.082925 
+Q 365.08536 79.140525 362.13912 79.140525 
+L 278.17128 79.140525 
+Q 275.22504 79.140525 275.22504 83.082925 
+L 275.22504 136.305325 
+Q 275.22504 140.247725 278.17128 140.247725 
+z
+" clip-path="url(#pf2780c2694)" style="fill: #f0e6d6; stroke: #2a7a6b; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #a33b3b" transform="translate(53.550556 106.290805)">nonlinear</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #a33b3b" transform="translate(68.983369 118.293539)">f, h</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2f5f8f" transform="translate(181.072788 106.090805)">linearize</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2f5f8f" transform="translate(181.354038 118.493539)">F, H @ x̂</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #2a7a6b" x="320.1552" y="112.291781" transform="rotate(-0 320.1552 112.291781)">KF step</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 134.335642 109.694125 
+Q 139.700588 109.694125 143.500287 109.694125 
+" style="fill: none; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 139.100287 107.494125 
+L 143.500287 109.694125 
+L 139.100287 111.894125 
+z
+" style="fill: #c47a2c; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 259.550842 109.694125 
+Q 264.915788 109.694125 268.715487 109.694125 
+" style="fill: none; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 264.315487 107.494125 
+L 268.715487 109.694125 
+L 264.315487 111.894125 
+z
+" style="fill: #c47a2c; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="194.94" y="19.918125" transform="rotate(-0 194.94 19.918125)">EKF idea</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pf2780c2694">
+   <rect x="10.8" y="25.918125" width="368.28" height="177.408"/>
+  </clipPath>
+ </defs>
+</svg>

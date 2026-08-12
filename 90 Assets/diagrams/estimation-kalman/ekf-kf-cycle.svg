@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="401.04pt" height="236.302125pt" viewBox="0 0 401.04 236.302125" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-12T15:34:45.858984</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 236.302125 
+L 401.04 236.302125 
+L 401.04 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 28.25424 112.404525 
+L 129.94416 112.404525 
+Q 132.97968 112.404525 132.97968 108.602925 
+L 132.97968 57.281325 
+Q 132.97968 53.479725 129.94416 53.479725 
+L 28.25424 53.479725 
+Q 25.21872 53.479725 25.21872 57.281325 
+L 25.21872 108.602925 
+Q 25.21872 112.404525 28.25424 112.404525 
+z
+" clip-path="url(#pf10476ed54)" style="fill: #d6e4f0; stroke: #2f5f8f; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 149.67504 112.404525 
+L 251.36496 112.404525 
+Q 254.40048 112.404525 254.40048 108.602925 
+L 254.40048 57.281325 
+Q 254.40048 53.479725 251.36496 53.479725 
+L 149.67504 53.479725 
+Q 146.63952 53.479725 146.63952 57.281325 
+L 146.63952 108.602925 
+Q 146.63952 112.404525 149.67504 112.404525 
+z
+" clip-path="url(#pf10476ed54)" style="fill: #f0e6d6; stroke: #2a7a6b; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 271.09584 112.404525 
+L 372.78576 112.404525 
+Q 375.82128 112.404525 375.82128 108.602925 
+L 375.82128 57.281325 
+Q 375.82128 53.479725 372.78576 53.479725 
+L 271.09584 53.479725 
+Q 268.06032 53.479725 268.06032 57.281325 
+L 268.06032 108.602925 
+Q 268.06032 112.404525 271.09584 112.404525 
+z
+" clip-path="url(#pf10476ed54)" style="fill: #d6e4f0; stroke: #c47a2c; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2f5f8f" transform="translate(61.877325 79.338805)">Predict</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2f5f8f" transform="translate(64.668731 91.741539)">x̂⁻, P⁻</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2a7a6b" transform="translate(182.411406 79.338805)">Update</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2a7a6b" transform="translate(184.910625 91.741539)">K, x̂, P</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #c47a2c" x="321.9408" y="85.540172" transform="rotate(-0 321.9408 85.540172)">Next time</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 138.012448 82.942125 
+Q 139.807587 82.942125 140.037479 82.942125 
+" style="fill: none; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 135.637479 80.742125 
+L 140.037479 82.942125 
+L 135.637479 85.142125 
+z
+" style="fill: #c47a2c; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 259.433248 82.942125 
+Q 261.228387 82.942125 261.458279 82.942125 
+" style="fill: none; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 257.058279 80.742125 
+L 261.458279 82.942125 
+L 257.058279 85.142125 
+z
+" style="fill: #c47a2c; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #666666" transform="translate(146.363203 157.676367)">x̂⁻ = F x̂,  P⁻ = FPFᵀ + Q</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #666666" transform="translate(152.556328 168.478125)">K = P⁻Hᵀ(HP⁻Hᵀ+R)⁻¹</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="200.52" y="19.918125" transform="rotate(-0 200.52 19.918125)">Kalman predict / update cycle</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pf10476ed54">
+   <rect x="10.8" y="25.918125" width="379.44" height="199.584"/>
+  </clipPath>
+ </defs>
+</svg>

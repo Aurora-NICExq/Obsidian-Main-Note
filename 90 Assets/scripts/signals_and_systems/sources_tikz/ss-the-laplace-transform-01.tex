@@ -1,0 +1,55 @@
+\begin{tikzpicture}[font=\small]
+  \foreach \i/\ttl in {0/{右边信号 $e^{-at}u(t)$}, 6.6/{左边信号 $-e^{-at}u(-t)$}, 13.2/{双边信号}}{
+    \begin{scope}[xshift=\i cm]
+      \node[anchor=south, font=\small] at (0,3.0){\ttl};
+      \draw[ax] (-2.6,0) -- (2.8,0); \node[note, anchor=north west] at (2.6,-0.05){$\sigma$};
+      \draw[ax] (0,-2.6) -- (0,2.8); \node[note, anchor=south west] at (0.08,2.6){$j\omega$};
+    \end{scope}
+  }
+
+  % (a) right-sided: ROC is Re{s} > -a
+  \begin{scope}
+    \fill[ssblue, opacity=0.16] (-1.0,-2.5) rectangle (2.6,2.5);
+    \draw[ssblue, line width=1.0pt, dashed] (-1.0,-2.5) -- (-1.0,2.5);
+    \draw[ssred, line width=1.3pt] (-1.15,-0.15) -- (-0.85,0.15);
+    \draw[ssred, line width=1.3pt] (-1.15,0.15) -- (-0.85,-0.15);
+    \node[ssred, font=\footnotesize, anchor=north east] at (-1.05,-0.2){$-a$};
+    \node[ssblue, font=\footnotesize, anchor=south west] at (0.9,1.9){ROC};
+    \node[note, anchor=north, align=center] at (0,-3.0)
+      {$\mathrm{Re}\{s\}>-a$\\ 极点\textbf{右侧}的半平面};
+  \end{scope}
+
+  % (b) left-sided: ROC is Re{s} < -a
+  \begin{scope}[xshift=6.6cm]
+    \fill[ssteal, opacity=0.16] (-2.5,-2.5) rectangle (-1.0,2.5);
+    \draw[ssteal, line width=1.0pt, dashed] (-1.0,-2.5) -- (-1.0,2.5);
+    \draw[ssred, line width=1.3pt] (-1.15,-0.15) -- (-0.85,0.15);
+    \draw[ssred, line width=1.3pt] (-1.15,0.15) -- (-0.85,-0.15);
+    \node[ssred, font=\footnotesize, anchor=north west] at (-0.95,-0.2){$-a$};
+    \node[ssteal, font=\footnotesize, anchor=south east] at (-1.15,1.9){ROC};
+    \node[note, anchor=north, align=center] at (0,-3.0)
+      {$\mathrm{Re}\{s\}<-a$\\ 极点\textbf{左侧}的半平面};
+  \end{scope}
+
+  % (c) two-sided: strip
+  \begin{scope}[xshift=13.2cm]
+    \fill[sslight, opacity=0.30] (-1.5,-2.5) rectangle (0.9,2.5);
+    \draw[ssgray, line width=1.0pt, dashed] (-1.5,-2.5) -- (-1.5,2.5);
+    \draw[ssgray, line width=1.0pt, dashed] (0.9,-2.5) -- (0.9,2.5);
+    \foreach \x in {-1.5,0.9}{
+      \draw[ssred, line width=1.3pt] (\x-0.15,-0.15) -- (\x+0.15,0.15);
+      \draw[ssred, line width=1.3pt] (\x-0.15,0.15) -- (\x+0.15,-0.15);
+    }
+    \node[ssgray, font=\footnotesize, anchor=south] at (-0.3,1.9){ROC};
+    \node[note, anchor=north, align=center] at (0,-3.0)
+      {两极点之间的\textbf{带状}区域\\ 若带内不含 $j\omega$ 轴则不稳定};
+  \end{scope}
+
+  \node[note, anchor=north, align=center] at (6.6,-5.0)
+    {\textbf{同一个 $X(s)$ 表达式配不同的 ROC，对应完全不同的时域信号} ——
+     所以拉普拉斯变换必须连 ROC 一起给，只写代数式是不完整的。};
+  \node[note, anchor=north, align=center] at (6.6,-6.1)
+    {两条判据：ROC 包含 $j\omega$ 轴 $\Leftrightarrow$ 系统 BIBO 稳定（此时 $H(j\omega)$ 存在，即 CTFT 收敛）；\;
+     ROC 是最右极点右侧的半平面 $\Leftrightarrow$ 因果。\\
+     两者同时成立 $\Leftrightarrow$ \textbf{全部极点都在左半平面}};
+\end{tikzpicture}

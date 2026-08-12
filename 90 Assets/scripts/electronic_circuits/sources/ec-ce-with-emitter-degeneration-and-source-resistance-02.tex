@@ -1,0 +1,36 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  \node[note, anchor=south, align=center] at (5.2,4.6)
+    {两条「阻抗速查」规则 —— 单级放大器的所有结论几乎都由它们推出};
+
+  % ---------- looking into the emitter ----------
+  \begin{scope}
+    \node[note, anchor=south] at (2.0,3.6){从射极看进去};
+    \draw (2.0,3.2) node[npn, anchor=C, rotate=0](Q1){};
+    \draw (Q1.C) -- (2.0,3.4);
+    \draw (Q1.B) -- (0.5,2.35) to[R=$R_B$] (-1.0,2.35) node[ground]{};
+    \draw (Q1.E) -- (2.0,1.2) node[circ]{};
+    \draw[helper, ecred, -{Stealth[length=4pt]}] (2.0,0.5) -- (2.0,1.1);
+    \node[ecred, font=\footnotesize, anchor=north] at (2.0,0.45)
+      {$R_{E,\text{in}}=\dfrac{1}{g_m}+\dfrac{R_B}{\beta+1}$};
+    \node[note, anchor=north, align=center] at (2.0,-0.55)
+      {基极电阻被 $(\beta+1)$ 除小了再看到\\ $\Rightarrow$ 射极永远是低阻节点};
+  \end{scope}
+
+  % ---------- looking into the base ----------
+  \begin{scope}[xshift=7.4cm]
+    \node[note, anchor=south] at (2.0,3.6){从基极看进去};
+    \draw (2.0,3.2) node[npn, anchor=C](Q2){};
+    \draw (Q2.C) -- (2.0,3.4);
+    \draw (Q2.B) -- (0.5,2.35) node[circ]{};
+    \draw[helper, ecblue, -{Stealth[length=4pt]}] (-0.3,2.35) -- (0.4,2.35);
+    \node[ecblue, font=\footnotesize, anchor=east] at (-0.35,2.35)
+      {$R_{B,\text{in}}=r_\pi+(\beta+1)R_E$};
+    \draw (Q2.E) to[R=$R_E$] (2.0,0.6) node[ground]{};
+    \node[note, anchor=north, align=center] at (1.6,-0.15)
+      {射极电阻被 $(\beta+1)$ 乘大了再看到\\ $\Rightarrow$ 基极永远是高阻节点};
+  \end{scope}
+
+  \node[note, anchor=north, align=center] at (5.2,-1.6)
+    {记法：\emph{阻抗从射极往基极看会放大 $(\beta+1)$ 倍，从基极往射极看会缩小 $(\beta+1)$ 倍}。
+     MOS 里的对应说法更简单——栅极不吃电流，源极看进去是 $1/g_m$};
+\end{tikzpicture}

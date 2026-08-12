@@ -1,0 +1,38 @@
+direction: right
+
+LoopBlock: {
+  label: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;循环处理 (中间字节)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+  direction_LR: "direction LR"
+  WaitTXE: "等待TXE"
+  WriteNext: "向TDR写第\ni+1 个字节"
+  WaitRxNE_Loop: "等待RxNE"
+  ReadCurrent: "从RDR读第\ni 字节"
+}
+
+classDef_default_fill__fff_stroke__333_stroke-width_2px_color__000_font-size_15px_rx_5_ry_5_: "classDef default fill:#fff,stroke:#333,stroke-width:2px,color:#000,font-size:15px,rx:5,ry:5;"
+classDef_pinkNode_fill__ebdce2_stroke__a66f7d_stroke-width_2px_color__000_font-size_15px_rx_5_ry_5_: "classDef pinkNode fill:#ebdce2,stroke:#a66f7d,stroke-width:2px,color:#000,font-size:15px,rx:5,ry:5;"
+classDef_diamond_fill__fff_stroke__333_stroke-width_2px_color__000_font-size_15px_: "classDef diamond fill:#fff,stroke:#333,stroke-width:2px,color:#000,font-size:15px;"
+Start: "闭合总开关\n(SPI_Cmd ENABLE)"
+WriteFirst: "向TDR写第\n一个字节\n(SendData pDataTx[0])"
+Decision__是否还有_br_中间字节___: "Decision{\"是否还有\n中间字节?\"}"
+WaitRxNE_Final: "等待RxNE"
+ReadLast: "读最后一个\n字节"
+EndNode: "断开总开关\n(SPI_Cmd DISABLE)"
+Decision: "Decision"
+Decision_--__是_: "Decision -- \"是"
+Decision_--__否_: "Decision -- \"否"
+class_Start_WriteFirst_WaitRxNE_Final_ReadLast_EndNode_default_: "class Start,WriteFirst,WaitRxNE_Final,ReadLast,EndNode default;"
+class_WaitTXE_WriteNext_WaitRxNE_Loop_ReadCurrent_pinkNode_: "class WaitTXE,WriteNext,WaitRxNE_Loop,ReadCurrent pinkNode;"
+class_Decision_diamond_: "class Decision diamond;"
+style_LoopBlock_fill__f5e8eb_stroke__a66f7d_stroke-width_3px_color__000_font-size_18px: "style LoopBlock fill:#f5e8eb,stroke:#a66f7d,stroke-width:3px,color:#000,font-size:18px"
+
+Start -> WriteFirst
+WriteFirst -> LoopBlock.WaitTXE
+LoopBlock.WaitTXE -> LoopBlock.WriteNext
+LoopBlock.WriteNext -> LoopBlock.WaitRxNE_Loop
+LoopBlock.WaitRxNE_Loop -> LoopBlock.ReadCurrent
+LoopBlock.ReadCurrent -> Decision
+Decision_--__是_ -> LoopBlock.WaitTXE
+Decision_--__否_ -> WaitRxNE_Final
+WaitRxNE_Final -> ReadLast
+ReadLast -> EndNode

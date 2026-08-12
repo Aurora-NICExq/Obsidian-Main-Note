@@ -1,0 +1,20 @@
+direction: down
+
+core__革命家组织_: {
+  label: "core [革命家组织]"
+  PR: "职业革命家核心"
+  CC: "全俄领导 / 机关报中心"
+}
+peri__外围与群众组织_: {
+  label: "peri [外围与群众组织]"
+  TU: "工会与经济组织"
+  LG: "地方委员会与小组"
+  DEM: "各阶层民主抗议网络"
+}
+
+PR_-_领导_-_TU: "PR -.领导.- TU"
+
+core__革命家组织_.PR -> core__革命家组织_.CC
+core__革命家组织_.CC -> peri__外围与群众组织_.LG
+peri__外围与群众组织_.LG -> peri__外围与群众组织_.TU
+peri__外围与群众组织_.LG -> peri__外围与群众组织_.DEM

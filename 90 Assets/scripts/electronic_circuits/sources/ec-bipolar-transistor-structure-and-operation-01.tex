@@ -1,0 +1,52 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  % ---------- npn cross-section ----------
+  \begin{scope}
+    \fill[ecred,  opacity=0.16] (0,0)   rectangle (2.2,2.2);   % n+ emitter
+    \fill[ecteal, opacity=0.16] (2.2,0) rectangle (3.1,2.2);   % p base (thin)
+    \fill[ecred,  opacity=0.10] (3.1,0) rectangle (6.0,2.2);   % n collector
+    \draw[ecgray, line width=0.8pt] (0,0) rectangle (6.0,2.2);
+    \draw[ecgray, line width=0.8pt] (2.2,0) -- (2.2,2.2);
+    \draw[ecgray, line width=0.8pt] (3.1,0) -- (3.1,2.2);
+
+    \node at (1.1,1.1){$n^{+}$};
+    \node at (2.65,1.1){$p$};
+    \node at (4.55,1.1){$n$};
+
+    \node[note, anchor=south] at (1.1,2.3){发射极 E（重掺杂）};
+    \node[note, anchor=south] at (2.65,2.85){基区 B（很薄、轻掺杂）};
+    \draw[helper] (2.65,2.8) -- (2.65,2.3);
+    \node[note, anchor=south] at (4.55,2.3){集电极 C};
+
+    % terminals
+    \draw[ecgray, line width=0.9pt] (1.1,0) -- (1.1,-0.7) node[below]{E};
+    \draw[ecgray, line width=0.9pt] (2.65,0) -- (2.65,-0.7) node[below]{B};
+    \draw[ecgray, line width=0.9pt] (4.55,0) -- (4.55,-0.7) node[below]{C};
+
+    % carrier flow
+    \draw[-{Stealth[length=6pt]}, ecblue, line width=1.2pt] (0.9,1.65) -- (4.4,1.65);
+    \node[ecblue, font=\footnotesize, anchor=south] at (2.6,1.68){电子（$\approx$ 全部到达 C）};
+    \draw[-{Stealth[length=5pt]}, ecteal, line width=0.9pt] (2.5,0.6) -- (2.5,-0.55);
+    \node[ecteal, font=\footnotesize, anchor=east] at (2.35,0.35){少量复合 $\to I_B$};
+
+    \node[note, anchor=north, align=center] at (3.0,-1.15)
+      {基区薄到电子来不及复合就被集电结的强电场「吸」走 ——
+       这就是 $\beta=I_C/I_B$ 可以做到上百的原因};
+  \end{scope}
+
+  % ---------- symbol + equations ----------
+  \begin{scope}[xshift=9.0cm, yshift=0.4cm]
+    \node[npn, anchor=B](Q) at (0,0){};
+    \node[font=\footnotesize, anchor=south] at ($(Q.C)+(0.1,0.05)$){C};
+    \node[font=\footnotesize, anchor=north] at ($(Q.E)+(0.1,-0.05)$){E};
+    \node[font=\footnotesize, anchor=east] at ($(Q.B)+(-0.05,0)$){B};
+    \draw (Q.C) -- ++(0,0.6);
+    \draw (Q.E) -- ++(0,-0.6);
+    \draw (Q.B) -- ++(-0.7,0);
+
+    \node[note, anchor=north west, align=left] at (1.1,1.2)
+      {$I_C=I_S\,e^{V_{BE}/V_T}$\\[4pt]
+       $I_B=\dfrac{I_C}{\beta}$，\quad $I_E=I_C+I_B=\dfrac{\beta+1}{\beta}I_C$\\[6pt]
+       正向有源区的两个条件：\\
+       \quad BE 结正偏、BC 结反偏};
+  \end{scope}
+\end{tikzpicture}

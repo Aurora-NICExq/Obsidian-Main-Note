@@ -1,0 +1,25 @@
+direction: right
+
+GPIOA: {
+  label: "GPIOA"
+  direction_LR: "direction LR"
+  REGA: "寄存器"
+  DRVA: "驱动器"
+}
+GPIOB: {
+  label: "GPIOB"
+  REGB: "寄存器"
+  DRVB: "驱动器"
+}
+
+BUS___APB2_外设总线___: "BUS([\"APB2 外设总线\"])"
+BUS__: "BUS <"
+PA: "PA0 · PA1 · PA2 ⋯ PA15"
+PB: "PB0 · PB1 · PB2 ⋯ PB15"
+
+GPIOA.REGA -> GPIOA.DRVA
+GPIOB.REGB -> GPIOB.DRVB
+BUS__ -> GPIOA.REGA
+BUS__ -> GPIOB.REGB
+GPIOA.DRVA -> PA
+GPIOB.DRVB -> PB

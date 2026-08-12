@@ -1,0 +1,57 @@
+\begin{tikzpicture}[font=\small]
+  % ---------- edge classification ----------
+  \begin{scope}
+    \node[anchor=south, font=\small] at (3.2,3.4){DFS 把每条边分成四类 —— 环检测和拓扑排序都靠这个分类};
+
+    \node[vtx] (a) at (0,2.4) {$a$};
+    \node[vtx] (b) at (0,0.9) {$b$};
+    \node[vtx] (c) at (2.2,0.9) {$c$};
+    \node[vtx] (d) at (0,-0.6) {$d$};
+    \node[vtx] (e) at (2.2,-0.6) {$e$};
+
+    \draw[tedge] (a) -- node[left, font=\footnotesize]{树边} (b);
+    \draw[tedge] (b) -- (d);
+    \draw[tedge] (b) -- (c);
+    \draw[dedge, algred, line width=1.2pt] (d) to[bend right=45]
+      node[left, font=\footnotesize, pos=0.55]{\textcolor{algred}{后向边}} (a);
+    \draw[dedge, algteal, line width=1.1pt] (a) to[bend left=42]
+      node[right, font=\footnotesize, pos=0.5]{\textcolor{algteal}{前向边}} (c);
+    \draw[dedge, alggray, line width=1.1pt] (c) -- node[right, font=\footnotesize]{横叉边} (e);
+
+    \node[note, anchor=west, align=left] at (4.6,1.6)
+      {\textbf{树边} 首次发现某点时走的边\\[3pt]
+       \textcolor{algred}{\textbf{后向边}} 指向\textbf{当前递归栈上}的祖先\\
+       \quad $\Rightarrow$ \textbf{存在环}（有向图里的充要条件）\\[3pt]
+       \textcolor{algteal}{\textbf{前向边}} 指向已完成的后代\\[3pt]
+       \textbf{横叉边} 指向已完成的、非祖先非后代};
+  \end{scope}
+
+  % ---------- topological sort ----------
+  \begin{scope}[yshift=-4.4cm]
+    \node[anchor=south, font=\small] at (5.0,2.6){拓扑排序 = DFS \textbf{完成时间}的逆序};
+
+    \node[vtx] (t1) at (0,1.2) {$a$};
+    \node[vtx] (t2) at (1.8,1.9) {$b$};
+    \node[vtx] (t3) at (1.8,0.5) {$c$};
+    \node[vtx] (t4) at (3.6,1.2) {$d$};
+    \node[vtx] (t5) at (5.4,1.2) {$e$};
+    \draw[dedge] (t1) -- (t2); \draw[dedge] (t1) -- (t3);
+    \draw[dedge] (t2) -- (t4); \draw[dedge] (t3) -- (t4);
+    \draw[dedge] (t4) -- (t5);
+
+    \node[note, anchor=west, align=left] at (6.4,1.6)
+      {完成顺序（finish time 递增）：\\
+       \quad $e,\ d,\ c,\ b,\ a$\\[3pt]
+       逆序即拓扑序：\\
+       \quad $a,\ b,\ c,\ d,\ e$};
+
+    \node[note, anchor=north, align=center] at (4.6,-0.4)
+      {为什么成立：$u\to v$ 时 $v$ 必然\textbf{先于} $u$ 完成
+       （要么 $v$ 是 $u$ 的后代先递归完，要么 $v$ 早就完成了）。\\
+       唯一的例外是后向边 —— 而后向边存在就意味着有环，拓扑序本来就\textbf{不存在}。};
+  \end{scope}
+
+  \node[note, anchor=north, align=center] at (5.0,-8.0)
+    {复杂度同 BFS：$O(|V|+|E|)$。\;
+     区别只在容器 —— BFS 用队列（按层），DFS 用栈 / 递归（钻到底）。};
+\end{tikzpicture}

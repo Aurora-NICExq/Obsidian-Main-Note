@@ -1,0 +1,64 @@
+\begin{tikzpicture}[font=\small]
+  % ---------- s-plane pole locations ----------
+  \begin{scope}
+    \draw[ax] (-3.9,0) -- (1.5,0) node[below left]{$\mathrm{Re}$};
+    \draw[ax] (0,-2.6) -- (0,3.0) node[below right]{$\mathrm{Im}$};
+    \draw[helper] (0,0) circle (2.0);
+
+    % underdamped pair
+    \draw[ssblue, line width=1.3pt] (-0.95,1.68) -- (-0.65,1.98);
+    \draw[ssblue, line width=1.3pt] (-0.95,1.98) -- (-0.65,1.68);
+    \draw[ssblue, line width=1.3pt] (-0.95,-1.68) -- (-0.65,-1.98);
+    \draw[ssblue, line width=1.3pt] (-0.95,-1.98) -- (-0.65,-1.68);
+    \draw[ssblue, line width=0.8pt] (0,0) -- (-0.8,1.83);
+    \node[ssblue, font=\footnotesize, anchor=east] at (-1.15,1.95){欠阻尼 $\zeta<1$};
+    \node[note, anchor=south east] at (-0.42,0.95){$\omega_n$};
+    \draw[ssgray, line width=0.6pt] (0,0.5) arc (90:113.6:0.5);
+    \node[note, anchor=south west] at (-0.12,0.42){$\theta$};
+
+    % critically damped (double pole)
+    \draw[ssteal, line width=1.3pt] (-2.15,-0.15) -- (-1.85,0.15);
+    \draw[ssteal, line width=1.3pt] (-2.15,0.15) -- (-1.85,-0.15);
+    \node[ssteal, font=\footnotesize, anchor=south] at (-2.0,0.28){临界 $\zeta=1$};
+
+    % overdamped
+    \draw[ssred, line width=1.3pt] (-3.55,-0.15) -- (-3.25,0.15);
+    \draw[ssred, line width=1.3pt] (-3.55,0.15) -- (-3.25,-0.15);
+    \draw[ssred, line width=1.3pt] (-0.75,-0.15) -- (-0.45,0.15);
+    \draw[ssred, line width=1.3pt] (-0.75,0.15) -- (-0.45,-0.15);
+    \node[ssred, font=\footnotesize, anchor=north] at (-2.4,-0.3){过阻尼 $\zeta>1$（两个实极点）};
+
+    \node[note, anchor=north, align=center] at (-1.2,-2.9)
+      {$H(s)=\dfrac{\omega_n^2}{s^2+2\zeta\omega_n s+\omega_n^2}$\\[4pt]
+       $s=-\zeta\omega_n\pm j\omega_n\sqrt{1-\zeta^2}$，\quad $\cos\theta=\zeta$\\[3pt]
+       欠阻尼极点恒在半径 $\omega_n$ 的圆上};
+  \end{scope}
+
+  % ---------- step responses ----------
+  \begin{scope}[xshift=8.4cm, yshift=-0.6cm]
+    \draw[ax] (-0.2,0) -- (6.6,0) node[below left]{$t$};
+    \draw[ax] (0,-0.3) -- (0,2.9) node[left]{$s(t)$};
+    \draw[helper] (0,1.6) -- (6.4,1.6);
+    \node[note, anchor=west] at (6.45,1.6){$1$};
+
+    % underdamped  zeta=0.25, wn=2
+    \draw[curve, domain=0:6.3, samples=260, smooth]
+      plot (\x, {1.6*(1 - exp(-0.5*\x)*(cos(deg(1.936*\x)) + 0.2582*sin(deg(1.936*\x))))});
+    % critically damped  zeta=1, wn=1.4
+    \draw[curve3, domain=0:6.3, samples=200, smooth]
+      plot (\x, {1.6*(1 - exp(-1.4*\x)*(1+1.4*\x))});
+    % overdamped  zeta=2, wn=1.4
+    \draw[curve2, domain=0:6.3, samples=200, smooth]
+      plot (\x, {1.6*(1 - 1.077*exp(-0.375*\x) + 0.0774*exp(-5.225*\x))});
+
+    \node[ssblue,  font=\footnotesize, anchor=west] at (1.75,2.62){$\zeta<1$：振荡、有超调};
+    \draw[helper, ssblue] (1.7,2.55) -- (1.15,2.12);
+    \node[ssteal,  font=\footnotesize, anchor=west] at (3.15,2.05){$\zeta=1$：最快的无超调};
+    \draw[helper, ssteal] (3.1,1.98) -- (2.0,1.55);
+    \node[ssred,   font=\footnotesize, anchor=west] at (3.6,0.72){$\zeta>1$：慢，被慢极点主导};
+
+    \node[note, anchor=north, align=center] at (3.2,-0.55)
+      {极点离虚轴越远衰减越快，离实轴越远振荡越快 ——\\
+       设计二阶系统就是在这两件事之间挑一个 $\theta$};
+  \end{scope}
+\end{tikzpicture}

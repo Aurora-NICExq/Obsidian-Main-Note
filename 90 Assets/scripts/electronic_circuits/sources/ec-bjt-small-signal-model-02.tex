@@ -1,0 +1,34 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  \node[note, anchor=south, align=center] at (5.0,4.3)
+    {小信号分析的三步：确定工作点 $\to$ 求 $(g_m,r_\pi,r_o)$ $\to$ 把电路整体线性化};
+
+  % step 1
+  \draw[ecblue, line width=1.0pt, fill=ecblue, fill opacity=0.06, rounded corners=3pt]
+    (0,1.6) rectangle (2.9,3.7);
+  \node[ecblue, anchor=north, align=center] at (1.45,3.55){\textbf{1. 直流工作点}};
+  \node[note, anchor=north, align=center, font=\footnotesize] at (1.45,2.95)
+    {电容开路\\ 电感短路\\ 解出 $I_C,V_{CE}$};
+
+  \draw[-{Stealth[length=6pt]}, ecgray, line width=1.0pt] (3.05,2.65) -- (3.65,2.65);
+
+  % step 2
+  \draw[ecteal, line width=1.0pt, fill=ecteal, fill opacity=0.06, rounded corners=3pt]
+    (3.8,1.6) rectangle (6.7,3.7);
+  \node[ecteal, anchor=north, align=center] at (5.25,3.55){\textbf{2. 小信号参数}};
+  \node[note, anchor=north, align=center, font=\footnotesize] at (5.25,2.95)
+    {$g_m=I_C/V_T$\\ $r_\pi=\beta/g_m$\\ $r_o=V_A/I_C$};
+
+  \draw[-{Stealth[length=6pt]}, ecgray, line width=1.0pt] (6.85,2.65) -- (7.45,2.65);
+
+  % step 3
+  \draw[ecred, line width=1.0pt, fill=ecred, fill opacity=0.06, rounded corners=3pt]
+    (7.6,1.6) rectangle (10.5,3.7);
+  \node[ecred, anchor=north, align=center] at (9.05,3.55){\textbf{3. 交流等效}};
+  \node[note, anchor=north, align=center, font=\footnotesize] at (9.05,2.95)
+    {直流源接地\\ 耦合电容短路\\ 换上 $\pi$ 或 T 模型};
+
+  \node[note, anchor=north, align=center] at (5.25,1.25)
+    {关键直觉：$g_m$ 只由 $I_C$ 决定 $\Rightarrow$ 想要大跨导就得烧电流；\\
+     而 $g_mr_o=V_A/V_T$ 是个常数（约 $\SI{100}{\volt}/\SI{26}{mV}\approx 4000$）——\\
+     BJT 的本征增益跟偏置电流无关，这一点和 MOS 很不一样};
+\end{tikzpicture}

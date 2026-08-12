@@ -1,0 +1,45 @@
+\begin{tikzpicture}[font=\small]
+  % ---------- decision table: which shortest-path algorithm ----------
+  \node[anchor=south, font=\small] at (7.0,4.6){最短路算法的选择：由图的性质决定，不由「哪个更快」决定};
+
+  \foreach \y/\g/\alg/\cx in {
+    3.5/{图的性质}/{算法}/{复杂度},
+    2.6/{无权（每条边算 1）}/{BFS}/{$O(|V|+|E|)$},
+    1.7/{DAG（有向无环，任意权）}/{拓扑序 + 一遍松弛}/{$O(|V|+|E|)$},
+    0.8/{非负权}/{Dijkstra}/{$O(|E|+|V|\log|V|)$},
+    -0.1/{有负权，无负环}/{Bellman-Ford}/{$O(|V|\cdot|E|)$},
+    -1.0/{有负环}/{无定义（Bellman-Ford 可检测）}/{---}}{
+    \node[anchor=west, align=left] at (0,\y){\g};
+    \node[anchor=west, align=left] at (5.4,\y){\alg};
+    \node[anchor=west, align=left] at (10.6,\y){\cx};
+  }
+  \draw[alggray, line width=0.9pt] (-0.2,3.15) -- (13.6,3.15);
+  \foreach \y in {2.15,1.25,0.35,-0.55}
+    \draw[alglight, line width=0.4pt] (-0.2,\y) -- (13.6,\y);
+
+  % ---------- the relaxation framework ----------
+  \begin{scope}[yshift=-4.4cm, xshift=1.2cm]
+    \node[anchor=south, font=\small] at (4.4,3.0){五种算法共用的一个动作：\textbf{松弛}（relax）};
+
+    \node[vtx] (u) at (0,0.6) {$u$};
+    \node[vtx] (v) at (4.4,0.6) {$v$};
+    \node[vtx] (s) at (-2.6,0.6) {$s$};
+    \draw[dedge, alglight, dashed] (s) -- node[above, note]{$d(u)$} (u);
+    \draw[tedge] (u) -- node[above, font=\footnotesize]{$w(u,v)$} (v);
+
+    \node[note, anchor=north west, align=left] at (-2.9,-0.4)
+      {\texttt{if d(u) + w(u,v) < d(v):}\\
+       \quad \texttt{d(v) = d(u) + w(u,v)}\\
+       \quad \texttt{parent(v) = u}};
+
+    \node[note, anchor=north west, align=left] at (5.6,1.6)
+      {两条不变量贯穿全部五种算法：\\[3pt]
+       \textbf{上界性质} $d(v)$ 永远 $\ge$ 真实最短路，且只减不增\\[2pt]
+       \textbf{路径松弛性质} 若某条最短路上的边\\
+       \quad 被\textbf{按顺序}各松弛过一次，终点必达最优\\[5pt]
+       五种算法的差别只在\textbf{松弛的顺序和次数}：\\
+       \quad BFS 按层、DAG 按拓扑序、\\
+       \quad Dijkstra 按 $d$ 从小到大、\\
+       \quad Bellman-Ford 按边数轮次暴力扫};
+  \end{scope}
+\end{tikzpicture}

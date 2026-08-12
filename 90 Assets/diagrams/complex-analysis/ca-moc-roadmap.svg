@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="534.96pt" height="238.364pt" viewBox="0 0 534.96 238.364" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-12T11:43:07.078037</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 238.364 
+L 534.96 238.364 
+L 534.96 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 31.3344 120.2876 
+L 98.0712 120.2876 
+Q 105.7716 120.2876 105.7716 112.8032 
+L 105.7716 62.9072 
+Q 105.7716 55.4228 98.0712 55.4228 
+L 31.3344 55.4228 
+Q 23.634 55.4228 23.634 62.9072 
+L 23.634 112.8032 
+Q 23.634 120.2876 31.3344 120.2876 
+z
+" clip-path="url(#pc73cec32e9)" style="fill: #d6e4f0; stroke: #2f5f8f; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 134.0064 120.2876 
+L 200.7432 120.2876 
+Q 208.4436 120.2876 208.4436 112.8032 
+L 208.4436 62.9072 
+Q 208.4436 55.4228 200.7432 55.4228 
+L 134.0064 55.4228 
+Q 126.306 55.4228 126.306 62.9072 
+L 126.306 112.8032 
+Q 126.306 120.2876 134.0064 120.2876 
+z
+" clip-path="url(#pc73cec32e9)" style="fill: #f0e6d6; stroke: #2f5f8f; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 236.6784 120.2876 
+L 303.4152 120.2876 
+Q 311.1156 120.2876 311.1156 112.8032 
+L 311.1156 62.9072 
+Q 311.1156 55.4228 303.4152 55.4228 
+L 236.6784 55.4228 
+Q 228.978 55.4228 228.978 62.9072 
+L 228.978 112.8032 
+Q 228.978 120.2876 236.6784 120.2876 
+z
+" clip-path="url(#pc73cec32e9)" style="fill: #d6e4f0; stroke: #2f5f8f; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 339.3504 120.2876 
+L 406.0872 120.2876 
+Q 413.7876 120.2876 413.7876 112.8032 
+L 413.7876 62.9072 
+Q 413.7876 55.4228 406.0872 55.4228 
+L 339.3504 55.4228 
+Q 331.65 55.4228 331.65 62.9072 
+L 331.65 112.8032 
+Q 331.65 120.2876 339.3504 120.2876 
+z
+" clip-path="url(#pc73cec32e9)" style="fill: #f0e6d6; stroke: #2f5f8f; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 442.0224 120.2876 
+L 508.7592 120.2876 
+Q 516.4596 120.2876 516.4596 112.8032 
+L 516.4596 62.9072 
+Q 516.4596 55.4228 508.7592 55.4228 
+L 442.0224 55.4228 
+Q 434.322 55.4228 434.322 62.9072 
+L 434.322 112.8032 
+Q 434.322 120.2876 442.0224 120.2876 
+z
+" clip-path="url(#pc73cec32e9)" style="fill: #d6e4f0; stroke: #2f5f8f; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 132.46632 210.1004 
+L 202.28328 210.1004 
+Q 208.4436 210.1004 208.4436 204.11288 
+L 208.4436 166.19192 
+Q 208.4436 160.2044 202.28328 160.2044 
+L 132.46632 160.2044 
+Q 126.306 160.2044 126.306 166.19192 
+L 126.306 204.11288 
+Q 126.306 210.1004 132.46632 210.1004 
+z
+" clip-path="url(#pc73cec32e9)" style="fill: #f7f7f7; stroke: #2a7a6b; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 235.13832 210.1004 
+L 304.95528 210.1004 
+Q 311.1156 210.1004 311.1156 204.11288 
+L 311.1156 166.19192 
+Q 311.1156 160.2044 304.95528 160.2044 
+L 235.13832 160.2044 
+Q 228.978 160.2044 228.978 166.19192 
+L 228.978 204.11288 
+Q 228.978 210.1004 235.13832 210.1004 
+z
+" clip-path="url(#pc73cec32e9)" style="fill: #f7f7f7; stroke: #2a7a6b; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 337.81032 210.1004 
+L 407.62728 210.1004 
+Q 413.7876 210.1004 413.7876 204.11288 
+L 413.7876 166.19192 
+Q 413.7876 160.2044 407.62728 160.2044 
+L 337.81032 160.2044 
+Q 331.65 160.2044 331.65 166.19192 
+L 331.65 204.11288 
+Q 331.65 210.1004 337.81032 210.1004 
+z
+" clip-path="url(#pc73cec32e9)" style="fill: #f7f7f7; stroke: #2a7a6b; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 167.3748 162.6992 
+L 167.3748 117.7928 
+" clip-path="url(#pc73cec32e9)" style="fill: none; stroke-dasharray: 1,1.65; stroke-dashoffset: 0; stroke: #aaaaaa"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 270.0468 162.6992 
+L 270.0468 117.7928 
+" clip-path="url(#pc73cec32e9)" style="fill: none; stroke-dasharray: 1,1.65; stroke-dashoffset: 0; stroke: #aaaaaa"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 372.7188 162.6992 
+L 372.7188 117.7928 
+" clip-path="url(#pc73cec32e9)" style="fill: none; stroke-dasharray: 1,1.65; stroke-dashoffset: 0; stroke: #aaaaaa"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #2f5f8f" transform="translate(44.433269 83.875512)">Complex</text>
+    <text style="font-size: 10px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #2f5f8f" transform="translate(52.232487 98.4552)">plane</text>
+   </g>
+   <g id="patch_10">
+    <path d="M 107.769393 87.8552 
+Q 116.039815 87.8552 122.633186 87.8552 
+" style="fill: none; stroke: #c47a2c; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 118.233186 85.6552 
+L 122.633186 87.8552 
+L 118.233186 90.0552 
+z
+" style="fill: #c47a2c; stroke: #c47a2c; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #2f5f8f" transform="translate(149.054487 84.165356)">Analytic</text>
+    <text style="font-size: 10px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #2f5f8f" transform="translate(145.8748 98.745044)">functions</text>
+   </g>
+   <g id="patch_11">
+    <path d="M 210.441393 87.8552 
+Q 218.711815 87.8552 225.305186 87.8552 
+" style="fill: none; stroke: #c47a2c; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 220.905186 85.6552 
+L 225.305186 87.8552 
+L 220.905186 90.0552 
+z
+" style="fill: #c47a2c; stroke: #c47a2c; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #2f5f8f" transform="translate(251.352269 84.095044)">Contour</text>
+    <text style="font-size: 10px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #2f5f8f" transform="translate(250.1468 98.095044)">integrals</text>
+   </g>
+   <g id="patch_12">
+    <path d="M 313.113393 87.8552 
+Q 321.383815 87.8552 327.977186 87.8552 
+" style="fill: none; stroke: #c47a2c; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 323.577186 85.6552 
+L 327.977186 87.8552 
+L 323.577186 90.0552 
+z
+" style="fill: #c47a2c; stroke: #c47a2c; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 10px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #2f5f8f" transform="translate(354.253956 84.165356)">Taylor /</text>
+    <text style="font-size: 10px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #2f5f8f" transform="translate(355.013331 98.745044)">Laurent</text>
+   </g>
+   <g id="patch_13">
+    <path d="M 415.785393 87.8552 
+Q 424.055815 87.8552 430.649186 87.8552 
+" style="fill: none; stroke: #c47a2c; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 426.249186 85.6552 
+L 430.649186 87.8552 
+L 426.249186 90.0552 
+z
+" style="fill: #c47a2c; stroke: #c47a2c; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 10px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #2f5f8f" transform="translate(449.107206 84.095044)">Residues &amp;</text>
+    <text style="font-size: 10px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #2f5f8f" transform="translate(445.255644 98.095044)">real integrals</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 9px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #2a7a6b" transform="translate(143.6148 182.0924)">Harmonic /</text>
+    <text style="font-size: 9px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #2a7a6b" transform="translate(151.229644 194.6924)">2D flow</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 9px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #2a7a6b" transform="translate(248.240081 181.831541)">Conformal</text>
+    <text style="font-size: 9px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #2a7a6b" transform="translate(258.7743 194.431541)">maps</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 9px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #2a7a6b" transform="translate(352.639659 181.5074)">Laplace /</text>
+    <text style="font-size: 9px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #2a7a6b" transform="translate(346.651144 194.629119)">arg principle</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 13px; font-family: 'PingFang SC', 'Heiti SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle" x="267.48" y="21.98" transform="rotate(-0 267.48 21.98)">MIT 18.04 Complex Variables roadmap</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pc73cec32e9">
+   <rect x="10.8" y="27.98" width="513.36" height="199.584"/>
+  </clipPath>
+ </defs>
+</svg>

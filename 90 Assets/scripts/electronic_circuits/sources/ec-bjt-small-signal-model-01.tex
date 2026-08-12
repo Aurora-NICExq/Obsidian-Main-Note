@@ -1,0 +1,46 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  % ---------- hybrid-pi ----------
+  \begin{scope}
+    \node[note, anchor=south] at (2.6,3.3){混合 $\pi$ 模型};
+    \coordinate (B) at (0,2.4);
+    \coordinate (C) at (5.2,2.4);
+    \coordinate (E) at (2.6,0);
+
+    \draw (B) node[left]{B} -- (1.3,2.4) node[circ]{};
+    \draw (1.3,2.4) to[R=$r_\pi$] (1.3,0) -- (E);
+    \node[circ] at (1.3,0){};
+    \node[below]  at (E) {E};
+
+    \draw (1.3,2.4) -- (3.3,2.4);
+    \draw (3.3,2.4) node[circ]{} to[cI, l_=$g_mv_\pi$, invert] (3.3,0) -- (1.3,0);
+    \draw (4.5,2.4) node[circ]{} to[R=$r_o$] (4.5,0) -- (3.3,0);
+    \draw (3.3,2.4) -- (5.2,2.4) node[right]{C};
+
+    % v_pi annotation
+    \draw[helper] (0.75,2.55) -- (0.75,0.85);
+    \node[note, anchor=east, font=\footnotesize] at (0.7,1.7){$v_\pi$};
+
+    \node[note, anchor=north, align=left] at (2.4,-0.7)
+      {$g_m=\dfrac{I_C}{V_T}$，\quad $r_\pi=\dfrac{\beta}{g_m}=\dfrac{\beta V_T}{I_C}$，\quad
+       $r_o=\dfrac{V_A}{I_C}$};
+  \end{scope}
+
+  % ---------- T model ----------
+  \begin{scope}[xshift=9.4cm]
+    \node[note, anchor=south] at (2.3,3.3){T 模型（看射极阻抗时更顺手）};
+    \draw (0,2.4) node[left]{B} -- (2.3,2.4) node[circ]{};
+    \draw (2.3,2.4) to[R=$1/g_m$] (2.3,0);
+    \node[below] at (2.3,0){E};
+    \draw (3.6,2.4) node[circ]{} -- (4.6,2.4) node[right]{C};
+    \draw (3.6,2.4) to[cI, l=$g_mv_\pi$, invert] (3.6,0.5) -- (2.3,0.5);
+    \node[circ] at (2.3,0.5){};
+
+    \node[note, anchor=north, align=left] at (2.0,-0.7)
+      {从射极看进去的电阻就是 $\dfrac{1}{g_m}$ ——\\
+       共基级低输入阻抗、射随器低输出阻抗都由它来};
+  \end{scope}
+
+  \node[note, anchor=north, align=center] at (7.0,-2.1)
+    {两个模型完全等价，只是把同一组 $(g_m,r_\pi,r_o)$ 换了个画法；
+     选哪个只看「哪个端口的阻抗更好读」};
+\end{tikzpicture}

@@ -1,0 +1,42 @@
+\begin{tikzpicture}[font=\small]
+  % ---------- baseband DT spectrum, 2pi-periodic ----------
+  \begin{scope}
+    \draw[ax] (-6.4,0) -- (6.8,0); \node[note, anchor=north west] at (6.6,-0.05){$\Omega$};
+    \draw[ax] (0,-0.2) -- (0,1.8);
+    \node[note, anchor=south east] at (-0.12,1.4){$X(e^{j\Omega})$};
+    \foreach \c in {-6.0,0,6.0}{
+      \draw[curve] (\c-1.1,0) -- (\c,1.35) -- (\c+1.1,0);
+    }
+    \draw[helper] (3.0,-0.2) -- (3.0,1.6);
+    \draw[helper] (-3.0,-0.2) -- (-3.0,1.6);
+    \node[note, anchor=north] at (3.0,-0.1){$\pi$};
+    \node[note, anchor=north] at (6.0,-0.1){$2\pi$};
+    \node[note, anchor=north] at (-3.0,-0.1){$-\pi$};
+    \node[note, anchor=north, align=center] at (0,-0.8){(a) 基带序列的谱，本身就以 $2\pi$ 为周期};
+  \end{scope}
+
+  % ---------- after modulation by cos(Omega_c n) ----------
+  \begin{scope}[yshift=-3.4cm]
+    \draw[ax] (-6.4,0) -- (6.8,0); \node[note, anchor=north west] at (6.6,-0.05){$\Omega$};
+    \draw[ax] (0,-0.2) -- (0,1.8);
+    \node[note, anchor=south east] at (-0.12,1.4){$Y(e^{j\Omega})$};
+    \foreach \c in {-6.0,0,6.0}{
+      \foreach \d in {-1.7,1.7}{
+        \draw[curve3] (\c+\d-1.1,0) -- (\c+\d,0.68) -- (\c+\d+1.1,0);
+      }
+    }
+    \draw[helper] (3.0,-0.2) -- (3.0,1.6);
+    \draw[helper] (-3.0,-0.2) -- (-3.0,1.6);
+    \node[note, anchor=north] at (3.0,-0.1){$\pi$};
+    \node[note, anchor=north] at (1.7,-0.1){$\Omega_c$};
+    \node[note, anchor=north] at (-3.0,-0.1){$-\pi$};
+    \node[note, anchor=north, align=center] at (0,-0.8)
+      {(b) 乘 $\cos(\Omega_cn)$ 后同样搬移 $\pm\Omega_c$，幅度减半，周期性仍在};
+  \end{scope}
+
+  \node[note, anchor=north, align=center] at (0,-5.5)
+    {与连续时间调制\textbf{形式完全相同}，但多了一条硬约束：
+     所有频率都住在长度 $2\pi$ 的区间里。\\
+     所以 $\Omega_c$ 不能随便调大 —— 搬得太远，副本就会从 $\pi$ 那一头绕回来撞上自己。\\
+     无混叠条件：$\Omega_c+\Omega_M<\pi$（单边带 / 复调制可以放宽这条）};
+\end{tikzpicture}

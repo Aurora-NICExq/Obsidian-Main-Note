@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="378.72pt" height="236.302125pt" viewBox="0 0 378.72 236.302125" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-12T15:01:33.895764</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 236.302125 
+L 378.72 236.302125 
+L 378.72 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 27.22752 119.944365 
+L 122.93568 119.944365 
+Q 125.79264 119.944365 125.79264 116.396205 
+L 125.79264 59.625645 
+Q 125.79264 56.077485 122.93568 56.077485 
+L 27.22752 56.077485 
+Q 24.37056 56.077485 24.37056 59.625645 
+L 24.37056 116.396205 
+Q 24.37056 119.944365 27.22752 119.944365 
+z
+" clip-path="url(#p78c9d7c688)" style="fill: #d6e4f0; stroke: #2f5f8f; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 141.50592 119.944365 
+L 237.21408 119.944365 
+Q 240.07104 119.944365 240.07104 116.396205 
+L 240.07104 59.625645 
+Q 240.07104 56.077485 237.21408 56.077485 
+L 141.50592 56.077485 
+Q 138.64896 56.077485 138.64896 59.625645 
+L 138.64896 116.396205 
+Q 138.64896 119.944365 141.50592 119.944365 
+z
+" clip-path="url(#p78c9d7c688)" style="fill: #f0e6d6; stroke: #2a7a6b; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 255.78432 119.944365 
+L 351.49248 119.944365 
+Q 354.34944 119.944365 354.34944 116.396205 
+L 354.34944 59.625645 
+Q 354.34944 56.077485 351.49248 56.077485 
+L 255.78432 56.077485 
+Q 252.92736 56.077485 252.92736 59.625645 
+L 252.92736 116.396205 
+Q 252.92736 119.944365 255.78432 119.944365 
+z
+" clip-path="url(#p78c9d7c688)" style="fill: #d6e4f0; stroke: #c47a2c; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 84.36672 204.213165 
+L 294.35328 204.213165 
+Q 297.21024 204.213165 297.21024 200.665005 
+L 297.21024 157.200045 
+Q 297.21024 153.651885 294.35328 153.651885 
+L 84.36672 153.651885 
+Q 81.50976 153.651885 81.50976 157.200045 
+L 81.50976 200.665005 
+Q 81.50976 204.213165 84.36672 204.213165 
+z
+" clip-path="url(#p78c9d7c688)" style="fill: #f0e6d6; stroke: #a33b3b; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2f5f8f" transform="translate(39.213631 84.607605)">page allocator</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2f5f8f" transform="translate(55.529256 96.610339)">(buddy)</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2a7a6b" transform="translate(167.106875 84.607605)">slab/slub</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2a7a6b" transform="translate(172.313906 96.610339)">k*alloc</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #c47a2c" transform="translate(280.884494 84.607605)">vmalloc /</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #c47a2c" transform="translate(283.059494 96.610339)">ioremap</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #a33b3b" x="189.36" y="181.530572" transform="rotate(-0 189.36 181.530572)">physical pages / zones</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 76.86393 119.968782 
+Q 105.437786 134.581029 132.618046 148.480612 
+" style="fill: none; stroke: #666666; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 129.702238 144.518533 
+L 132.618046 148.480612 
+L 127.698898 148.43601 
+z
+" style="fill: #666666; stroke: #666666; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 189.36 121.054573 
+Q 189.36 134.577393 189.36 146.534965 
+" style="fill: none; stroke: #666666; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 191.56 142.134965 
+L 189.36 146.534965 
+L 187.16 142.134965 
+z
+" style="fill: #666666; stroke: #666666; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 301.85607 119.968782 
+Q 273.282214 134.581029 246.101954 148.480612 
+" style="fill: none; stroke: #666666; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 251.021102 148.43601 
+L 246.101954 148.480612 
+L 249.017762 144.518533 
+z
+" style="fill: #666666; stroke: #666666; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="189.36" y="19.918125" transform="rotate(-0 189.36 19.918125)">Kernel memory management map</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p78c9d7c688">
+   <rect x="10.8" y="25.918125" width="357.12" height="199.584"/>
+  </clipPath>
+ </defs>
+</svg>

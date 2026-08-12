@@ -1,0 +1,50 @@
+\begin{tikzpicture}[font=\small]
+  % ---------- the class containment picture ----------
+  \begin{scope}
+    \node[anchor=south, font=\small] at (0,4.4){复杂度类的包含关系（6.006 的粗粒度版本）};
+
+    \draw[alggray, line width=1.0pt, fill=alglight!10] (-4.6,-2.4) rectangle (4.6,3.9);
+    \node[note, anchor=north west] at (-4.45,3.8){$\mathbf{R}$：可判定（图灵机能停机）};
+
+    \draw[algred, line width=1.0pt, fill=algred!7] (-3.8,-1.9) rectangle (3.8,2.9);
+    \node[algred, font=\footnotesize, anchor=north west] at (-3.65,2.8){$\mathbf{EXP}$：指数时间可解};
+
+    \draw[algteal, line width=1.0pt, fill=algteal!8] (-3.0,-1.4) rectangle (3.0,1.9);
+    \node[algteal, font=\footnotesize, anchor=north west] at (-2.85,1.8){$\mathbf{NP}$：解可在多项式时间\textbf{验证}};
+
+    \draw[algblue, line width=1.2pt, fill=algblue!12] (-1.8,-0.9) rectangle (1.8,0.9);
+    \node[algblue, font=\footnotesize] at (0,0.35){$\mathbf{P}$};
+    \node[note, font=\footnotesize] at (0,-0.2){多项式时间\textbf{可解}};
+
+    \node[note, anchor=west, align=left] at (5.0,2.4)
+      {已知：$\mathbf{P}\subseteq\mathbf{NP}\subseteq\mathbf{EXP}\subseteq\mathbf{R}$\\[4pt]
+       已证严格：$\mathbf{P}\subsetneq\mathbf{EXP}$\\
+       （时间层级定理）\\[4pt]
+       \textbf{未知}：$\mathbf{P}\overset{?}{=}\mathbf{NP}$\\[4pt]
+       $\mathbf{R}$ 之外：停机问题等\\ \textbf{不可判定}问题};
+
+    \node[note, anchor=west, align=left] at (5.0,-0.9)
+      {\textbf{NP-hard}：至少和 NP 里\\ 最难的问题一样难\\[3pt]
+       \textbf{NP-complete}：既在 NP 里\\ 又是 NP-hard\\[3pt]
+       \footnotesize（NP-hard 可以在 NP 之外）};
+  \end{scope}
+
+  % ---------- reduction direction ----------
+  \begin{scope}[yshift=-5.0cm, xshift=-3.4cm]
+    \node[anchor=south, font=\small] at (5.2,2.0){规约的方向：最容易搞反的一点};
+
+    \node[blk, minimum width=2.9cm, fill=algblue!8, draw=algblue] (known) at (0,1.0) {已知很难的 $A$};
+    \node[blk, minimum width=2.9cm] (new) at (6.8,1.0) {你的新问题 $B$};
+    \draw[dedge, algblue, line width=1.3pt] (known) -- node[above, font=\footnotesize]{多项式规约 $A\le_p B$} (new);
+
+    \node[note, anchor=north west, align=left] at (-1.6,0.2)
+      {想证明 $B$ \textbf{难}：把\textbf{已知难}的 $A$ 规约到 $B$（$A\le_p B$）。\\
+       \quad 直觉：如果 $B$ 有快解法，那 $A$ 也就有了 —— 与 $A$ 难矛盾。\\[4pt]
+       想证明 $B$ \textbf{易}：把 $B$ 规约到\textbf{已知易}的问题。\\[4pt]
+       \textbf{方向反了就什么都没证明。} 记法：\textbf{难的规约到你要证难的那个}。};
+
+    \node[note, anchor=north, align=center] at (4.4,-2.2)
+      {这一讲的实际价值：碰到一个问题久攻不下时，先花十分钟想想它是不是 NP-hard ——\\
+       如果是，就该转向近似算法、启发式、或者限制输入规模，而不是继续找多项式解法。};
+  \end{scope}
+\end{tikzpicture}

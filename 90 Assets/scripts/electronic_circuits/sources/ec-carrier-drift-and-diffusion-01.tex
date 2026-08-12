@@ -1,0 +1,22 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  \draw[ax] (-0.2,0) -- (6.4,0) node[below left]{$E$（电场）};
+  \draw[ax] (0,-0.2) -- (0,3.6) node[left]{$v$（漂移速度）};
+
+  % linear (ideal) mobility line
+  \draw[helper, ecred] (0,0) -- (4.0,4.0*0.85);
+  \node[ecred, font=\footnotesize, anchor=south east, rotate=40] at (3.1,2.62){$v=\mu E$（低场线性）};
+
+  % actual: saturating
+  \draw[curve, domain=0:6.0, samples=200, smooth]
+    plot (\x, {2.55*tanh(0.85*\x/2.55)});
+
+  % saturation asymptote
+  \draw[helper] (0,2.55) -- (6.3,2.55);
+  \node[note, anchor=south east] at (6.3,2.58){$v_{sat}\approx\SI{e7}{cm/s}$};
+
+  \node[note, anchor=north west, align=left] at (2.9,1.85)
+    {高场下载流子与晶格散射加剧，\\ 速度饱和 —— 短沟道器件的关键非理想};
+
+  \node[note, anchor=north, align=center] at (3.2,-0.45)
+    {迁移率 $\mu$ 是低场斜率；Si 中 $\mu_n\approx\SI{1350}{cm^2/(V.s)}$，$\mu_p\approx\SI{480}{cm^2/(V.s)}$};
+\end{tikzpicture}

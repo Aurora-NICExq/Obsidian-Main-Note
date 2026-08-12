@@ -1,0 +1,37 @@
+\begin{circuitikz}[scale=1.0, transform shape, font=\small]
+  % ---------- common-gate ----------
+  \begin{scope}
+    \node[note, anchor=south] at (2.0,5.2){共栅级（CG）};
+    \draw (2.4,4.3) node[vcc]{$V_{DD}$} -- (2.4,3.7);
+    \draw (2.4,3.7) to[R=$R_D$] (2.4,2.5);
+    \draw (2.4,2.5) node[nmos, anchor=D](M){$M_1$};
+    \draw (M.G) -- (1.0,1.85) node[left]{$V_b$};
+    \draw (M.S) -- (2.4,0.9) node[circ]{} -- (2.4,0.6);
+    \draw (2.4,0.6) to[sV, l=$v_{in}$] (2.4,-0.6) node[ground]{};
+    \draw (2.4,2.5) node[circ]{} -- (3.7,2.5) node[right]{$v_{out}$};
+
+    \node[note, anchor=north west, align=left, text=ecblue] at (4.7,3.3)
+      {$A_v=+g_mR_D$（同相）\\[3pt]
+       $R_{in}=\dfrac{1}{g_m+g_{mb}}$（很低）\\[3pt]
+       $R_{out}=R_D$};
+    \node[note, anchor=north, align=center] at (2.2,-1.2)
+      {用途：宽带电流缓冲、\\ 阻抗匹配、cascode 上管};
+  \end{scope}
+
+  % ---------- source follower ----------
+  \begin{scope}[xshift=9.4cm]
+    \node[note, anchor=south] at (2.0,5.2){源极跟随器（SF / 共漏）};
+    \draw (2.2,4.3) node[vcc]{$V_{DD}$} -- (2.2,3.6);
+    \draw (2.2,3.6) node[nmos, anchor=D](M2){$M_2$};
+    \draw (M2.G) -- (0.6,2.95) to[sV, l_=$v_{in}$] (0.6,0.4) node[ground]{};
+    \draw (M2.S) -- (2.2,1.6) node[circ]{} to[R=$R_S$] (2.2,0.4) node[ground]{};
+    \draw (2.2,1.6) -- (3.5,1.6) node[right]{$v_{out}$};
+
+    \node[note, anchor=north west, align=left, text=ecteal] at (4.6,3.3)
+      {$A_v=\dfrac{g_mR_S}{1+(g_m+g_{mb})R_S}<1$\\[3pt]
+       $R_{in}=\infty$（直流）\\[3pt]
+       $R_{out}=\dfrac{1}{g_m+g_{mb}}$（很低）};
+    \node[note, anchor=north, align=center] at (2.0,-1.2)
+      {用途：缓冲级 —— 但体效应\\ 使它的增益明显低于射随器};
+  \end{scope}
+\end{circuitikz}

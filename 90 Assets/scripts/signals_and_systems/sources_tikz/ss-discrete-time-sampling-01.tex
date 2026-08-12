@@ -1,0 +1,54 @@
+\begin{tikzpicture}[font=\small]
+  % ---------- original DT spectrum ----------
+  \begin{scope}
+    \draw[ax] (-6.4,0) -- (6.8,0); \node[note, anchor=north west] at (6.6,-0.05){$\Omega$};
+    \draw[ax] (0,-0.2) -- (0,1.8);
+    \node[note, anchor=south east] at (-0.12,1.4){$X(e^{j\Omega})$};
+    \foreach \c in {-6.0,0,6.0}{
+      \draw[curve] (\c-0.9,0) -- (\c,1.35) -- (\c+0.9,0);
+    }
+    \draw[helper] (3.0,-0.2) -- (3.0,1.6);
+    \draw[helper] (-3.0,-0.2) -- (-3.0,1.6);
+    \node[note, anchor=north] at (3.0,-0.1){$\pi$};
+    \node[note, anchor=north] at (0.95,-0.1){$\Omega_M$};
+    \node[note, anchor=north] at (-3.0,-0.1){$-\pi$};
+    \node[note, anchor=north, align=center] at (0,-0.8)
+      {(a) 原序列 $x[n]$，带限于 $\Omega_M=\pi/3$};
+  \end{scope}
+
+  % ---------- after decimation by M = 2 ----------
+  \begin{scope}[yshift=-3.4cm]
+    \draw[ax] (-6.4,0) -- (6.8,0); \node[note, anchor=north west] at (6.6,-0.05){$\Omega$};
+    \draw[ax] (0,-0.2) -- (0,1.8);
+    \node[note, anchor=south east] at (-0.12,1.4){$X_d(e^{j\Omega})$};
+    \foreach \c in {-6.0,0,6.0}{
+      \draw[curve3] (\c-1.8,0) -- (\c,0.68) -- (\c+1.8,0);
+    }
+    \draw[helper] (3.0,-0.2) -- (3.0,1.6);
+    \draw[helper] (-3.0,-0.2) -- (-3.0,1.6);
+    \node[note, anchor=north] at (3.0,-0.1){$\pi$};
+    \node[note, anchor=north] at (1.85,-0.1){$M\Omega_M$};
+    \node[note, anchor=north] at (-3.0,-0.1){$-\pi$};
+    \node[note, anchor=north, align=center] at (0,-0.8)
+      {(b) 抽取 $M=2$：频率轴被\textbf{展宽} $M$ 倍，幅度除以 $M$};
+  \end{scope}
+
+  % ---------- decimation chain ----------
+  \begin{scope}[yshift=-7.2cm, xshift=-1.4cm]
+    \node[blk, minimum width=2.3cm] (aa) at (0,0) {抗混叠低通\\ $\Omega_{co}=\pi/M$};
+    \node[blk, minimum width=1.5cm] (dn) at (3.6,0) {$\downarrow M$};
+    \draw[sig] (-2.4,0) -- (aa.west);
+    \node[note, anchor=south] at (-1.9,0.08){$x[n]$};
+    \draw[sig] (aa) -- (dn);
+    \draw[sig] (dn.east) -- (6.2,0);
+    \node[note, anchor=south] at (5.6,0.08){$x_d[n]$};
+    \node[note, anchor=north, align=center] at (1.8,-0.8)
+      {抽取器前面\textbf{必须}先低通 —— 否则展宽 $M$ 倍时副本相撞};
+  \end{scope}
+
+  \node[note, anchor=north, align=center] at (0,-9.4)
+    {离散时间抽取与连续时间采样是同一件事的两副面孔：
+     都是「降低采样率 $\Rightarrow$ 频谱副本靠拢 $\Rightarrow$ 不够带限就混叠」。\\
+     无混叠条件 $M\Omega_M<\pi$。反过来的内插（$\uparrow L$ 后低通）则把频率轴压窄 $L$ 倍。\\
+     两者级联（$\uparrow L$、低通、$\downarrow M$）就得到有理数倍率 $L/M$ 的采样率转换};
+\end{tikzpicture}

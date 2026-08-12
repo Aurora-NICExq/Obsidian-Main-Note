@@ -1,0 +1,35 @@
+\begin{circuitikz}[scale=1.0, transform shape, font=\small]
+  % Square-bridge drawing: every diode points at the top rail, so the
+  % top rail is always the positive node whichever half-cycle it is.
+  \draw (1,1.7) to[D, l_=$D_1$] (1,3.4);
+  \draw (1,0)   to[D, l_=$D_4$] (1,1.7);
+  \draw (4,1.7) to[D, l=$D_3$]  (4,3.4);
+  \draw (4,0)   to[D, l=$D_2$]  (4,1.7);
+
+  % source across the two mid-nodes (floating, as a transformer secondary is)
+  \draw (1,1.7) node[circ]{} to[sV, l=$v_{in}$] (4,1.7) node[circ]{};
+
+  % rails
+  \draw (1,3.4) -- (4,3.4) node[circ]{} -- (6.2,3.4);
+  \draw (1,0)   -- (4,0)   node[circ]{} -- (6.2,0);
+
+  % load
+  \draw (6.2,3.4) node[circ]{} to[R=$R_L$] (6.2,0) node[circ]{};
+  \draw (6.2,3.4) -- (7.2,3.4) node[right]{$v_{out}$};
+  \draw (6.2,0) -- (7.2,0) node[ground]{};
+
+  % current annotations
+  \node[note, anchor=east] at (0.75,1.7){$+$};
+  \node[note, anchor=west] at (4.25,1.7){$-$};
+  \draw[-{Stealth[length=5pt]}, ecblue, line width=0.9pt] (0.55,2.2) -- (0.55,3.1);
+  \draw[-{Stealth[length=5pt]}, ecblue, line width=0.9pt] (4.45,0.35) -- (4.45,1.25);
+  \node[ecblue, font=\footnotesize, anchor=east] at (0.5,2.65){正半周};
+  \node[ecblue, font=\footnotesize, anchor=west] at (4.5,0.8){经 $D_2$ 回流};
+
+  \node[note, anchor=north, align=center] at (3.4,-0.8)
+    {正半周 $D_1,D_2$ 导通，负半周 $D_3,D_4$ 导通；不论哪半周，
+     电流都从下往上灌进顶部轨道，$R_L$ 上极性不变};
+  \node[note, anchor=north, align=center] at (3.4,-1.7)
+    {代价：信号路径上串两个二极管，压降变成 $2V_{D,on}$。\quad
+     好处：纹波频率翻倍（同样纹波下电容减半），且不需要中心抽头变压器};
+\end{circuitikz}

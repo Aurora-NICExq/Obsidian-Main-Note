@@ -1,0 +1,42 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  % ---------- circuit with smoothing cap ----------
+  \begin{scope}[yshift=0.4cm]
+    \draw (0,2.0) to[sV, l=$v_{in}$] (0,0) node[ground]{};
+    \draw (0,2.0) to[D, l=$D_1$] (2.2,2.0);
+    \draw (2.2,2.0) node[circ]{} to[C=$C_1$] (2.2,0) -- (0,0);
+    \draw (2.2,2.0) -- (3.5,2.0) node[circ]{} to[R=$R_L$] (3.5,0) -- (2.2,0);
+    \draw (3.5,2.0) -- (4.3,2.0) node[right]{$v_{out}$};
+  \end{scope}
+
+  % ---------- waveform with ripple ----------
+  \begin{scope}[xshift=7.2cm, yshift=1.4cm]
+    \draw[ax] (-0.2,0) -- (7.0,0) node[below left]{$t$};
+    \draw[ax] (0,-0.4) -- (0,2.3) node[left]{$v_{out}$};
+
+    % input sine (faint)
+    \draw[helper, domain=0:6.6, samples=250, smooth]
+      plot (\x, {1.55*sin(deg(2.4*\x))});
+
+    % ripple: charge to the peak, then RC-decay until the next peak
+    \draw[curve, line width=1.2pt]
+      (0,0) .. controls (0.25,0.9) .. (0.654,1.55)
+      -- (2.05,1.22)
+      .. controls (2.35,1.35) .. (2.618,1.55)
+      -- (4.02,1.22)
+      .. controls (4.32,1.35) .. (4.60,1.55)
+      -- (6.0,1.22)
+      .. controls (6.3,1.35) .. (6.55,1.52);
+
+    \draw[helper, ecred] (0,1.55) -- (6.9,1.55);
+    \draw[helper, ecred] (0,1.22) -- (6.9,1.22);
+    \draw[{Stealth[length=3.5pt]}-{Stealth[length=3.5pt]}, ecred] (6.75,1.22) -- (6.75,1.55);
+    \node[ecred, font=\footnotesize, anchor=west] at (6.85,1.38){$V_R$};
+
+    \node[note, anchor=north, align=center] at (3.3,-2.35)
+      {电容在峰值附近充电，其余时间以 $\tau=R_LC_1$ 放电};
+  \end{scope}
+
+  \node[note, anchor=north, align=center] at (5.6,-1.6)
+    {纹波近似 $V_R\approx\dfrac{V_p-V_{D,on}}{R_LC_1 f_{in}}$：
+     要小纹波就要大 $C_1$，代价是更大的充电尖峰电流};
+\end{tikzpicture}

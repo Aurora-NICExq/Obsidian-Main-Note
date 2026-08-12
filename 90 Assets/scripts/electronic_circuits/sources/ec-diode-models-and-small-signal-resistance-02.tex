@@ -1,0 +1,43 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  \draw[ax] (-0.3,0) -- (3.6,0) node[below left]{$V_D$};
+  \draw[ax] (0,-0.3) -- (0,3.4) node[left]{$I_D$};
+
+  \draw[curve, domain=0:2.95, samples=250, smooth]
+    plot (\x, {0.004*(exp(2.45*\x)-1)});
+
+  % operating point
+  \pgfmathsetmacro\xq{2.35}
+  \pgfmathsetmacro\yq{0.004*(exp(2.45*\xq)-1)}
+  \pgfmathsetmacro\sl{0.004*2.45*exp(2.45*\xq)}
+  \node[circle, fill=ecred, inner sep=1.5pt] at (\xq,\yq){};
+  \node[ecred, font=\footnotesize, anchor=north west] at (\xq+0.08,\yq-0.06){$Q$};
+
+  % tangent at Q
+  \draw[curve2, line width=1.0pt]
+    ({\xq-0.62},{\yq-\sl*0.62}) -- ({\xq+0.32},{\yq+\sl*0.32});
+  \node[ecred, font=\footnotesize, anchor=south east] at (\xq-0.28,{\yq-\sl*0.28+0.08})
+    {斜率 $=1/r_d$};
+
+  % projections
+  \draw[helper] (0,\yq) -- (\xq,\yq);
+  \draw[helper] (\xq,0) -- (\xq,\yq);
+  \node[note, anchor=east] at (-0.08,\yq){$I_D$};
+  \node[note, anchor=north] at (\xq,-0.08){$V_D$};
+
+  % small excursion around Q
+  \draw[{Stealth[length=3.5pt]}-{Stealth[length=3.5pt]}, ecteal, line width=0.9pt]
+    (\xq-0.18,{\yq-\sl*0.18-0.5}) -- (\xq+0.18,{\yq-\sl*0.18-0.5});
+  \node[ecteal, font=\footnotesize, anchor=north] at (\xq,{\yq-\sl*0.18-0.56}){$v_d$};
+
+  % annotation block, clear of the curve
+  \node[note, anchor=north west, align=left] at (3.95,3.3)
+    {$r_d=\left(\dfrac{\partial I_D}{\partial V_D}\right)^{-1}_{\!Q}=\dfrac{V_T}{I_D}$\\[6pt]
+     $I_D=\SI{1}{mA}\ \Rightarrow\ r_d\approx\SI{26}{\ohm}$\\[2pt]
+     $I_D=\SI{0.1}{mA}\ \Rightarrow\ r_d\approx\SI{260}{\ohm}$\\[6pt]
+     偏置电流越大，二极管的小信号电阻越小\\[6pt]
+     成立前提：$v_d\ll V_T$（约 \SI{10}{mV} 以内），\\
+     否则指数的高阶项就不能忽略了};
+
+  \node[note, anchor=north, align=center] at (1.8,-1.0)
+    {小信号方法 = 在工作点把曲线换成它的切线};
+\end{tikzpicture}

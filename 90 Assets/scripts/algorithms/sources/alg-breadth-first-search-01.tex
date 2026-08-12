@@ -1,0 +1,56 @@
+\begin{tikzpicture}[font=\small]
+  % ---------- BFS layering ----------
+  \begin{scope}
+    \node[anchor=south, font=\small] at (4.6,3.4){BFS 把图\textbf{按到源点的边数}分层};
+
+    % layer bands
+    \foreach \x/\lb in {0/{$L_0$}, 2.4/{$L_1$}, 4.8/{$L_2$}, 7.2/{$L_3$}}{
+      \draw[alglight, dashed, line width=0.6pt] (\x,-1.5) -- (\x,2.6);
+      \node[note, anchor=south] at (\x,2.6){\lb};
+    }
+
+    \node[done] (s) at (0,0.5) {$s$};
+    \node[vis] (a) at (2.4,1.4) {$a$};
+    \node[vis] (b) at (2.4,-0.4) {$b$};
+    \node[vtx] (c) at (4.8,1.8) {$c$};
+    \node[vtx] (d) at (4.8,0.2) {$d$};
+    \node[vtx] (e) at (4.8,-1.1) {$e$};
+    \node[vtx] (f) at (7.2,0.6) {$f$};
+
+    \draw[tedge] (s) -- (a);
+    \draw[tedge] (s) -- (b);
+    \draw[tedge] (a) -- (c);
+    \draw[tedge] (a) -- (d);
+    \draw[tedge] (b) -- (e);
+    \draw[tedge] (d) -- (f);
+    % non-tree edges within/between layers
+    \draw[edge, alglight] (a) -- (b);
+    \draw[edge, alglight] (c) -- (d);
+    \draw[edge, alglight] (e) -- (f);
+
+    \node[note, anchor=west, align=left] at (8.4,1.3)
+      {\textcolor{algblue}{蓝}：BFS 树边（$\mathrm{parent}$）\\
+       \textcolor{alglight}{灰}：非树边\\[5pt]
+       无权图里\\ $\delta(s,v)=v$ 所在的层号};
+
+    \node[note, anchor=north, align=center] at (4.4,-2.0)
+      {关键不变量：\textbf{队列里始终最多只有两层}（$L_i$ 的尾巴和 $L_{i+1}$ 的头）。\\
+       这保证了「先进先出」等价于「按层扩展」，也就等价于「按边数从小到大」。};
+  \end{scope}
+
+  % ---------- why FIFO gives shortest paths ----------
+  \begin{scope}[yshift=-4.6cm, xshift=0.4cm]
+    \node[anchor=south, font=\small] at (4.6,2.3){为什么 FIFO 就得到最短路};
+
+    \node[blk, minimum width=2.6cm, fill=algteal!8, draw=algteal] (q1) at (0.6,1.2) {队列 = FIFO};
+    \node[blk, minimum width=3.2cm] (q2) at (4.6,1.2) {先出队的层号更小};
+    \node[blk, minimum width=3.4cm, fill=algblue!8, draw=algblue] (q3) at (8.8,1.2) {首次访问即最短};
+    \draw[dedge] (q1) -- (q2);
+    \draw[dedge] (q2) -- (q3);
+
+    \node[note, anchor=north west, align=left] at (-0.9,0.4)
+      {\textbf{对比 DFS}：栈是后进先出，会一路钻到底再回头 —— 首次访问某点时走的\textbf{不一定}是最短路。\\
+       所以求无权最短路必须用 BFS；DFS 擅长的是可达性、拓扑序、环检测这些「结构」问题。\\[4pt]
+       复杂度：每个顶点入队出队各一次，每条边被检查常数次 $\Rightarrow$ $O(|V|+|E|)$（邻接表表示下）。};
+  \end{scope}
+\end{tikzpicture}

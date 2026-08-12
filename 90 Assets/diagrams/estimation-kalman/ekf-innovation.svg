@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="378.72pt" height="203.038125pt" viewBox="0 0 378.72 203.038125" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-12T15:34:45.881285</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 203.038125 
+L 378.72 203.038125 
+L 378.72 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 27.22752 134.515301 
+L 108.65088 134.515301 
+Q 111.50784 134.515301 111.50784 130.60189 
+L 111.50784 77.770831 
+Q 111.50784 73.857419 108.65088 73.857419 
+L 27.22752 73.857419 
+Q 24.37056 73.857419 24.37056 77.770831 
+L 24.37056 130.60189 
+Q 24.37056 134.515301 27.22752 134.515301 
+z
+" clip-path="url(#p935779974c)" style="fill: #d6e4f0; stroke: #2f5f8f; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 137.93472 134.515301 
+L 240.78528 134.515301 
+Q 243.64224 134.515301 243.64224 130.60189 
+L 243.64224 77.770831 
+Q 243.64224 73.857419 240.78528 73.857419 
+L 137.93472 73.857419 
+Q 135.07776 73.857419 135.07776 77.770831 
+L 135.07776 130.60189 
+Q 135.07776 134.515301 137.93472 134.515301 
+z
+" clip-path="url(#p935779974c)" style="fill: #f0e6d6; stroke: #2a7a6b; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 270.06912 134.515301 
+L 351.49248 134.515301 
+Q 354.34944 134.515301 354.34944 130.60189 
+L 354.34944 77.770831 
+Q 354.34944 73.857419 351.49248 73.857419 
+L 270.06912 73.857419 
+Q 267.21216 73.857419 267.21216 77.770831 
+L 267.21216 130.60189 
+Q 267.21216 134.515301 270.06912 134.515301 
+z
+" clip-path="url(#p935779974c)" style="fill: #d6e4f0; stroke: #2f5f8f; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #2f5f8f" x="67.9392" y="106.784407" transform="rotate(-0 67.9392 106.784407)">y_k</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2a7a6b" transform="translate(162.973281 100.58304)">innovation</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2a7a6b" transform="translate(157.924063 112.985774)">ν = y − H x̂⁻</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #2f5f8f" x="310.7808" y="106.984407" transform="rotate(-0 310.7808 106.984407)">update x̂</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 116.365753 104.18636 
+Q 123.292659 104.18636 128.654317 104.18636 
+" style="fill: none; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 124.254317 101.98636 
+L 128.654317 104.18636 
+L 124.254317 106.38636 
+z
+" style="fill: #c47a2c; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 248.500153 104.18636 
+Q 255.427059 104.18636 260.788717 104.18636 
+" style="fill: none; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 256.388717 101.98636 
+L 260.788717 104.18636 
+L 256.388717 106.38636 
+z
+" style="fill: #c47a2c; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="189.36" y="19.918125" transform="rotate(-0 189.36 19.918125)">Innovation</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p935779974c">
+   <rect x="10.8" y="25.918125" width="357.12" height="166.32"/>
+  </clipPath>
+ </defs>
+</svg>

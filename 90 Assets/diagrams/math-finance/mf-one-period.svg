@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="367.56pt" height="203.038125pt" viewBox="0 0 367.56 203.038125" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-12T16:01:52.848171</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 203.038125 
+L 367.56 203.038125 
+L 367.56 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 30.6927 129.623537 
+L 120.6423 129.623537 
+Q 124.1019 129.623537 124.1019 125.710125 
+L 124.1019 72.879066 
+Q 124.1019 68.965654 120.6423 68.965654 
+L 30.6927 68.965654 
+Q 27.2331 68.965654 27.2331 72.879066 
+L 27.2331 125.710125 
+Q 27.2331 129.623537 30.6927 129.623537 
+z
+" clip-path="url(#p81f001d29e)" style="fill: #d6e4f0; stroke: #2f5f8f; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 151.7787 129.623537 
+L 250.3773 129.623537 
+Q 253.8369 129.623537 253.8369 125.710125 
+L 253.8369 72.879066 
+Q 253.8369 68.965654 250.3773 68.965654 
+L 151.7787 68.965654 
+Q 148.3191 68.965654 148.3191 72.879066 
+L 148.3191 125.710125 
+Q 148.3191 129.623537 151.7787 129.623537 
+z
+" clip-path="url(#p81f001d29e)" style="fill: #f0e6d6; stroke: #2a7a6b; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 281.5137 129.623537 
+L 341.1918 129.623537 
+Q 344.6514 129.623537 344.6514 125.710125 
+L 344.6514 72.879066 
+Q 344.6514 68.965654 341.1918 68.965654 
+L 281.5137 68.965654 
+Q 278.0541 68.965654 278.0541 72.879066 
+L 278.0541 125.710125 
+Q 278.0541 129.623537 281.5137 129.623537 
+z
+" clip-path="url(#p81f001d29e)" style="fill: #d6e4f0; stroke: #c47a2c; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2f5f8f" transform="translate(66.33625 95.890885)">t=0</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2f5f8f" transform="translate(55.855 107.893619)">prices p</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #2a7a6b" x="201.078" y="101.931705" transform="rotate(-0 201.078 101.931705)">portfolio θ</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #c47a2c" x="311.35275" y="101.892642" transform="rotate(-0 311.35275 101.892642)">payoff</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 129.559047 99.294596 
+Q 136.210038 99.294596 141.29578 99.294596 
+" style="fill: none; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 136.89578 97.094596 
+L 141.29578 99.294596 
+L 136.89578 101.494596 
+z
+" style="fill: #c47a2c; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 259.294047 99.294596 
+Q 265.945038 99.294596 271.03078 99.294596 
+" style="fill: none; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 266.63078 97.094596 
+L 271.03078 99.294596 
+L 266.63078 101.494596 
+z
+" style="fill: #c47a2c; stroke: #c47a2c; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="183.78" y="19.918125" transform="rotate(-0 183.78 19.918125)">One-period market model</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p81f001d29e">
+   <rect x="10.8" y="25.918125" width="345.96" height="166.32"/>
+  </clipPath>
+ </defs>
+</svg>

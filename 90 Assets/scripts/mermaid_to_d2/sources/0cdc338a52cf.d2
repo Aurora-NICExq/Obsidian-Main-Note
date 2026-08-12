@@ -1,0 +1,14 @@
+shape: sequence_diagram
+
+L: "低优先级任务"
+S: "调度器"
+H: "高优先级任务"
+
+L -> L: "Running"
+H -> S: "变为 Ready"
+S -> L: "立刻抢占"
+S -> H: "Running"
+L -> L: "Running（继续）"
+H -> S: "变为 Ready（先等着）"
+L -> S: "主动让出 / 阻塞"
+S -> H: "这时才切到 H"

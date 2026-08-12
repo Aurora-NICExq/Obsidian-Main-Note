@@ -1,0 +1,40 @@
+direction: down
+
+IRQ: {
+  label: "驱动调度的中断"
+  SVC: "SVC\n启动首个任务 · 优先级最高"
+  PendSV: "PendSV\n后续任务切换 · 优先级最低"
+  SysTick: "SysTick\n节拍 / 时间片 · 优先级最低"
+}
+Tasks: {
+  label: "任务"
+  Idle: "空闲任务 Idle"
+  Timer: "定时器任务 Timer Service"
+  U1: "用户任务 1 … n"
+}
+Objects: {
+  label: "内核对象"
+  Q: "队列 / 队列集"
+  EG: "事件组"
+  Sem: "信号量 / 互斥锁"
+  TN: "任务通知"
+  Buf: "流 / 消息缓冲区"
+  Crit: "临界区"
+  SoftT: "软件定时器"
+}
+
+Sched: "调度器 Scheduler"
+Heap: "堆内存管理 heap_1 … heap_5"
+__命令队列__Timer: ">|命令队列| Timer"
+Objects: "Objects"
+Tasks: "Tasks"
+
+IRQ.SVC -> Sched
+IRQ.PendSV -> Sched
+IRQ.SysTick -> Sched
+Sched -> Tasks.Idle
+Sched -> Tasks.Timer
+Sched -> Tasks.U1
+Objects.SoftT -> __命令队列__Timer
+Objects -> Heap
+Tasks -> Heap

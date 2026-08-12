@@ -1,0 +1,42 @@
+\begin{tikzpicture}[font=\small]
+  % ---------- the canonical loop ----------
+  \begin{scope}
+    \node[circle, draw=ssgray, line width=1.0pt, inner sep=2.5pt] (sum) at (0,0) {};
+    \node[note, anchor=south east] at (-0.12,0.1){$+$};
+    \node[note, anchor=north east] at (-0.12,-0.35){$-$};
+    \node[blk, minimum width=1.8cm] (G) at (2.6,0) {$G(s)$};
+    \node[blk, minimum width=1.8cm] (H) at (2.6,-2.0) {$H(s)$};
+
+    \draw[sig] (-2.4,0) -- (sum.west);
+    \node[note, anchor=south] at (-1.9,0.08){$x$};
+    \draw[sig] (sum) -- (G);
+    \node[note, anchor=south] at (1.35,0.08){$e$};
+    \draw[sig] (G.east) -- (6.2,0);
+    \node[note, anchor=south] at (5.7,0.08){$y$};
+
+    \draw[ssgray, line width=1.0pt] (5.0,0) -- (5.0,-2.0);
+    \filldraw[ssgray] (5.0,0) circle (1.6pt);
+    \draw[sig] (5.0,-2.0) -- (H.east);
+    \draw[ssgray, line width=1.0pt] (H.west) -- (0,-2.0);
+    \draw[sig] (0,-2.0) -- (sum.south);
+
+    \node[ssblue, font=\small, anchor=north, align=center] at (2.6,-2.9)
+      {$\dfrac{Y}{X}=\dfrac{G}{1+GH}$\qquad 环路增益 $T=GH$};
+  \end{scope}
+
+  % ---------- what feedback buys ----------
+  \node[rounded corners=3pt, draw=ssgray, dashed, line width=0.8pt, fill=sslight!12,
+        align=left, font=\footnotesize, anchor=north west] at (8.4,0.9)
+    {\textbf{$|T|\gg1$ 时的三条推论}\\[5pt]
+     1. $\dfrac{Y}{X}\to\dfrac{1}{H}$ —— 闭环只由\textbf{反馈网络}决定，\\
+     \quad 而 $H$ 通常是无源、精密、稳定的元件\\[4pt]
+     2. 灵敏度 $S=\dfrac{dA/A}{dG/G}=\dfrac{1}{1+T}$ —— $G$ 漂移 $10\%$，\\
+     \quad 闭环只漂 $10\%/(1+T)$\\[4pt]
+     3. 同样的 $1/(1+T)$ 因子也压低失真、\\
+     \quad 改变输入输出阻抗、展宽带宽};
+
+  \node[note, anchor=north, align=center] at (5.6,-4.6)
+    {代价：\textbf{稳定性}。若在某个频率环路相移到 $-180^\circ$ 而 $|T|$ 仍 $>1$，
+     负反馈就变成了正反馈，系统起振。\\
+     这就是相位裕度、增益裕度和频率补偿存在的全部理由 —— 也是 $\dfrac{G}{1+GH}$ 分母那个零点的位置问题};
+\end{tikzpicture}

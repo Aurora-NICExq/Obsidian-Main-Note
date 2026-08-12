@@ -1,0 +1,49 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  \tikzset{
+    atom/.style={circle, draw=ecgray, fill=white, inner sep=1.5pt, font=\footnotesize},
+    bond/.style={ecgray, line width=0.7pt},
+  }
+  % ---- n-type: phosphorus donor ----
+  \begin{scope}
+    \foreach \x in {0,1.4,2.8} \foreach \y in {0,1.4,2.8} {
+      \node[atom] (a-\x-\y) at (\x,\y) {Si};
+    }
+    \foreach \x in {0,1.4,2.8} \foreach \y in {0,1.4} {
+      \draw[bond] (\x,\y+0.22) -- (\x,\y+1.18);
+    }
+    \foreach \y in {0,1.4,2.8} \foreach \x in {0,1.4} {
+      \draw[bond] (\x+0.26,\y) -- (\x+1.14,\y);
+    }
+    % donor replaces the centre atom
+    \node[atom, draw=ecred, fill=ecred!12, font=\footnotesize] at (1.4,1.4){P};
+    % free electron
+    \node[circle, fill=ecblue, inner sep=1.6pt] (e) at (2.15,2.05){};
+    \draw[-{Stealth[length=4pt]}, ecblue] (1.62,1.62) -- (2.02,1.95);
+    \node[ecblue, font=\footnotesize, anchor=west] at (2.25,2.15){自由电子};
+    \node[note, anchor=north, align=center] at (1.4,-0.6)
+      {$n$ 型：五价施主 P 多出一个电子\\ $n\approx N_D$，$p=\dfrac{n_i^2}{N_D}$};
+  \end{scope}
+
+  % ---- p-type: boron acceptor ----
+  \begin{scope}[xshift=7.0cm]
+    \foreach \x in {0,1.4,2.8} \foreach \y in {0,1.4,2.8} {
+      \node[atom] at (\x,\y) {Si};
+    }
+    \foreach \x in {0,1.4,2.8} \foreach \y in {0,1.4} {
+      \draw[bond] (\x,\y+0.22) -- (\x,\y+1.18);
+    }
+    \foreach \y in {0,1.4,2.8} \foreach \x in {0,1.4} {
+      \draw[bond] (\x+0.26,\y) -- (\x+1.14,\y);
+    }
+    \node[atom, draw=ecteal, fill=ecteal!12, font=\footnotesize] at (1.4,1.4){B};
+    % hole
+    \node[circle, draw=ecteal, line width=0.9pt, fill=white, inner sep=1.4pt] at (2.15,2.05){};
+    \draw[-{Stealth[length=4pt]}, ecteal] (1.62,1.62) -- (2.02,1.95);
+    \node[ecteal, font=\footnotesize, anchor=west] at (2.3,2.15){空穴};
+    \node[note, anchor=north, align=center] at (1.4,-0.6)
+      {$p$ 型：三价受主 B 缺一个电子\\ $p\approx N_A$，$n=\dfrac{n_i^2}{N_A}$};
+  \end{scope}
+
+  \node[note, anchor=north] at (4.2,-2.0)
+    {两边都满足质量作用定律 $np=n_i^2$（Si 常温 $n_i\approx\SI{1.08e10}{cm^{-3}}$），且整体电中性};
+\end{tikzpicture}

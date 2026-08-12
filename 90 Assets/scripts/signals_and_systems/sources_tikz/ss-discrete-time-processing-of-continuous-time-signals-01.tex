@@ -1,0 +1,37 @@
+\begin{tikzpicture}[font=\small]
+  % ---------- block chain ----------
+  \node[blk, minimum width=1.7cm] (cd) at (0,0) {C/D};
+  \node[blk, minimum width=2.4cm] (h)  at (3.3,0) {离散系统\\ $H(e^{j\Omega})$};
+  \node[blk, minimum width=1.7cm] (dc) at (6.6,0) {D/C};
+
+  \draw[sig] (-2.2,0) -- (cd.west);
+  \node[note, anchor=south] at (-1.7,0.08){$x_c(t)$};
+  \draw[sig] (cd) -- (h);
+  \node[note, anchor=south] at (1.65,0.08){$x[n]$};
+  \draw[sig] (h) -- (dc);
+  \node[note, anchor=south] at (4.95,0.08){$y[n]$};
+  \draw[sig] (dc.east) -- (8.8,0);
+  \node[note, anchor=south] at (8.3,0.08){$y_c(t)$};
+
+  \draw[helper] (cd.south) -- ++(0,-0.55) node[note, anchor=north]{$T$};
+  \draw[helper] (dc.south) -- ++(0,-0.55) node[note, anchor=north]{$T$};
+
+  \draw[ssgray, dashed, line width=0.8pt, rounded corners=3pt]
+    (-1.35,-1.35) rectangle (8.0,1.15);
+  \node[note, anchor=south] at (3.3,1.2){整体等效于一个连续时间 LTI 系统};
+
+  % ---------- equivalence ----------
+  \node[blk, minimum width=3.0cm] (heq) at (3.3,-3.0) {$H_c(j\omega)$};
+  \draw[sig] (0.3,-3.0) -- (heq.west);
+  \node[note, anchor=south] at (0.8,-2.92){$x_c(t)$};
+  \draw[sig] (heq.east) -- (6.6,-3.0);
+  \node[note, anchor=south] at (6.1,-2.92){$y_c(t)$};
+
+  \node[ssteal, font=\footnotesize, anchor=north, align=center] at (3.3,-3.85)
+    {$H_c(j\omega)=\begin{cases} H(e^{j\omega T}), & |\omega|<\pi/T\\[2pt] 0,&\text{否则}\end{cases}$};
+
+  \node[note, anchor=north, align=center] at (3.3,-5.4)
+    {成立前提：$x_c$ 带限且 $\omega_s=2\pi/T$ 满足采样定理（无混叠）。\\
+     数字频率 $\Omega=\omega T$ 是「归一化」的 —— 同一套系数换个 $T$ 就换了截止频率，\\
+     这正是数字信号处理能复用的原因};
+\end{tikzpicture}

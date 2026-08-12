@@ -1,0 +1,27 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  \draw[ax] (-0.2,0) -- (5.6,0) node[below left]{$V_{BE}$};
+  \draw[ax] (0,-0.3) -- (0,3.6) node[left]{$I_C$};
+
+  \draw[curve, domain=0:4.7, samples=250, smooth]
+    plot (\x, {0.006*(exp(1.32*\x)-1)});
+
+  % two operating points one decade apart
+  \pgfmathsetmacro\xa{3.05}
+  \pgfmathsetmacro\ya{0.006*(exp(1.32*\xa)-1)}
+  \pgfmathsetmacro\xb{4.4}
+  \pgfmathsetmacro\yb{0.006*(exp(1.32*\xb)-1)}
+  \node[circle, fill=ecred, inner sep=1.3pt] at (\xa,\ya){};
+  \node[circle, fill=ecred, inner sep=1.3pt] at (\xb,\yb){};
+  \draw[helper] (\xa,0) -- (\xa,\ya);
+  \draw[helper] (\xb,0) -- (\xb,\yb);
+  \draw[{Stealth[length=3.5pt]}-{Stealth[length=3.5pt]}, ecred] (\xa,-0.35) -- (\xb,-0.35);
+  \node[ecred, font=\footnotesize, anchor=north] at ({(\xa+\xb)/2},-0.4)
+    {$\Delta V_{BE}=V_T\ln 10\approx\SI{60}{mV}$};
+
+  \node[note, anchor=north west, align=left] at (0.15,3.55)
+    {$I_C=I_S e^{V_{BE}/V_T}$\\[4pt]
+     电流每涨 $10\times$，$V_{BE}$ 只涨 \SI{60}{mV}；\\
+     所以「$V_{BE}\approx\SI{0.7}{\volt}$」在 \si{\micro\ampere} 到 \si{\milli\ampere} 都够用\\[4pt]
+     跨导 $g_m=\dfrac{\partial I_C}{\partial V_{BE}}=\dfrac{I_C}{V_T}$ ——
+     只由偏置电流决定，与器件尺寸无关};
+\end{tikzpicture}

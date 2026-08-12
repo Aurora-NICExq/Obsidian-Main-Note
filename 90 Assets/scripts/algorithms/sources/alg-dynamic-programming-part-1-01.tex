@@ -1,0 +1,65 @@
+\begin{tikzpicture}[font=\small]
+  % ---------- SRTBOT ----------
+  \begin{scope}
+    \node[anchor=south, font=\small] at (6.0,4.6){\textbf{SRTBOT}：6.006 给动态规划定的六步模板};
+
+    \foreach \rw/\letter/\name/\what in {
+      0/{\textbf{S}}/{Subproblem}/{定义子问题 —— \textbf{最难也最关键}的一步，其余五步几乎自动},
+      1/{\textbf{R}}/{Relate}/{写出子问题之间的递推关系},
+      2/{\textbf{T}}/{Topological order}/{论证子问题之间无环，从而可以按序求解},
+      3/{\textbf{B}}/{Base case}/{给出边界情形},
+      4/{\textbf{O}}/{Original problem}/{说明原问题由哪些子问题拼出},
+      5/{\textbf{T}}/{Time}/{子问题个数 $\times$ 单个子问题的代价}}{
+      \node[blk, minimum width=0.9cm, minimum height=0.62cm, fill=algblue!12, draw=algblue]
+        at (0,3.8-\rw*0.78) {\letter};
+      \node[anchor=west, font=\small] at (0.7,3.8-\rw*0.78) {\name};
+      \node[note, anchor=west, align=left] at (3.9,3.8-\rw*0.78) {\what};
+    }
+  \end{scope}
+
+  % ---------- subproblem DAG ----------
+  \begin{scope}[yshift=-3.8cm, xshift=0.6cm]
+    \node[anchor=south, font=\small] at (4.4,2.4){子问题 DAG：DP 就是在这张图上做\textbf{记忆化的 DFS}};
+
+    \node[vtx, minimum size=8mm] (f5) at (0,1.2) {$F_5$};
+    \node[vtx, minimum size=8mm] (f4) at (2.0,1.8) {$F_4$};
+    \node[vtx, minimum size=8mm] (f3) at (2.0,0.6) {$F_3$};
+    \node[vtx, minimum size=8mm] (f2) at (4.0,1.2) {$F_2$};
+    \node[done, minimum size=8mm] (f1) at (6.0,1.8) {$F_1$};
+    \node[done, minimum size=8mm] (f0) at (6.0,0.6) {$F_0$};
+
+    \draw[dedge] (f5) -- (f4); \draw[dedge] (f5) -- (f3);
+    \draw[dedge] (f4) -- (f3); \draw[dedge] (f4) -- (f2);
+    \draw[dedge] (f3) -- (f2); \draw[dedge] (f3) -- (f1);
+    \draw[dedge] (f2) -- (f1); \draw[dedge] (f2) -- (f0);
+
+    \node[note, anchor=west, align=left] at (7.2,1.2)
+      {\textcolor{algteal}{绿}：base case\\[4pt]
+       朴素递归会把 $F_3$、$F_2$ 各算很多遍\\
+       $\Rightarrow$ 指数时间。\\[4pt]
+       记忆化让每个结点\textbf{只算一次}\\
+       $\Rightarrow$ 时间 $=$ 结点数 $\times$ 每点出边数};
+
+    \node[note, anchor=north, align=center] at (4.2,-0.2)
+      {「子问题之间无环」这一条不是形式要求，而是\textbf{可解性的前提} ——
+       有环就意味着子问题互相依赖，没有求解顺序。};
+  \end{scope}
+
+  % ---------- top-down vs bottom-up ----------
+  \begin{scope}[yshift=-8.2cm, xshift=0.6cm]
+    \node[blk, minimum width=4.4cm, minimum height=1.5cm, align=left, anchor=north west,
+          fill=algteal!7, draw=algteal] at (0,1.0)
+      {\textbf{自顶向下（记忆化）}\\[2pt]
+       \footnotesize 照着递推直接写递归 + 缓存\\
+       \footnotesize 只算到真正需要的子问题\\
+       \footnotesize 递归深度可能爆栈};
+    \node[blk, minimum width=4.4cm, minimum height=1.5cm, align=left, anchor=north west,
+          fill=algblue!7, draw=algblue] at (5.2,1.0)
+      {\textbf{自底向上（填表）}\\[2pt]
+       \footnotesize 按拓扑序循环填表\\
+       \footnotesize 无递归开销，常数更小\\
+       \footnotesize 便于做滚动数组省空间};
+    \node[note, anchor=north, align=center] at (4.8,-0.8)
+      {两者时间复杂度相同，先用记忆化把递推写对，需要时再改写成填表。};
+  \end{scope}
+\end{tikzpicture}

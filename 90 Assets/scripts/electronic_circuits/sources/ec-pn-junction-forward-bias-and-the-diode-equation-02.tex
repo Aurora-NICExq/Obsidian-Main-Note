@@ -1,0 +1,30 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  \draw[ax] (-4.6,0) -- (3.2,0) node[below left]{$V_D$};
+  \draw[ax] (0,-1.9) -- (0,3.4) node[left]{$I_D$};
+
+  % forward exponential
+  \draw[curve, domain=0:2.55, samples=250, smooth]
+    plot (\x, {0.0022*(exp(2.85*\x)-1)});
+  \node[ecblue, font=\footnotesize, anchor=north west] at (2.35,1.55)
+    {$I_D=I_S\!\left(e^{V_D/V_T}-1\right)$};
+
+  % reverse saturation (tiny, drawn slightly below axis to be visible)
+  \draw[curve, line width=1.1pt] (-3.5,-0.12) -- (0,-0.12);
+  \node[note, anchor=north west] at (-3.4,-0.18){$-I_S$（反向饱和，nA 量级）};
+
+  % breakdown
+  \draw[curve2, line width=1.2pt] (-4.1,-0.12) .. controls (-4.25,-0.5) .. (-4.28,-1.75);
+  \draw[helper, ecred] (-4.28,-1.8) -- (-4.28,0.35);
+  \node[ecred, font=\footnotesize, anchor=south] at (-4.28,0.38){$-V_{BR}$};
+  \node[ecred, font=\footnotesize, anchor=west] at (-4.15,-1.5){击穿};
+
+  % the "0.7 V" knee
+  \draw[helper] (1.85,0) -- (1.85,2.3);
+  \node[note, anchor=north] at (1.85,-0.08){$\approx\SI{0.7}{\volt}$};
+
+  \node[note, anchor=north west, align=left] at (-4.55,3.3)
+    {指数的实用后果：\\[2pt]
+     $\bullet$ 电流每变 $10\times$，$V_D$ 只变 $V_T\ln 10\approx\SI{60}{mV}$\\
+     $\bullet$ 所以「导通压降 \SI{0.7}{\volt}」在很宽的电流范围内都近似成立\\
+     $\bullet$ 也正是 $\SI{60}{mV/dec}$ 这条铁律限制了 MOS 亚阈值摆幅};
+\end{tikzpicture}

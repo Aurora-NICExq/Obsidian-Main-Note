@@ -1,0 +1,74 @@
+\begin{tikzpicture}[font=\small]
+  % ---------- (a) baseband ----------
+  \begin{scope}
+    \draw[ax] (-3.2,0) -- (3.6,0); \node[note, anchor=north west] at (3.4,-0.05){$\omega$};
+    \draw[ax] (0,-0.2) -- (0,1.8);
+    \node[note, anchor=south east] at (-0.12,1.4){$X(j\omega)$};
+    \draw[curve] (-1.3,0) -- (0,1.35) -- (1.3,0);
+    \node[note, anchor=north] at (1.3,-0.1){$\omega_M$};
+    \node[note, anchor=north] at (0,-0.75){(a) 基带信号};
+  \end{scope}
+
+  % ---------- (b) carrier ----------
+  \begin{scope}[xshift=8.2cm]
+    \draw[ax] (-4.4,0) -- (4.8,0); \node[note, anchor=north west] at (4.6,-0.05){$\omega$};
+    \draw[ax] (0,-0.2) -- (0,1.8);
+    \node[note, anchor=south east] at (-0.12,1.4){$C(j\omega)$};
+    \draw[curve2, -{Stealth[length=6pt]}, line width=1.4pt] (3.0,0) -- (3.0,1.35);
+    \draw[curve2, -{Stealth[length=6pt]}, line width=1.4pt] (-3.0,0) -- (-3.0,1.35);
+    \node[note, anchor=north] at (3.0,-0.1){$\omega_c$};
+    \node[note, anchor=north] at (-3.0,-0.1){$-\omega_c$};
+    \node[note, anchor=north] at (0,-0.75){(b) 载波 $\cos\omega_ct$ 的谱是两根冲激};
+  \end{scope}
+
+  % ---------- (c) modulated ----------
+  \begin{scope}[yshift=-3.4cm, xshift=4.2cm]
+    \draw[ax] (-6.0,0) -- (6.4,0); \node[note, anchor=north west] at (6.2,-0.05){$\omega$};
+    \draw[ax] (0,-0.2) -- (0,1.6);
+    \node[note, anchor=south east] at (-0.12,1.2){$Y(j\omega)$};
+    \foreach \c in {-3.4,3.4}{
+      \draw[curve] (\c-1.3,0) -- (\c,0.68) -- (\c+1.3,0);
+    }
+    \draw[helper] (3.4,0) -- (3.4,0.9);
+    \node[note, anchor=north] at (3.4,-0.1){$\omega_c$};
+    \node[note, anchor=north] at (-3.4,-0.1){$-\omega_c$};
+    \node[note, anchor=north, align=center] at (0,-0.75)
+      {(c) 相乘 $\Rightarrow$ 频谱被\textbf{搬移}到 $\pm\omega_c$，幅度减半。
+       要不重叠需 $\omega_c>\omega_M$};
+  \end{scope}
+
+  % ---------- (d) synchronous demodulation ----------
+  \begin{scope}[yshift=-7.0cm, xshift=-0.4cm]
+    \node[note, anchor=south] at (4.6,1.5){(d) 同步解调：再乘一次载波，然后低通};
+
+    \node[circle, draw=ssgray, line width=1.0pt, inner sep=2.5pt] (m1) at (0,0) {$\times$};
+    \node[blk, minimum width=1.9cm] (lp) at (3.0,0) {低通\\ $\omega_M<\omega_{co}<2\omega_c-\omega_M$};
+    \draw[sig] (-2.0,0) -- (m1.west);
+    \node[note, anchor=south] at (-1.5,0.08){$y(t)$};
+    \draw[sig] (m1) -- (lp);
+    \draw[sig] (lp.east) -- (6.4,0);
+    \node[note, anchor=south] at (5.9,0.08){$\tfrac12 x(t)$};
+    \draw[sig] (0,-1.5) -- (m1.south);
+    \node[note, anchor=north] at (0,-1.55){$\cos\omega_ct$};
+
+    % spectrum after second multiply
+    \begin{scope}[xshift=11.0cm, yshift=0.1cm]
+      \draw[ax] (-4.6,0) -- (5.0,0); \node[note, anchor=north west] at (4.8,-0.05){$\omega$};
+      \draw[ax] (0,-0.2) -- (0,1.5);
+      \draw[curve3] (-1.3,0) -- (0,1.15) -- (1.3,0);
+      \foreach \c in {-3.4,3.4}{
+        \draw[sslight, line width=1.2pt] (\c-1.3,0) -- (\c,0.58) -- (\c+1.3,0);
+      }
+      \draw[helper, ssteal] (-1.9,-0.2) -- (-1.9,1.35);
+      \draw[helper, ssteal] (1.9,-0.2) -- (1.9,1.35);
+      \node[ssteal, font=\footnotesize, anchor=south] at (0,1.4){低通留下这一份};
+      \node[note, anchor=north] at (3.4,-0.1){$2\omega_c$};
+      \node[note, anchor=north, align=center] at (0.4,-0.75){在 $2\omega_c$ 处的两份被滤掉};
+    \end{scope}
+  \end{scope}
+
+  \node[note, anchor=north, align=center] at (4.4,-9.8)
+    {关键前提：解调用的载波必须与调制端\textbf{同频同相}。
+     相差 $\theta$ 时输出乘上 $\cos\theta$ —— $\theta=\pi/2$ 就完全收不到，\\
+     这正是同步解调需要载波恢复电路（锁相环）的原因};
+\end{tikzpicture}

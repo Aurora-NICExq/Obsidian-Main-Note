@@ -1,0 +1,85 @@
+\begin{tikzpicture}[
+    scale=1.0, font=\small,
+    stage/.style={rounded corners=3pt, line width=1.0pt, minimum width=3.5cm,
+                  minimum height=0.95cm, align=center, font=\small},
+    lec/.style={rounded corners=2pt, draw=ecgray, line width=0.6pt, fill=white,
+                minimum width=5.6cm, minimum height=0.62cm, align=left,
+                font=\footnotesize, anchor=west},
+    flow/.style={-{Stealth[length=6pt]}, ecgray, line width=1.1pt},
+  ]
+
+  % ---- stage column ----
+  \node[stage, draw=ecteal, fill=ecteal!8, text=ecteal] (s1) at (0,0)    {\textbf{一 · 半导体物理}\\[-2pt]{\footnotesize L01–L03}};
+  \node[stage, draw=ecblue, fill=ecblue!8, text=ecblue] (s2) at (0,-3.1) {\textbf{二 · PN 结与二极管}\\[-2pt]{\footnotesize L04–L08}};
+  \node[stage, draw=ecred,  fill=ecred!8,  text=ecred]  (s3) at (0,-7.4) {\textbf{三 · BJT 器件}\\[-2pt]{\footnotesize L09–L13}};
+  \node[stage, draw=ecred,  fill=ecred!8,  text=ecred]  (s4) at (0,-11.5){\textbf{四 · BJT 放大器}\\[-2pt]{\footnotesize L14–L16}};
+  \node[stage, draw=ecblue, fill=ecblue!8, text=ecblue] (s5) at (0,-14.6){\textbf{五 · MOSFET 与其放大器}\\[-2pt]{\footnotesize L17–L20}};
+
+  \foreach \a/\b in {s1/s2, s2/s3, s3/s4, s4/s5}
+    \draw[flow] (\a) -- (\b);
+
+  % ---- lecture column ----
+  \def\lx{2.9}
+  \foreach \y/\t in {
+     0.60/{L01 Introduction to Microelectronics},
+     0.00/{L02 Basic Physics of Semiconductors},
+    -0.60/{L03 Carrier Drift and Diffusion}}
+    \node[lec] at (\lx,\y) {\t};
+
+  \foreach \y/\t in {
+    -1.90/{L04 PN Junction in Equilibrium \& Reverse Bias},
+    -2.50/{L05 PN Junction Forward Bias and the Diode Equation},
+    -3.10/{L06 Diode Models and Small-Signal Resistance},
+    -3.70/{L07 Half-Wave and Full-Wave Rectifiers},
+    -4.30/{L08 Zener Regulators, Limiters and Voltage Doublers}}
+    \node[lec] at (\lx,\y) {\t};
+
+  \foreach \y/\t in {
+    -6.20/{L09 Bipolar Transistor Structure and Operation},
+    -6.80/{L10 BJT Output Characteristics and the Early Effect},
+    -7.40/{L11 BJT Operating Regions and Large-Signal Model},
+    -8.00/{L12 BJT Small-Signal Model},
+    -8.60/{L13 BJT Biasing Schemes}}
+    \node[lec] at (\lx,\y) {\t};
+
+  \foreach \y/\t in {
+    -10.90/{L14 Common-Emitter Stage},
+    -11.50/{L15 CE with Emitter Degeneration and Source Resistance},
+    -12.10/{L16 Common-Base Stage and Emitter Follower}}
+    \node[lec] at (\lx,\y) {\t};
+
+  \foreach \y/\t in {
+    -13.70/{L17 MOSFET Structure and Operation},
+    -14.30/{L18 MOSFET Characteristics and Small-Signal Model},
+    -14.90/{L19 MOS Biasing and the Common-Source Stage},
+    -15.50/{L20 Common-Gate Stage and Source Follower}}
+    \node[lec] at (\lx,\y) {\t};
+
+  % ---- the recurring method, drawn as a side rail ----
+  \node[rounded corners=3pt, draw=ecgray, dashed, line width=0.8pt,
+        fill=eclight!12, align=left, font=\footnotesize, anchor=north west]
+    at (10.9,-1.4)
+    {\textbf{贯穿全课的三步法}\\[3pt]
+     1. 大信号方程 + 直流电源 $\to$ 工作点 $Q$\\
+     2. 在 $Q$ 点求偏导 $\to$ 小信号参数\\
+     3. 换线性模型 $\to$ 增益与阻抗\\[6pt]
+     二极管、BJT、MOS 三次原样重复};
+
+  \node[rounded corners=3pt, draw=ecgray, dashed, line width=0.8pt,
+        fill=eclight!12, align=left, font=\footnotesize, anchor=north west]
+    at (10.9,-5.4)
+    {\textbf{反复出现的三个数}\\[3pt]
+     $V_T=kT/q\approx 26\,\mathrm{mV}$\\
+     $60\,\mathrm{mV/dec}$（电流变 $10\times$）\\
+     $g_m=I_C/V_T$（BJT）\\
+     $g_m=2I_D/V_{ov}$（MOS）};
+
+  \node[rounded corners=3pt, draw=ecgray, dashed, line width=0.8pt,
+        fill=eclight!12, align=left, font=\footnotesize, anchor=north west]
+    at (10.9,-9.6)
+    {\textbf{单级放大器的两条速查规则}\\[3pt]
+     基极看进去：$r_\pi+(\beta{+}1)R_E$\\
+     射极看进去：$1/g_m+R_B/(\beta{+}1)$\\[4pt]
+     MOS 版更简单：\\
+     栅极 $\infty$，源极 $1/g_m$};
+\end{tikzpicture}

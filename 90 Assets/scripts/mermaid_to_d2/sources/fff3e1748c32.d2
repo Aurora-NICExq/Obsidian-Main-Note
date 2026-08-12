@@ -1,0 +1,41 @@
+direction: left
+
+
+y0: "y₀"
+FA0: "Full Adder"
+x0: "x₀"
+S0: "S₀"
+c0___c₀___: "c0([\"c₀\"])"
+y1: "y₁"
+FA1: "Full Adder"
+x1: "x₁"
+S1: "S₁"
+y2: "y₂"
+FA2: "Full Adder"
+x2: "x₂"
+S2: "S₂"
+yn1: "yₙ₋₁"
+FAn: "Full Adder"
+xn1: "xₙ₋₁"
+Sn1: "Sₙ₋₁"
+cn___cₙ___: "cn([\"cₙ\"])"
+DOTS: "..."
+
+y0 -> FA0
+x0 -> FA0
+FA0 -> S0
+c0___c₀___ -> FA0
+y1 -> FA1
+x1 -> FA1
+FA1 -> S1
+y2 -> FA2
+x2 -> FA2
+FA2 -> S2
+yn1 -> FAn
+xn1 -> FAn
+FAn -> Sn1
+FAn -> cn___cₙ___
+FA0 -> FA1: "c₁"
+FA1 -> FA2: "c₂"
+FA2 -> DOTS: "c₃"
+DOTS -> FAn: "cₙ₋₁"

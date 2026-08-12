@@ -1,0 +1,48 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  % ---------- I/V comparison ----------
+  \begin{scope}
+    \draw[ax] (-1.6,0) -- (3.4,0) node[below left]{$V_D$};
+    \draw[ax] (0,-0.3) -- (0,3.2) node[left]{$I_D$};
+
+    % exponential (truth)
+    \draw[curve, domain=0:2.75, samples=250, smooth]
+      plot (\x, {0.0035*(exp(2.6*\x)-1)});
+    % ideal switch: vertical at 0
+    \draw[curve3, line width=1.2pt] (-1.5,0) -- (0,0) -- (0,3.0);
+    % constant voltage drop
+    \draw[curve2, line width=1.2pt] (-1.5,0) -- (1.4,0) -- (1.4,3.0);
+    \node[note, anchor=north] at (1.4,-0.1){$V_{D,on}$};
+
+    \node[ecteal, font=\footnotesize, anchor=east] at (-0.12,1.9){理想开关};
+    \node[ecred,  font=\footnotesize, anchor=east] at (1.3,2.55){恒压降};
+    \node[ecblue, font=\footnotesize, anchor=west] at (2.55,2.2){指数（真实）};
+
+    \node[note, anchor=north, align=center] at (0.9,-0.6)
+      {三种模型精度递增、手算代价也递增};
+  \end{scope}
+
+  % ---------- the three symbols ----------
+  \begin{scope}[xshift=5.6cm, yshift=2.3cm]
+    \node[note, anchor=east] at (-0.35,0){理想};
+    \draw[ecteal, line width=1.0pt] (0,0) -- (0.35,0);
+    \draw[ecteal, line width=1.0pt, fill=ecteal!15] (0.35,0.28) -- (0.35,-0.28) -- (0.95,0) -- cycle;
+    \draw[ecteal, line width=1.0pt] (0.95,0.28) -- (0.95,-0.28);
+    \draw[ecteal, line width=1.0pt] (0.95,0) -- (1.3,0);
+    \node[note, anchor=west] at (1.45,0){导通即短路，截止即开路};
+  \end{scope}
+  \begin{scope}[xshift=5.6cm, yshift=1.15cm]
+    \node[note, anchor=east] at (-0.35,0){恒压降};
+    \draw[ecred, line width=1.0pt] (0,0) -- (0.35,0);
+    \draw[ecred, line width=1.0pt, fill=ecred!15] (0.35,0.28) -- (0.35,-0.28) -- (0.95,0) -- cycle;
+    \draw[ecred, line width=1.0pt] (0.95,0.28) -- (0.95,-0.28);
+    \draw[ecred, line width=1.0pt] (0.95,0) -- (1.3,0);
+    \node[note, anchor=west] at (1.45,0){导通时串一个 \SI{0.7}{\volt} 电池};
+  \end{scope}
+  \begin{scope}[xshift=5.6cm, yshift=0cm]
+    \node[note, anchor=east] at (-0.35,0){小信号};
+    \draw[ecblue, line width=1.0pt] (0,0) -- (0.35,0);
+    \draw[ecblue, line width=1.0pt] (0.35,-0.22) rectangle (0.95,0.22);
+    \draw[ecblue, line width=1.0pt] (0.95,0) -- (1.3,0);
+    \node[note, anchor=west] at (1.45,0){工作点上等效成电阻 $r_d=V_T/I_D$};
+  \end{scope}
+\end{tikzpicture}

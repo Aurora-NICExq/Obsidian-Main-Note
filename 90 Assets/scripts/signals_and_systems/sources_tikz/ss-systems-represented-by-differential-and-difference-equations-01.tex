@@ -1,0 +1,57 @@
+\begin{tikzpicture}[font=\small]
+  % ---------- CT: integrator feedback realisation ----------
+  \begin{scope}
+    \node[note, anchor=south] at (3.4,2.2){连续时间：$\dot y(t)+a\,y(t)=b\,x(t)$};
+
+    \node[circle, draw=ssgray, line width=1.0pt, inner sep=2.2pt] (sum) at (1.0,0.6) {$+$};
+    \node[blk, minimum width=1.5cm] (int) at (3.4,0.6) {$\displaystyle\int$};
+    \node[blk, minimum width=1.1cm, minimum height=0.7cm] (ga) at (3.4,-1.3) {$-a$};
+    \node[blk, minimum width=1.1cm, minimum height=0.7cm] (gb) at (-0.9,0.6) {$b$};
+
+    \draw[sig] (-2.6,0.6) -- (gb.west);
+    \node[note, anchor=south] at (-2.1,0.68){$x(t)$};
+    \draw[sig] (gb) -- (sum);
+    \draw[sig] (sum) -- (int);
+    \draw[sig] (int.east) -- (6.4,0.6);
+    \node[note, anchor=south] at (5.9,0.68){$y(t)$};
+
+    \draw[ssgray, line width=1.0pt] (5.2,0.6) -- (5.2,-1.3);
+    \filldraw[ssgray] (5.2,0.6) circle (1.6pt);
+    \draw[sig] (5.2,-1.3) -- (ga.east);
+    \draw[ssgray, line width=1.0pt] (ga.west) -- (1.0,-1.3);
+    \draw[sig] (1.0,-1.3) -- (sum.south);
+
+    \node[note, anchor=north, align=center] at (2.2,-2.0)
+      {用\textbf{积分器}而不是微分器 ——\\ 微分器放大高频噪声，物理实现也不因果};
+  \end{scope}
+
+  % ---------- DT: delay feedback realisation ----------
+  \begin{scope}[xshift=9.8cm]
+    \node[note, anchor=south] at (3.4,2.2){离散时间：$y[n]+a\,y[n-1]=b\,x[n]$};
+
+    \node[circle, draw=ssgray, line width=1.0pt, inner sep=2.2pt] (sum2) at (1.0,0.6) {$+$};
+    \node[blk, minimum width=1.5cm] (del) at (3.4,-1.3) {$z^{-1}$};
+    \node[blk, minimum width=1.1cm, minimum height=0.7cm] (ga2) at (1.9,-1.3) {$-a$};
+    \node[blk, minimum width=1.1cm, minimum height=0.7cm] (gb2) at (-0.9,0.6) {$b$};
+
+    \draw[sig] (-2.6,0.6) -- (gb2.west);
+    \node[note, anchor=south] at (-2.1,0.68){$x[n]$};
+    \draw[sig] (gb2) -- (sum2);
+    \draw[sig] (sum2.east) -- (6.4,0.6);
+    \node[note, anchor=south] at (5.9,0.68){$y[n]$};
+
+    \draw[ssgray, line width=1.0pt] (5.2,0.6) -- (5.2,-1.3);
+    \filldraw[ssgray] (5.2,0.6) circle (1.6pt);
+    \draw[sig] (5.2,-1.3) -- (del.east);
+    \draw[sig] (del.west) -- (ga2.east);
+    \draw[ssgray, line width=1.0pt] (ga2.west) -- (1.0,-1.3);
+    \draw[sig] (1.0,-1.3) -- (sum2.south);
+
+    \node[note, anchor=north, align=center] at (2.2,-2.0)
+      {\textbf{递归}实现：一个延迟单元 + 一次乘加\\ 就得到无限长的冲激响应 $h[n]=b(-a)^nu[n]$};
+  \end{scope}
+
+  \node[note, anchor=north, align=center] at (6.5,-4.2)
+    {两边结构完全同构：积分器 $\leftrightarrow$ 延迟器。\;
+     方程本身\textbf{不足以}确定系统 —— 还要附加条件（如初始松弛）才能定出唯一的 LTI 因果解};
+\end{tikzpicture}

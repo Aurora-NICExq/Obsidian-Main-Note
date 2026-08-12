@@ -1,0 +1,34 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  \draw[ax] (-0.2,0) -- (7.2,0) node[below left]{$V_{DS}$};
+  \draw[ax] (0,-0.2) -- (0,4.4) node[left]{$I_D$};
+
+  % Each curve: parabola in triode up to Vov, then a gently sloped saturation line
+  \foreach \vov/\lbl in {1.0/{$V_{GS1}$}, 1.6/{$V_{GS2}$}, 2.25/{$V_{GS3}$}}{
+    \pgfmathsetmacro\isat{0.62*\vov*\vov}
+    % triode: I = k(2 Vov V - V^2)
+    \draw[curve, domain=0:\vov, samples=120, smooth]
+      plot (\x, {0.62*(2*\vov*\x - \x*\x)});
+    % saturation with channel-length modulation
+    \draw[curve, domain=\vov:6.8, samples=120]
+      plot (\x, {\isat*(1 + 0.055*(\x-\vov))});
+    \node[note, anchor=west, font=\footnotesize]
+      at (6.85,{\isat*(1+0.055*(6.8-\vov))}){\lbl};
+    \node[circle, fill=ecred, inner sep=1.2pt] at (\vov,\isat){};
+  }
+
+  % boundary parabola V_DS = V_GS - V_TH
+  \draw[helper, ecred, domain=0:2.55, samples=100, smooth]
+    plot (\x, {0.62*\x*\x});
+  \node[ecred, font=\footnotesize, anchor=south east] at (2.5,4.05)
+    {$V_{DS}=V_{GS}-V_{TH}$};
+
+  \node[note, anchor=north west, align=left] at (0.25,4.35)
+    {三极管区\\ $I_D=\mu_nC_{ox}\dfrac{W}{L}\!\left[(V_{GS}-V_{TH})V_{DS}-\dfrac{V_{DS}^2}{2}\right]$};
+  \node[note, anchor=north west, align=left] at (3.3,2.4)
+    {饱和区\\ $I_D=\dfrac12\mu_nC_{ox}\dfrac{W}{L}(V_{GS}-V_{TH})^2(1+\lambda V_{DS})$};
+
+  \node[note, anchor=north, align=center] at (3.4,-0.55)
+    {$\lambda$（沟道长度调制）给饱和区一个小斜率，
+     它的倒数就是输出电阻 $r_o=1/(\lambda I_D)$ ——
+     BJT 里对应的角色是 Early 电压};
+\end{tikzpicture}

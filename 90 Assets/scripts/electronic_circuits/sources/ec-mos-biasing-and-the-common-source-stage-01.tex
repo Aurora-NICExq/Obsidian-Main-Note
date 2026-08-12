@@ -1,0 +1,53 @@
+\begin{circuitikz}[scale=1.0, transform shape, font=\small]
+  % ---------- (a) resistive load ----------
+  \begin{scope}
+    \node[note, anchor=south] at (1.7,5.0){(a) 电阻负载};
+    \draw (2.4,4.1) node[vcc]{$V_{DD}$} -- (2.4,3.5);
+    \draw (2.4,3.5) to[R=$R_D$] (2.4,2.3);
+    \draw (2.4,2.3) node[nmos, anchor=D](M1){};
+    \draw (M1.S) -- (2.4,0.4) node[ground]{};
+    \draw (M1.G) -- (0.7,1.35) node[left]{$v_{in}$};
+    \draw (2.4,2.3) node[circ]{} -- (3.5,2.3) node[right]{$v_{out}$};
+    \node[note, anchor=north, align=center, text=ecblue] at (1.9,-0.1)
+      {$A_v=-g_m(R_D\parallel r_o)$\\
+       增益受 $R_D$ 上直流压降限制};
+  \end{scope}
+
+  % ---------- (b) diode-connected load ----------
+  \begin{scope}[xshift=6.0cm]
+    \node[note, anchor=south] at (1.7,5.0){(b) 二极管接法负载};
+    \draw (2.4,4.1) node[vcc]{$V_{DD}$} -- (2.4,3.6);
+    \draw (2.4,3.6) node[pmos, anchor=S](M2){};
+    \draw (M2.G) -- (1.5,2.75) -- (1.5,2.3) -- (2.4,2.3);
+    \draw (M2.D) -- (2.4,2.3) node[circ]{};
+    \draw (2.4,2.3) node[nmos, anchor=D](M3){};
+    \draw (M3.S) -- (2.4,0.4) node[ground]{};
+    \draw (M3.G) -- (0.7,1.35) node[left]{$v_{in}$};
+    \draw (2.4,2.3) -- (3.5,2.3) node[right]{$v_{out}$};
+    \node[note, anchor=north, align=center, text=ecteal] at (1.9,-0.1)
+      {$A_v=-\dfrac{g_{m1}}{g_{m2}}=-\sqrt{\dfrac{(W/L)_1}{(W/L)_2}}$\\
+       增益由尺寸比决定，线性度好但偏低};
+  \end{scope}
+
+  % ---------- (c) current-source load ----------
+  \begin{scope}[xshift=12.0cm]
+    \node[note, anchor=south] at (1.7,5.0){(c) 电流源负载};
+    \draw (2.4,4.1) node[vcc]{$V_{DD}$} -- (2.4,3.6);
+    \draw (2.4,3.6) node[pmos, anchor=S](M4){};
+    \draw (M4.G) -- (1.1,2.75) node[left]{$V_b$};
+    \draw (M4.D) -- (2.4,2.3) node[circ]{};
+    \draw (2.4,2.3) node[nmos, anchor=D](M5){};
+    \draw (M5.S) -- (2.4,0.4) node[ground]{};
+    \draw (M5.G) -- (0.7,1.35) node[left]{$v_{in}$};
+    \draw (2.4,2.3) -- (3.5,2.3) node[right]{$v_{out}$};
+    \node[note, anchor=north, align=center, text=ecred] at (1.9,-0.1)
+      {$A_v=-g_{m1}(r_{o1}\parallel r_{o2})$\\
+       最高增益：负载是大电阻但直流压降很小};
+  \end{scope}
+
+  \node[note, anchor=north, align=center] at (8.2,-1.6)
+    {同一个共源级，换个负载就换了一套折中：\;
+     (a) 简单但增益被电源电压卡死，\;
+     (b) 增益可预测但天花板低，\;
+     (c) 增益最高、代价是输出摆幅和匹配要求};
+\end{circuitikz}

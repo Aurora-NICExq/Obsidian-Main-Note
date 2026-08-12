@@ -1,0 +1,29 @@
+\begin{tikzpicture}[scale=1.0, font=\small]
+  % ---------- circuit ----------
+  \begin{scope}[yshift=0.4cm]
+    \draw (0,2.0) to[sV, l=$v_{in}$] (0,0) node[ground]{};
+    \draw (0,2.0) to[D, l=$D_1$] (2.4,2.0);
+    \draw (2.4,2.0) node[circ]{} to[R=$R_L$] (2.4,0) -- (0,0);
+    \draw (2.4,2.0) -- (3.2,2.0) node[right]{$v_{out}$};
+  \end{scope}
+
+  % ---------- waveforms ----------
+  \begin{scope}[xshift=6.0cm, yshift=1.5cm]
+    \draw[ax] (-0.2,0) -- (6.6,0) node[below left]{$t$};
+    \draw[ax] (0,-1.5) -- (0,1.7) node[left]{$v$};
+    % input sine
+    \draw[helper, ecgray, domain=0:6.3, samples=220, smooth]
+      plot (\x, {1.25*sin(deg(2*\x))});
+    \node[note, anchor=south east] at (6.5,0.9){$v_{in}$};
+    % output: clipped, shifted down by V_D,on
+    \draw[curve, line width=1.2pt, domain=0:6.3, samples=300, smooth]
+      plot (\x, {max(0, 1.25*sin(deg(2*\x)) - 0.32)});
+    \node[ecblue, font=\footnotesize, anchor=east] at (1.4,0.55){$v_{out}$};
+    \draw[helper, ecred] (0,0.93) -- (6.4,0.93);
+    \node[ecred, font=\footnotesize, anchor=south east] at (6.5,0.98)
+      {峰值 $=V_p-V_{D,on}$};
+    \node[note, anchor=north, align=center] at (3.2,-1.7)
+      {负半周二极管反偏截止，输出被削掉一半；\\
+       此时二极管承受的反向电压峰值 $\mathrm{PIV}=V_p$};
+  \end{scope}
+\end{tikzpicture}

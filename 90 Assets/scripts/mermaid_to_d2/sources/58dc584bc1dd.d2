@@ -1,0 +1,12 @@
+shape: sequence_diagram
+
+T1: "TaskA (prio=1)"
+Tick: "SysTick"
+T2: "TaskB (prio=1)"
+
+T1 -> T1: "Running"
+Tick -> T1: "tick 到"
+T1 -> T2: "轮转到 B"
+T2 -> T2: "Running"
+Tick -> T2: "下一 tick"
+T2 -> T1: "再轮转到 A"
